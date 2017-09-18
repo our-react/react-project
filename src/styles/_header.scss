@@ -1,0 +1,21 @@
+
+@import './_background.scss';
+
+header{
+    @include bgimage;
+
+    height: 180px;
+    position: relative;
+
+    h1{
+        text-align: center;
+        line-height: 180px;
+        color: #fff;
+    }
+
+    button{
+        position: absolute;
+        right: 0px;
+        bottom: 20px;
+    }
+}

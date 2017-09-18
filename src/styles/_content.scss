@@ -1,0 +1,36 @@
+
+
+section{
+    padding-top: 10px;
+    form{
+        .btn-box{
+            display: flex;           
+            justify-content: flex-end;
+            button{
+                margin: 0px 10px;
+            }
+        }
+    }
+    
+    .question{
+        display: flex;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0 ;
+        .btn-box{
+            width: 80px; 
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between; 
+            align-items: center;
+            button{
+                margin: 5px 0;
+            }
+        }
+        .info{
+            display: flex;
+            flex-flow: column;
+            justify-content: space-around; 
+        }
+    }
+    
+}
