@@ -11,15 +11,11 @@ module.exports = {
     devServer:{
         proxy:{
             '/list':{
-                target:'https://m.toutiao.com',
+                target:'http://m.loho88.com',
                 changeOrigin:true,
-                secure:false
+                pathRewrite: {'^/list' : ''}
             },
-            '/api':{
-                target:'https://m.toutiao.com',
-                changeOrigin:true,
-                pathRewrite: {'^/api' : ''}
-            }
+           
         },
 		contentBase:'./build',//服务器要在哪个地方开启，默认是在webpack.config.js的路径中
 		port:9000,//端口

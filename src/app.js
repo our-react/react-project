@@ -1,7 +1,8 @@
 
+require("./styles/app.scss")
 
 
-import IndexComponent from './scripts/module/index'
+import IndexComponent from './scripts/component/index/index'
 
 
 import {Router,Route,hashHistory,IndexRedirect,IndexRoute} from 'react-router'

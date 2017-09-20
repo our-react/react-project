@@ -1,0 +1,115 @@
+.header {
+    width: 100%;
+    height: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.32rem;
+    box-sizing: border-box;
+    line-height: 0.6rem;
+    background: #fff;
+    a {
+        color: #333333;
+        span {
+            font-size: 0.14rem;
+            padding-left: 3px;
+            color: #333333;
+        }
+    }
+   h4 {
+       font-size: 0.18rem;
+   }
+   span {
+        display: inline-block;
+        font-size: 0.20rem;
+        color: #333333;
+        &.gouwu {
+            margin-right:0.34rem;
+        }
+    }
+}
+
+.list-product {
+    width: 100%;
+    font-size: 0;
+    .list {
+        width: 100%;
+        margin-top: 0.11rem;
+        .list-top {
+            height: 0.4rem;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 0.24rem;
+            align-items: center;
+            h5 {
+                font-size: 0.18rem;
+                color: #000;
+                border-left: 0.05rem solid #FF0000;
+                border-radius: 0.025rem;
+                padding-left: 0.02rem;
+            }
+            a {
+                font-size: 0.14rem;
+                font-size: #BDBDBD;
+            }
+        }
+        .banner {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }    
+    }
+    .product-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background: #fff;      
+        .product-left {
+            width: 50%;
+            text-align: center;
+            padding: 0.6rem 0.15rem;
+            box-sizing: border-box;
+            @include right; 
+            @include bottom;
+            span {
+                display: block;
+                color: #D3C6C1;
+                font-size: 14px;
+                &:first-child {
+                    color: #333;
+                }
+            }
+            img {
+                 width: 100%;
+                margin-top: 0.35rem;
+            }
+        }
+        .product-right {
+            width: 50%;
+            text-align: center;          
+            display: flex;
+            flex-direction: column;
+            a {
+                display: black;
+                margin-top: 0.1rem;
+                 padding: 0.16rem 0.15rem;
+               @include bottom;
+                 span {
+                    display: block;
+                    color: #D3C6C1;
+                     font-size: 14px;
+                    &:first-child {
+                        color: #333;
+                    }
+                }
+                img {
+                    width: 100%;
+                
+                }
+            }
+           
+        }
+    }
+
+}
