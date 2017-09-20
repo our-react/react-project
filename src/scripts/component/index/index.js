@@ -2,7 +2,13 @@
 
 import HeaderComponent from "./HeaderComponent"
 import ListComponent from "./ListComponent"
+import FooterComponent from "./FooterComponent"
 
+import GuessComponent from "./GuessComponent"
+
+import FootadComponent from "./FootadComponent"
+
+import GoTopComponent from "./GoTopComponent"
 import Fetch from '../../module/fetch'
 import store from '../../flux/store'
 import actions from '../../flux/actions'
@@ -19,7 +25,7 @@ class IndexComponent extends React.Component {
 
     componentWillMount() {
        let that = this
-        Fetch.Get("http://localhost:9000/list/index",{
+        Fetch.Get("http://localhost:9000/loho/index",{
         }).then(res=>{
            return res.json()
         }).then(json=>{          
@@ -32,6 +38,10 @@ class IndexComponent extends React.Component {
             <div>
                 <HeaderComponent />
                 <ListComponent  />
+                <GuessComponent/>
+                <FooterComponent/>
+                <FootadComponent/>
+                <GoTopComponent/>
             </div>
             
         )

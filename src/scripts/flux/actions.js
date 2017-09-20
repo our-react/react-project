@@ -1,4 +1,5 @@
 
+
 import dispatcher from './dispatcher'
 const actions = {
 
@@ -8,6 +9,15 @@ const actions = {
             type: 'ADD-DATA'
         }
         dispatcher.dispatch(action)
+    },
+    addNew(obj){
+        let action={
+            glassInfo:obj,
+            type:'ADD_NEW'
+        }
+        // console.log(obj,"action")
+        dispatcher.dispatch(action)
     }
 }
 export default actions
+

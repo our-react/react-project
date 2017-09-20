@@ -1,3 +1,4 @@
+
 import store from './store'
 const Dispatcher = require('flux').Dispatcher
 const dispatcher = new Dispatcher()
@@ -7,6 +8,9 @@ dispatcher.register((action)=>{
         case 'ADD-DATA':
         store.addIndexData(action.data)
         break;
+        case 'ADD_NEW':
+            store.addNew(action.glassInfo)
+            break;
         default: break;
     }
 })

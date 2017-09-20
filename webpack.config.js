@@ -9,13 +9,12 @@ module.exports = {
         filename:'app.js'
     },
     devServer:{
-        proxy:{
-            '/list':{
+        proxy:{         
+            '/loho':{
                 target:'http://m.loho88.com',
                 changeOrigin:true,
-                pathRewrite: {'^/list' : ''}
-            },
-           
+                pathRewrite: {'^/loho' : ''}
+            }
         },
 		contentBase:'./build',//服务器要在哪个地方开启，默认是在webpack.config.js的路径中
 		port:9000,//端口
