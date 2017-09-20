@@ -16,9 +16,9 @@ class LunboComponent extends React.Component {
     		let arr=[];
 		  	lunbodata.result.focus.forEach((item,i)=>{
 		  		//console.log(this)
-		  		arr.push(<div className="swiper-slide">
+		  		arr.push(<a href={item.url} className="swiper-slide">
 					        	<img src={item.pic}/>
-					        </div>)
+					        </a>)
 		  	})
 		  	return arr
     	}

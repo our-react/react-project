@@ -19,10 +19,10 @@ class NavComponent extends React.Component {
     		let arr=[];
 		  	navdata.result.cates.forEach((item,i)=>{
 		  		//console.log(this)
-		  		arr.push(<div className="nav_box">
+		  		arr.push(<a href='#' className="nav_box">
                		<img src={item.pic}/>
                		<p>{item.tag}</p>
-               </div>)
+               </a>)
 		  	})
 		  	return arr
     	}

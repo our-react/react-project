@@ -1,0 +1,85 @@
+.lunbo .swiper-slide {
+  width: 100%; }
+  .lunbo .swiper-slide img {
+    width: 100%; }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 2.53rem;
+  background: white; }
+  .nav .nav_box {
+    width: 25%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .nav .nav_box img {
+      width: 54%;
+      margin-top: 0.25rem;
+      margin-bottom: 0.12rem; }
+    .nav .nav_box p {
+      font-size: .14rem;
+      color: #333; }
+
+.banner {
+  display: inline-block;
+  width: 100%;
+  height: 1.5rem;
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  background: white; }
+  .banner img {
+    width: 100%; }
+
+.hotRecommend {
+  width: 100%;
+  height: 6.26rem;
+  background: white; }
+  .hotRecommend .hotRecommend_head {
+    width: 100%;
+    height: .4rem;
+    padding: .12rem .26rem 0 .24rem; }
+    .hotRecommend .hotRecommend_head .redbox {
+      width: .06rem;
+      height: .18rem;
+      background: #ff0000;
+      margin-right: .06rem;
+      border-radius: 1rem;
+      float: left; }
+    .hotRecommend .hotRecommend_head .hotRecommend_head--title {
+      float: left;
+      font-size: .17rem; }
+    .hotRecommend .hotRecommend_head .hotRecommend_head--more {
+      float: right;
+      color: #c7c7c7; }
+  .hotRecommend .hotRecommend_adv {
+    width: 100%;
+    height: 1rem; }
+    .hotRecommend .hotRecommend_adv img {
+      width: 100%; }
+  .hotRecommend .hotRecommend_content {
+    width: 100%;
+    height: auto; }
+    .hotRecommend .hotRecommend_content .hotRecommend_content--box {
+      width: 50%;
+      height: 1.62rem;
+      text-align: center;
+      float: left;
+      border: .01rem solid #e1e1e1;
+      border-top: none;
+      border-left: none; }
+      .hotRecommend .hotRecommend_content .hotRecommend_content--box p {
+        margin-top: .16rem;
+        margin-bottom: .09rem;
+        font-size: .14rem; }
+      .hotRecommend .hotRecommend_content .hotRecommend_content--box h2 {
+        font-size: .13rem;
+        color: #c7c7c7;
+        font-weight: normal; }
+      .hotRecommend .hotRecommend_content .hotRecommend_content--box img {
+        width: 1.55rem;
+        margin-top: .30rem; }
+
+/*# sourceMappingURL=_index.css.map */

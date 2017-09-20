@@ -18,11 +18,11 @@ class HotRecommendComponent extends React.Component {
     		let that=this;
 		    let arr=[];
 		    hotdata.result.popular.show.forEach((item,i)=>{
-		    	arr.push(<div className="hotRecommend_content--box">
+		    	arr.push(<a href={item.url} className="hotRecommend_content--box">
 		                	<p>{item.tag}</p>
 		                	<h2>{item.tag_en}</h2>
 		                	<img src={item.pic}/>
-		                </div>)
+		                </a>)
 		    })
 		    return arr;
     	}
@@ -35,11 +35,11 @@ class HotRecommendComponent extends React.Component {
                 <div className="hotRecommend_head">
                 	<div className="redbox"></div>
                 	<h3 className="hotRecommend_head--title">{this.props.hotdata.length!=0?this.props.hotdata.result.popular.title.word:''}</h3>
-                	<a href={this.props.hotdata.length!=0?this.props.hotdata.result.popular.more.url:''}>{this.props.hotdata.length!=0?this.props.hotdata.result.popular.more.word:''}</a>
+                	<a className="hotRecommend_head--more" href={this.props.hotdata.length!=0?this.props.hotdata.result.popular.more.url:''}>{this.props.hotdata.length!=0?this.props.hotdata.result.popular.more.word:''}</a>
                 </div>
-                <div className="hotRecommend_adv">
+                <a href={this.props.hotdata.length!=0?this.props.hotdata.result.popular.img.url:''} className="hotRecommend_adv">
                 	<img src={this.props.hotdata.length!=0?this.props.hotdata.result.popular.img.pic:''}/>
-                </div>
+                </a>
                 <div className="hotRecommend_content">
                 	{this.gethotData()}
                 </div>

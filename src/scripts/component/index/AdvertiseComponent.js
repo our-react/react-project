@@ -25,9 +25,9 @@ class AdvertiseComponent extends React.Component {
     render(){
        
         return (
-            <div className="banner">
+            <a href={this.props.advdata.length!=0?this.props.advdata.result.ad[0].url:''} className="banner">
                 {this.getadvData()}
-            </div>
+            </a>
         )
     }
 }
