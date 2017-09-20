@@ -4,6 +4,7 @@ const Dispatcher = require('flux').Dispatcher
 const dispatcher = new Dispatcher()
 
 dispatcher.register((action)=>{
+
     switch(action.type) {
         case 'ADD-DATA':
         store.addIndexData(action.data)
@@ -14,4 +15,5 @@ dispatcher.register((action)=>{
         default: break;
     }
 })
+
 export default dispatcher
