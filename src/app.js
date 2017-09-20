@@ -1,20 +1,12 @@
 
+require("./styles/app.scss")
+
+///////////////////////
+// var React = require("react")
+// var ReactDOM = require('react-dom')
 
 
-import IndexComponent from './scripts/module/index'
+import RootComponent from './scripts/components/RootComponent'
 
+ReactDOM.render(<RootComponent/>,document.getElementById("app"))
 
-import {Router,Route,hashHistory,IndexRedirect,IndexRoute} from 'react-router'
-
-
-
-ReactDOM.render(
-    
-    <Router history={hashHistory}>
-        <Route path="/" component={IndexComponent}>           
-            <IndexRoute component={IndexComponent}/>          
-
-        </Route>
-    </Router>
-    
-    ,document.getElementById("app"))

@@ -1,0 +1,48 @@
+
+@mixin onepixel($h:1px,$color:#ccc){
+    position:relative;
+    &:after{
+        content: '';
+        display: block;
+        width: 100%;
+        height:$h;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $color;
+        transform: scaleY(0.5); 
+    }
+
+}
+
+@mixin line_down($h:1px,$color:#ccc){
+    position:relative;
+    &:after{
+        content: '';
+        display: block;
+        width: 100%;
+        height:$h;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: $color;
+        transform: scaleY(0.5); 
+    }
+
+}
+
+@mixin line_left($h:1px,$color:#ccc){
+    position:relative;
+    &:before{
+        content: '';
+        display: block;
+        width: $h;
+        height:100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        background: $color;
+        transform: scaleY(0.5); 
+    }
+
+}

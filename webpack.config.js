@@ -19,7 +19,18 @@ module.exports = {
                 target:'https://m.toutiao.com',
                 changeOrigin:true,
                 pathRewrite: {'^/api' : ''}
+            },
+            '/ele':{
+                target:'https://restapi.ele.me',
+                changeOrigin:true,
+                pathRewrite: {'^/ele' : ''}
+            },
+            '/loho':{
+                target:'http://m.loho88.com',
+                changeOrigin:true,
+                pathRewrite: {'^/loho' : ''}
             }
+            // http://m.loho88.com/search/?sort=o6&e=249&page=1
         },
 		contentBase:'./build',//服务器要在哪个地方开启，默认是在webpack.config.js的路径中
 		port:9000,//端口
