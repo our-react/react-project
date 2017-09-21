@@ -36,11 +36,11 @@ class ListComponent extends React.Component {
                             <h5>{item.title.word}</h5>
                             <a href={item.more.url}>{item.more.word}</a>
                         </div>
-                        <div className="banner"><img src={item.img.pic} alt=""/></div>
-                    </div>           
-                    
-                )             
+                        <div className="banner"><img src={item.img.pic} alt=""/></div>  
+                    </div>                              
+                )                     
                 _arr.push(
+
                     <div className="product-list">
                         <div className="product-left">
                             <a  href="/">
@@ -67,12 +67,6 @@ class ListComponent extends React.Component {
               _arr=[]
                                          
             })
-
-          
-
-
-          
-           
         }
        return arr
         

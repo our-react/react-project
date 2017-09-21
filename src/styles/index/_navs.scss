@@ -15,6 +15,10 @@
         align-items: center;
         color:#000;
         font-size:0.12rem;
+        &.active {
+            text-decoration: none;
+            color: blue;
+        }
         span{
             font-size:0.28rem;
             height: auto;

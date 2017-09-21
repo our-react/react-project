@@ -1,17 +1,10 @@
 //import store from '../../flux/store.js'
 //import actioncreator from '../../flux/actionCreator.js'
 class LunboComponent extends React.Component {
-    constructor(props,context){
-        super(props,context)
-
-        this.state={
-          
-        }
-    }
+   
     getLunboData(){
     	
 	  	let lunbodata = this.props.lunbodata
-	  	console.log(lunbodata)
     	if(lunbodata.length!=0){
     		let arr=[];
 		  	lunbodata.result.focus.forEach((item,i)=>{
@@ -26,10 +19,6 @@ class LunboComponent extends React.Component {
 
     }
     
-    componentWillMount(){
-        
-
-    }
     componentDidMount(){
     	
          this.mySwiper = new Swiper ('.swiper-container', {		    
@@ -55,10 +44,6 @@ class LunboComponent extends React.Component {
             </div>
         )
     }
-}
-//定义默认属性
-LunboComponent.defaultProps={
-    
 }
 
 

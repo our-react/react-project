@@ -1,9 +1,10 @@
 
 
 
-@import './index/_base.scss';
-@import './index/_mixin.scss';
-@import './index/_reset.scss';
+@import './common/_base.scss';
+@import './common/_mixin.scss';
+@import './common/_reset.scss';
+
 @import './index/_navs.scss';
 @import './index/_guess.scss';
 @import './index/_footad.scss';

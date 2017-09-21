@@ -1,16 +1,7 @@
 
 import {Link} from 'react-router'
 class NavComponent extends React.Component {
-    constructor(props,context){
-        super(props,context)
-
-        this.state={
-            
-        }
-    }
-    componentWillMount(){
-        
-    }
+    
     getNavData(){
     	
 	  	let navdata = this.props.navdata
@@ -37,10 +28,6 @@ class NavComponent extends React.Component {
             </div>
         )
     }
-}
-//定义默认属性
-NavComponent.defaultProps={
-    
 }
 
 

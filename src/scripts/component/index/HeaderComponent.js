@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router'
 
 class HeaderComponent extends React.Component {
     render() {
@@ -6,7 +6,7 @@ class HeaderComponent extends React.Component {
             <div className="header">
                 <a href="/">北京市<span className="iconfont icon-fanhui-copy"></span></a>
                 <h4 className="logo" >LOHO</h4>
-                <span><span className="iconfont icon-gouwuche gouwu"></span><span className="iconfont icon-wode1"></span></span>
+                <span><Link href="/" className="iconfont icon-gouwuche gouwu"></Link><Link to="/login" className="iconfont icon-wode1"></Link></span>
              </div> 
            
         )

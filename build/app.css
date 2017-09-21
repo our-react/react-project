@@ -14,8 +14,17 @@ h1, h2, h3, h4, h5, h6, ul, li {
   margin: 0;
   padding: 0; }
 
-li {
+ul, li {
   list-style: none; }
+
+body {
+  font-size: 14px;
+  background: #f2f2f2; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
 .navs {
   position: relative;
@@ -48,33 +57,16 @@ li {
       font-size: 0.28rem;
       height: auto; }
 
-.guess .guess_head {
-  margin-bottom: 0;
-  text-align: center;
-  height: 0.6rem;
-  line-height: 0.6rem;
-  background: #fff;
-  position: relative; }
-  .guess .guess_head::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    left: 0;
-    background: #ccc;
-    transform: scaleY(0.5);
-    top: 0; }
-
-.guess .guess_list {
-  background: #fff;
-  display: flex;
-  flex-wrap: wrap; }
-  .guess .guess_list .guess_list--li {
-    position: relative;
-    width: 50%;
-    padding: 10px; }
-    .guess .guess_list .guess_list--li::before {
+.guess {
+  margin-top: 20px; }
+  .guess .guess_head {
+    margin-bottom: 0;
+    text-align: center;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    background: #fff;
+    position: relative; }
+    .guess .guess_head::before {
       content: '';
       display: block;
       width: 100%;
@@ -84,41 +76,58 @@ li {
       background: #ccc;
       transform: scaleY(0.5);
       top: 0; }
-    .guess .guess_list .guess_list--li h1 {
+  .guess .guess_list {
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap; }
+    .guess .guess_list .guess_list--li {
+      position: relative;
+      width: 50%;
+      padding: 10px; }
+      .guess .guess_list .guess_list--li::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        background: #ccc;
+        transform: scaleY(0.5);
+        top: 0; }
+      .guess .guess_list .guess_list--li h1 {
+        text-align: center;
+        height: 1.44rem;
+        line-height: 1.44rem; }
+        .guess .guess_list .guess_list--li h1 img {
+          width: 100%; }
+      .guess .guess_list .guess_list--li .info {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical; }
+    .guess .guess_list .guess_list--li:nth-child(2n) {
+      position: relative; }
+      .guess .guess_list .guess_list--li:nth-child(2n)::after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: #ccc;
+        transform: scaleX(0.5);
+        left: 0; }
+    .guess .guess_list .price {
       text-align: center;
-      height: 1.44rem;
-      line-height: 1.44rem; }
-      .guess .guess_list .guess_list--li h1 img {
-        width: 100%; }
-    .guess .guess_list .guess_list--li .info {
-      width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical; }
-  .guess .guess_list .guess_list--li:nth-child(2n) {
-    position: relative; }
-    .guess .guess_list .guess_list--li:nth-child(2n)::after {
-      content: '';
-      display: block;
-      width: 1px;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      background: #ccc;
-      transform: scaleX(0.5);
-      left: 0; }
-  .guess .guess_list .price {
+      color: orangered; }
+  .guess .addmore {
     text-align: center;
-    color: orangered; }
-
-.guess .addmore {
-  text-align: center;
-  height: 0.6rem;
-  line-height: 0.6rem; }
-  .guess .addmore span {
-    color: #666; }
+    height: 0.6rem;
+    line-height: 0.6rem; }
+    .guess .addmore span {
+      color: #666; }
 
 .footad {
   height: 2.66rem;
@@ -175,6 +184,10 @@ li {
 .header {
   width: 100%;
   height: 0.6rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
   display: flex;
   justify-content: space-between;
   padding: 0 0.32rem;
@@ -188,12 +201,14 @@ li {
       padding-left: 3px;
       color: #333333; }
   .header h4 {
-    font-size: 0.18rem; }
-  .header span {
+    font-size: 0.18rem;
+    line-height: 0.6rem;
+    font-weight: bolder; }
+  .header a {
     display: inline-block;
     font-size: 0.20rem;
     color: #333333; }
-    .header span.gouwu {
+    .header a.gouwu {
       margin-right: 0.34rem; }
 
 .list-product {
@@ -291,3 +306,89 @@ li {
             color: #333; }
         .list-product .product-list .product-right a img {
           width: 100%; }
+
+.lunbo {
+  margin-top: 0.6rem; }
+  .lunbo .swiper-slide {
+    width: 100%; }
+    .lunbo .swiper-slide img {
+      width: 100%; }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 2.53rem;
+  background: white; }
+  .nav .nav_box {
+    width: 25%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .nav .nav_box img {
+      width: 54%;
+      margin-top: 0.25rem;
+      margin-bottom: 0.12rem; }
+    .nav .nav_box p {
+      font-size: .14rem;
+      color: #333; }
+
+.adv {
+  display: inline-block;
+  width: 100%;
+  height: 1.5rem;
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  background: white; }
+  .adv img {
+    width: 100%; }
+
+.hotRecommend {
+  width: 100%;
+  height: 6.26rem;
+  background: white; }
+  .hotRecommend .hotRecommend_head {
+    width: 100%;
+    height: .4rem;
+    padding: .12rem .26rem 0 .24rem; }
+    .hotRecommend .hotRecommend_head .redbox {
+      width: .06rem;
+      height: .18rem;
+      background: #ff0000;
+      margin-right: .06rem;
+      border-radius: 1rem;
+      float: left; }
+    .hotRecommend .hotRecommend_head .hotRecommend_head--title {
+      float: left;
+      font-size: .17rem; }
+    .hotRecommend .hotRecommend_head .hotRecommend_head--more {
+      float: right;
+      color: #c7c7c7; }
+  .hotRecommend .hotRecommend_adv {
+    width: 100%;
+    height: 1rem; }
+    .hotRecommend .hotRecommend_adv img {
+      width: 100%; }
+  .hotRecommend .hotRecommend_content {
+    width: 100%;
+    height: auto; }
+    .hotRecommend .hotRecommend_content .hotRecommend_content--box {
+      width: 50%;
+      height: 1.62rem;
+      text-align: center;
+      float: left;
+      border: .01rem solid #e1e1e1;
+      border-top: none;
+      border-left: none; }
+      .hotRecommend .hotRecommend_content .hotRecommend_content--box p {
+        margin-top: .16rem;
+        margin-bottom: .09rem;
+        font-size: .14rem; }
+      .hotRecommend .hotRecommend_content .hotRecommend_content--box h2 {
+        font-size: .13rem;
+        color: #c7c7c7;
+        font-weight: normal; }
+      .hotRecommend .hotRecommend_content .hotRecommend_content--box img {
+        width: 1.55rem;
+        margin-top: .30rem; }
