@@ -410,7 +410,6 @@ body {
       .newthings .production-filter-bar .listnav a.active {
         color: red;
         text-decoration: none; }
-
 .newthings .godslist_box {
   width: 100%;
   height: auto;
@@ -451,14 +450,14 @@ body {
       top: .12rem;
       left: .12rem;
       color: #e51c23; }
-
 .newthings .loadingmore {
   text-align: center;
   margin-top: .06rem; }
-
 .newthings .bottom {
   text-align: center;
   margin-top: .06rem; }
 
 .active {
   color: red; }
+
+/*# sourceMappingURL=app.css.map */

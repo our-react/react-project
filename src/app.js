@@ -13,8 +13,6 @@ import NewthingsComponent from './scripts/component/newthings/NewthingsComponent
 import SocketComponent from './scripts/component/socket/SocketComponent'
 import NearbyComponent from './scripts/component/nearby/NearbyComponent'
 
-
-
 ReactDOM.render(
     
     <Router history={hashHistory}>
@@ -23,7 +21,7 @@ ReactDOM.render(
             <Route path="/index" component={IndexComponent}></Route>
             <Route path="/register" component={RegisterComponent}></Route>  
             <Route path="/login" component={LoginComponent}></Route>  
-            <Route path="/newthings" component={NewthingsComponent}></Route>  
+            <Route path="/newthings" component={NewthingsComponent}></Route>            
             <Route path="/socket" component={SocketComponent}></Route> 
             <Route path="/nearby" component={NearbyComponent}></Route>          
         </Route>
