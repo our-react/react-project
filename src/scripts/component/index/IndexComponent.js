@@ -65,5 +65,6 @@ IndexComponent.defaultProps={
         title: "LOHO",
         gouwu: "icon-gouwuche",
         login: "icon-wode1"    
+
 }
 export default IndexComponent

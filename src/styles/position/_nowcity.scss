@@ -1,0 +1,22 @@
+.nowcity{
+    width:100%;
+    height:0.45rem;
+    background:#fff;
+    margin-top:0.75rem;
+    padding:0.15rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    p{
+        margin:0;
+        flex-grow: 1;
+       .iconfont{
+           font-size:0.18rem;
+       }
+        span{
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0.14rem;
+        }
+    }
+}
