@@ -84,7 +84,7 @@ class AllCityComponent extends React.Component {
             for(var key in obj){
                 let _arr=[]
                 obj[key].forEach((item,i)=>{
-                    _arr.push(<li className="list"><Link to={"/detail/"+this.state._id} className="list_cy">{item.cityName}</Link></li>)  
+                    _arr.push(<li className="list"><Link to="/" className="list_cy">{item.cityName}</Link></li>)  
                 })              
                 arr.push(<div className="swi-slide">
                     <p  className="list_tm">{key}</p>

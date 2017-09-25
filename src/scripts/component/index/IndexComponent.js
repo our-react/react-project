@@ -19,6 +19,7 @@ import actions from '../../flux/actions'
 
 class IndexComponent extends React.Component {
 
+
     constructor(props,context) {
         super(props,context)
         this.state={
@@ -32,17 +33,21 @@ class IndexComponent extends React.Component {
         Fetch.Get("http://localhost:9000/loho/index",{
         }).then(res=>{
            return res.json()
-        }).then(json=>{      
+        }).then(json=>{  
+            // console.log(json)    
         	that.setState({
             	data:json
             })
+            
             actions.addIndexData(json.result)                
         })
      
     }
     render() {
         return (
-            <div>
+
+            <div className="index-page">
+
                 <HeaderComponent data = {this.props}/>
                 <LunboComponent lunbodata={this.state.data}/>
                 <NavComponent navdata={this.state.data}/>
@@ -62,9 +67,13 @@ class IndexComponent extends React.Component {
 IndexComponent.defaultProps={
         position: "北京市",
         fanhui: "icon-fanhui-copy",
-        title: "LOHO",
+        title: "",
         gouwu: "icon-gouwuche",
-        login: "icon-wode1"    
-
+        login: "icon-wode1"
+    
+    
 }
+
+
+
 export default IndexComponent

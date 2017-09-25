@@ -10,6 +10,9 @@ a {
   text-decoration: none;
   color: #ccc; }
 
+a:hover {
+  text-decoration: none; }
+
 h1, h2, h3, h4, h5, h6, ul, li, p {
   margin: 0;
   padding: 0; }
@@ -184,6 +187,9 @@ body {
   line-height: 0.5rem;
   background: #fff; }
 
+.index-page {
+  overflow: hidden; }
+
 .header {
   width: 100%;
   height: 0.6rem;
@@ -191,28 +197,37 @@ body {
   left: 0;
   top: 0;
   z-index: 20;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 0.32rem;
+  padding: 0 0.25rem 0 0.25rem;
   box-sizing: border-box;
   line-height: 0.6rem;
-  background: #fff; }
-  .header a {
-    color: #333333; }
-    .header a span {
-      font-size: 0.14rem;
-      padding-left: 3px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between; }
+  .header .header-left a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 16px; }
+    .header .header-left a .iconfont {
+      font-size: 16px;
       color: #333333; }
-  .header h4 {
-    font-size: 0.18rem;
-    line-height: 0.6rem;
-    font-weight: bolder; }
-  .header a {
-    display: inline-block;
-    font-size: 0.20rem;
-    color: #333333; }
-    .header a.gouwu {
-      margin-right: 0.34rem; }
+  .header .header-right {
+    display: flex;
+    justify-content: space-between; }
+    .header .header-right h4 {
+      font-size: 0.20rem;
+      line-height: 0.6rem;
+      margin-right: 0.38rem;
+      font-weight: normal; }
+      .header .header-right h4 img {
+        height: 70%; }
+    .header .header-right .iconfont {
+      display: inline-block;
+      font-size: 0.25rem;
+      color: #333333;
+      text-decoration: none;
+      margin-top: 0; }
+      .header .header-right .iconfont.gouwu {
+        margin-right: 0.32rem; }
 
 .list-product {
   width: 100%;
@@ -381,13 +396,33 @@ body {
       height: 1.62rem;
       text-align: center;
       float: left;
-      border: .01rem solid #e1e1e1;
-      border-top: none;
-      border-left: none; }
+      position: relative;
+      position: relative; }
+      .hotRecommend .hotRecommend_content .hotRecommend_content--box::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        background: #ccc;
+        transform: scaleY(0.5);
+        bottom: 0; }
+      .hotRecommend .hotRecommend_content .hotRecommend_content--box::after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: #ccc;
+        transform: scaleX(0.5);
+        left: 100%; }
       .hotRecommend .hotRecommend_content .hotRecommend_content--box p {
         margin-top: .16rem;
         margin-bottom: .09rem;
-        font-size: .14rem; }
+        font-size: .14rem;
+        color: #333; }
       .hotRecommend .hotRecommend_content .hotRecommend_content--box h2 {
         font-size: .13rem;
         color: #c7c7c7;
@@ -811,3 +846,228 @@ body {
       display: inline-block;
       vertical-align: middle;
       font-size: 0.14rem; }
+
+.register {
+  overflow: hidden; }
+  .register .header {
+    position: relative; }
+    .register .header::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      background: #ccc;
+      transform: scaleY(0.5);
+      bottom: 0; }
+    .register .header .header-right h4 {
+      font-weight: normal;
+      font-size: 16px; }
+  .register .form-list {
+    margin-top: 0.1rem;
+    position: relative; }
+    .register .form-list::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      background: #ccc;
+      transform: scaleY(0.5);
+      top: 0; }
+    .register .form-list .form-items .form-item {
+      width: 100%;
+      background: #fff;
+      height: 0.47rem;
+      line-height: 0.45rem;
+      position: relative; }
+      .register .form-list .form-items .form-item label {
+        font-size: 0.12rem;
+        color: #616161;
+        display: inline-block;
+        width: 20%;
+        text-align: center;
+        line-height: 0.47rem;
+        font-weight: normal; }
+      .register .form-list .form-items .form-item input {
+        width: 80%;
+        font-size: 0.12rem;
+        color: #616161;
+        border: 0;
+        border-bottom: 0.01rem solid #eee;
+        outline: none; }
+      .register .form-list .form-items .form-item button {
+        display: inline-block;
+        width: 1.25rem;
+        border: 0;
+        outline: none;
+        color: #fff;
+        background: #E8343B;
+        position: absolute;
+        right: 0;
+        top: 0; }
+      .register .form-list .form-items .form-item #container {
+        width: 1.25rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%; }
+    .register .form-list .form-items .agreement {
+      position: fixed;
+      left: 0;
+      bottom: 0.3rem;
+      height: 0.6rem;
+      width: 100%;
+      text-align: center; }
+      .register .form-list .form-items .agreement p a {
+        color: #E8343B; }
+    .register .form-list .form-items .register {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      height: 0.6rem;
+      width: 100%; }
+      .register .form-list .form-items .register button {
+        display: inline-block;
+        height: 0.6rem;
+        width: 100%;
+        border: 0;
+        background: #CCCCCC;
+        color: #ACACAC;
+        font-size: .14rem;
+        outline: none; }
+    .register .form-list .tishi {
+      width: 2.1rem;
+      height: 0.5rem;
+      line-height: 0.5rem;
+      text-align: center;
+      font-size: 0.2rem;
+      border: 0.01rem solid #ccc;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      margin-left: -1.15rem;
+      margin-top: -1.5rem;
+      background: #fff; }
+
+.detial-page .detial-lunbo {
+  width: 100%;
+  padding-bottom: 0.1rem;
+  background: #fff;
+  margin-bottom: 0.1rem; }
+  .detial-page .detial-lunbo .swiper-container .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #E51C23; }
+  .detial-page .detial-lunbo .swiper-container .swiper-wrapper .swiper-slide {
+    width: 100%;
+    display: block; }
+    .detial-page .detial-lunbo .swiper-container .swiper-wrapper .swiper-slide span {
+      width: 100%;
+      display: block;
+      height: 1.05rem; }
+      .detial-page .detial-lunbo .swiper-container .swiper-wrapper .swiper-slide span.lunbo-button {
+        background: -webkit-linear-gradient(top, #fff, #E9E9E9, #CACACA);
+        background: linear-gradient(top, #fff, #E9E9E9, #CACACA); }
+    .detial-page .detial-lunbo .swiper-container .swiper-wrapper .swiper-slide img {
+      width: 100%; }
+
+.detial-page .detial-title {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 0.1rem; }
+  .detial-page .detial-title .detial-tit {
+    width: 100%;
+    padding: 0.15rem 0.1rem;
+    overflow: hidden;
+    position: relative; }
+    .detial-page .detial-title .detial-tit::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      background: #ccc;
+      transform: scaleY(0.5);
+      bottom: 0; }
+    .detial-page .detial-title .detial-tit .title-left {
+      float: left;
+      width: 65%; }
+    .detial-page .detial-title .detial-tit .title-right {
+      float: right;
+      padding: 0 7px;
+      position: relative; }
+      .detial-page .detial-title .detial-tit .title-right::after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: #ccc;
+        transform: scaleX(0.5);
+        left: 0; }
+      .detial-page .detial-title .detial-tit .title-right .iconfont {
+        font-size: 0.20rem; }
+  .detial-page .detial-title .detial-price {
+    width: 100%;
+    padding: 0.15rem 0.1rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative; }
+    .detial-page .detial-title .detial-price::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      background: #ccc;
+      transform: scaleY(0.5);
+      bottom: 0; }
+    .detial-page .detial-title .detial-price .price-left {
+      font-size: 0.15rem;
+      color: #E51C23;
+      font-weight: bolder; }
+  .detial-page .detial-title .detial-decri {
+    width: 100%;
+    padding: 0.15rem 0.1rem;
+    display: flex;
+    justify-content: space-between;
+    background: #F2F2F2;
+    position: relative; }
+    .detial-page .detial-title .detial-decri::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      background: #ccc;
+      transform: scaleY(0.5);
+      bottom: 0; }
+  .detial-page .detial-title .detial-color {
+    width: 100%;
+    background: #fff;
+    padding: 0.15rem 0.1rem; }
+    .detial-page .detial-title .detial-color p {
+      line-height: 0.4rem;
+      font-size: 0.16rem; }
+    .detial-page .detial-title .detial-color ul {
+      display: flex;
+      flex-flow: row wrap; }
+      .detial-page .detial-title .detial-color ul li {
+        padding: 0 7px;
+        height: 0.35rem;
+        margin-right: 7px;
+        background: #D8D8D8;
+        margin-bottom: 7px;
+        line-height: 0.35rem;
+        font-size: 0.12rem; }
+
+.detial-page .detial-shop {
+  width: 100%;
+  padding: 0.15rem 0.1rem;
+  background: #fff; }

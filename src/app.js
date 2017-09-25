@@ -12,8 +12,10 @@ import LoginComponent from './scripts/component/login/LoginComponent'
 import NewthingsComponent from './scripts/component/newthings/NewthingsComponent'
 import SocketComponent from './scripts/component/socket/SocketComponent'
 import NearbyComponent from './scripts/component/nearby/NearbyComponent'
+
 import PositionComponent from './scripts/component/position/PositionComponent'
-import DetailComponent from './scripts/component/position/DetailComponent'
+import DetialComponent from './scripts/component/detial/DetialComponent'
+
 
 import {Provider} from 'react-redux'
 import store from './scripts/redux/store'
@@ -29,8 +31,10 @@ ReactDOM.render(
             <Route path="/newthings" component={NewthingsComponent}></Route>            
             <Route path="/socket" component={SocketComponent}></Route> 
             <Route path="/nearby" component={NearbyComponent}></Route>
-            <Route path="/position" component={PositionComponent}></Route>
-            <Route path="/detail/:id" component={DetailComponent}></Route>            
+            <Route path="/position" component={PositionComponent}></Route>         
+            <Route path="/nearby" component={NearbyComponent}></Route>   
+            <Route path="/detial" component={DetialComponent}></Route>       
+
         </Route>
     </Router>
     </Provider>

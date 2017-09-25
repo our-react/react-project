@@ -29,7 +29,7 @@ class HotCityComponent extends React.Component {
             return arr
         }else{
             this.state.city.hot.forEach((item,i)=>{
-                arr.push(<Link to={"/detail/"+this.state._id} className="hot_country">{item.cityName}</Link>)
+                arr.push(<Link to="/" className="hot_country">{item.cityName}</Link>)
             })
         }
         return arr
