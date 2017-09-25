@@ -3,7 +3,7 @@ import LunboComponent from './LunboComponent'
 import NavComponent from './NavComponent'
 import AdvertiseComponent from './AdvertiseComponent'
 import HotRecommendComponent from './HotRecommendComponent'
-import HeaderComponent from "./HeaderComponent"
+import HeaderComponent from "../common/HeaderComponent"
 import ListComponent from "./ListComponent"
 import FooterComponent from "./FooterComponent"
 
@@ -19,6 +19,7 @@ import actions from '../../flux/actions'
 
 class IndexComponent extends React.Component {
 
+
     constructor(props,context) {
         super(props,context)
         this.state={
@@ -32,18 +33,20 @@ class IndexComponent extends React.Component {
         Fetch.Get("http://localhost:9000/loho/index",{
         }).then(res=>{
            return res.json()
-        }).then(json=>{      
+        }).then(json=>{  
+            // console.log(json)    
         	that.setState({
             	data:json
             })
+            
             actions.addIndexData(json.result)                
         })
      
     }
     render() {
         return (
-            <div>
-                <HeaderComponent />
+            <div className="index-page">
+                <HeaderComponent data = {this.props}/>
                 <LunboComponent lunbodata={this.state.data}/>
                 <NavComponent navdata={this.state.data}/>
                 <AdvertiseComponent advdata={this.state.data}/>
@@ -58,6 +61,15 @@ class IndexComponent extends React.Component {
         )
     }
 
+    
+}
+IndexComponent.defaultProps={
+        position: "北京市",
+        fanhui: "icon-fanhui-copy",
+        title: "",
+        gouwu: "icon-gouwuche",
+        login: "icon-wode1"
+    
     
 }
 

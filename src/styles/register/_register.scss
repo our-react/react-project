@@ -1,0 +1,103 @@
+.register {
+    overflow: hidden;
+   .header {
+       @include bottom;
+       .header-right {
+           h4 {
+               font-weight: normal;
+               font-size: 16px;
+           }
+       }
+   }
+   .form-list {
+        margin-top: 0.1rem;
+       @include top;
+       .form-items .form-item {
+           width: 100%;
+           background: #fff;
+           height: 0.47rem;
+           line-height: 0.45rem;
+           position: relative;
+           label {
+               font-size: 0.12rem;
+               color: #616161;
+               display: inline-block;
+               width: 20%;
+               text-align: center;
+               line-height: 0.47rem;
+               font-weight: normal;             
+           }
+            input {
+                width: 80%;
+                font-size: 0.12rem;
+                color: #616161;
+                border: 0;
+                border-bottom: 0.01rem solid #eee;
+                outline: none;
+            }
+            button {
+                display: inline-block;
+                width: 1.25rem;
+                border: 0;
+                outline: none;
+                color: #fff;
+                background: #E8343B;
+                position: absolute;               
+                right: 0;
+                top: 0;
+            }
+            #container {
+                width: 1.25rem; 
+                position: absolute;               
+                right: 0;
+                top: 0;
+                height: 100%;
+            }
+
+        }
+        .form-items .agreement {
+            position: fixed;
+            left: 0;
+            bottom: 0.3rem;
+            height: 0.6rem;
+            width: 100%;
+            text-align: center;
+            p {
+                a {
+                    color: #E8343B;
+                }
+            }
+        }
+        .form-items .register {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            height: 0.6rem;
+            width: 100%;
+            button {
+                display: inline-block;
+                height: 0.6rem;
+                width: 100%;
+                border: 0;
+                background: #CCCCCC;
+                color: #ACACAC;
+                font-size: .14rem;
+                outline: none;
+            }
+        }
+        .tishi {
+            width: 2.1rem;
+            height: 0.5rem;
+            line-height: 0.5rem;
+            text-align: center;
+            font-size: 0.2rem;
+            border: 0.01rem solid #ccc;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -1.15rem;
+            margin-top: -1.5rem;
+            background: #fff;
+        }
+   }
+}

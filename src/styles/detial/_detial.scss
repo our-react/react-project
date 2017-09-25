@@ -1,0 +1,102 @@
+.detial-page {
+    .detial-lunbo{
+        width: 100%;
+        padding-bottom: 0.1rem;
+        background: #fff;
+        margin-bottom: 0.1rem;
+        .swiper-container {
+            .swiper-pagination-bullet-active {
+                opacity: 1;
+                background: #E51C23;
+            }
+            .swiper-wrapper .swiper-slide {
+                width: 100%;
+                display: block;
+                span {
+                    width: 100%;
+                    display: block;
+                    height: 1.05rem;
+                    &.lunbo-button {
+                        background:-webkit-linear-gradient(top,#fff, #E9E9E9, #CACACA);
+                        background:linear-gradient(top,#fff, #E9E9E9, #CACACA)
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        
+    }
+    .detial-title {
+        width: 100%;
+        background: #fff;
+        margin-bottom: 0.1rem;
+        .detial-tit {
+            width: 100%;
+            padding: 0.15rem 0.1rem;
+            overflow: hidden;  
+            @include bottom;         
+            .title-left {
+                float: left;
+                width: 65%;
+            }
+            .title-right {
+                float: right;
+                padding: 0 7px;
+                @include left;
+                .iconfont {
+                    font-size: 0.20rem;
+                }
+            }
+        }
+        .detial-price {
+            width: 100%;
+            padding: 0.15rem 0.1rem;
+             display: flex;
+             justify-content: space-between;
+              @include bottom;    
+             .price-left {
+                 font-size: 0.15rem;
+                 color: #E51C23;
+                 font-weight: bolder;
+             }
+        }
+        .detial-decri {
+            width: 100%;
+            padding: 0.15rem 0.1rem;
+            display: flex;
+            justify-content: space-between;
+            background:#F2F2F2;
+             @include bottom;    
+        }
+        .detial-color {
+            width: 100%;
+            background: #fff;
+            padding: 0.15rem 0.1rem;
+            p {
+                line-height: 0.4rem;
+                font-size: 0.16rem;
+            }
+            ul {
+                display: flex;
+                flex-flow: row wrap;
+                li {
+                    padding: 0 7px;
+                    height: 0.35rem;
+                    margin-right: 7px;
+                    background: #D8D8D8;
+                    margin-bottom: 7px;
+                    line-height: 0.35rem;
+                    font-size: 0.12rem;
+                }
+            }
+        }
+    }
+    .detial-shop {
+        width: 100%;
+         padding: 0.15rem 0.1rem;
+        background: #fff;
+    }
+   
+}

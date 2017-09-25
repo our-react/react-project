@@ -12,6 +12,7 @@ import LoginComponent from './scripts/component/login/LoginComponent'
 import NewthingsComponent from './scripts/component/newthings/NewthingsComponent'
 import SocketComponent from './scripts/component/socket/SocketComponent'
 import NearbyComponent from './scripts/component/nearby/NearbyComponent'
+import DetialComponent from './scripts/component/detial/DetialComponent'
 
 
 
@@ -25,7 +26,8 @@ ReactDOM.render(
             <Route path="/login" component={LoginComponent}></Route>  
             <Route path="/newthings" component={NewthingsComponent}></Route>  
             <Route path="/socket" component={SocketComponent}></Route> 
-            <Route path="/nearby" component={NearbyComponent}></Route>          
+            <Route path="/nearby" component={NearbyComponent}></Route>   
+            <Route path="/detial" component={DetialComponent}></Route>       
         </Route>
     </Router>
     
