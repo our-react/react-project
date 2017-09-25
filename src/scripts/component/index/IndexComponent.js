@@ -3,7 +3,7 @@ import LunboComponent from './LunboComponent'
 import NavComponent from './NavComponent'
 import AdvertiseComponent from './AdvertiseComponent'
 import HotRecommendComponent from './HotRecommendComponent'
-import HeaderComponent from "./HeaderComponent"
+import HeaderComponent from "../common/HeaderComponent"
 import ListComponent from "./ListComponent"
 import FooterComponent from "./FooterComponent"
 
@@ -43,7 +43,7 @@ class IndexComponent extends React.Component {
     render() {
         return (
             <div>
-                <HeaderComponent />
+                <HeaderComponent data = {this.props}/>
                 <LunboComponent lunbodata={this.state.data}/>
                 <NavComponent navdata={this.state.data}/>
                 <AdvertiseComponent advdata={this.state.data}/>
@@ -61,4 +61,13 @@ class IndexComponent extends React.Component {
     
 }
 
+IndexComponent.defaultProps={
+        position: "北京市",
+        fanhui: "icon-fanhui-copy",
+        title: "LOHO",
+        gouwu: "icon-gouwuche",
+        login: "icon-wode1"
+    
+    
+}
 export default IndexComponent

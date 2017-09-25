@@ -1,0 +1,28 @@
+.hotcity{
+    margin-top:0.15rem;
+    height:0.9rem;
+    background: #fff;
+
+    p{
+        padding-left:0.15rem;
+        height:0.4rem;
+        line-height: 0.4rem;
+        @include bottom; 
+    }
+    .hotcity_hot{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        height:0.5rem;
+        .hot_country{
+            width:25%;
+            display: inline-block;
+            height: 100%;
+            line-height: 0.5rem;
+            text-align: center;
+            color:#333;
+            text-decoration: none;
+        }
+    }
+}
