@@ -216,14 +216,11 @@ body {
     .header .header-right h4 {
       font-size: 0.20rem;
       line-height: 0.6rem;
-<<<<<<< HEAD
-      margin-right: 0.45rem;
-=======
       margin-right: 0.40rem;
->>>>>>> origin/hyc20170925
       font-weight: normal; }
       .header .header-right h4 img {
-        height: 70%; }
+        height: 70%;
+        vertical-align: top; }
     .header .header-right .iconfont {
       display: inline-block;
       font-size: 0.25rem;
@@ -444,11 +441,11 @@ body {
     display: flex;
     justify-content: space-around;
     width: 100%; }
-    .newthings .production-filter-bar .listnav a {
+    .newthings .production-filter-bar .listnav li {
       line-height: .47rem; }
-      .newthings .production-filter-bar .listnav a.active {
-        color: red;
-        text-decoration: none; }
+    .newthings .production-filter-bar .listnav .active {
+      color: red;
+      text-decoration: none; }
 
 .newthings .godslist_box {
   width: 100%;
@@ -457,7 +454,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between; }
   .newthings .godslist_box .goodslist-bar {
-    width: 1.85rem;
+    width: 49%;
     height: 2.53rem;
     padding: .12rem;
     margin-top: .04rem;
@@ -1071,7 +1068,255 @@ body {
         line-height: 0.35rem;
         font-size: 0.12rem; }
 
-.detial-page .detial-shop {
+.detial-page .detial-store {
+  width: 100%; }
+  .detial-page .detial-store .show-store {
+    width: 100%;
+    padding: 0.15rem 0.1rem;
+    background: #fff;
+    position: relative; }
+    .detial-page .detial-store .show-store::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      background: #ccc;
+      transform: scaleY(0.5);
+      bottom: 0; }
+    .detial-page .detial-store .show-store h4 {
+      font-size: 0.16rem;
+      color: #444444;
+      font-weight: bold; }
+    .detial-page .detial-store .show-store p:nth-of-type(1) {
+      font-size: 0.14rem;
+      line-height: 0.5rem; }
+      .detial-page .detial-store .show-store p:nth-of-type(1) span:last-child {
+        color: #FF9800; }
+    .detial-page .detial-store .show-store p:nth-of-type(2) {
+      font-size: 0.14rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .detial-page .detial-store .show-store p:nth-of-type(2) span:last-child {
+        color: #EF3F45;
+        padding: 0 0.2rem 0 0.2rem;
+        font-size: 0.24rem; }
+
+.detial-page .bj-store {
   width: 100%;
   padding: 0.15rem 0.1rem;
-  background: #fff; }
+  background: #fff;
+  position: relative; }
+  .detial-page .bj-store::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    background: #ccc;
+    transform: scaleY(0.5);
+    bottom: 0; }
+  .detial-page .bj-store a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .detial-page .bj-store a span {
+      font-size: 0.14rem;
+      color: #333333; }
+      .detial-page .bj-store a span:nth-of-type(1) span {
+        color: #EF3F45; }
+      .detial-page .bj-store a span:nth-of-type(2) {
+        padding-right: 0.2rem; }
+
+.detial-page .detial-goods {
+  width: 100%;
+  margin-top: 0.1rem;
+  background: #fff;
+  padding-bottom: 0.6rem; }
+  .detial-page .detial-goods .goods-message {
+    display: flex;
+    align-items: center;
+    height: 0.5rem;
+    padding: 0.15rem 0.1rem;
+    position: relative;
+    border-bottom: 0.01rem solid #ccc; }
+    .detial-page .detial-goods .goods-message::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      background: #ccc;
+      transform: scaleY(0.5);
+      top: 0; }
+    .detial-page .detial-goods .goods-message li {
+      width: 33.33%;
+      text-align: center;
+      font-size: 0.16rem;
+      border-right: 0.01rem solid #ccc; }
+      .detial-page .detial-goods .goods-message li:last-child {
+        border: 0; }
+  .detial-page .detial-goods .goods-tab .goods-tuwei {
+    width: 100%; }
+    .detial-page .detial-goods .goods-tab .goods-tuwei img {
+      width: 100%; }
+  .detial-page .detial-goods .goods-tab .goods-pingjia {
+    width: 100%; }
+    .detial-page .detial-goods .goods-tab .goods-pingjia .pingjia {
+      width: 100%;
+      background: #fff;
+      padding: 0.26rem;
+      border-bottom: 0.01rem solid #ccc; }
+      .detial-page .detial-goods .goods-tab .goods-pingjia .pingjia p {
+        font-size: 0.12rem;
+        color: #444444;
+        line-height: 0.2rem; }
+        .detial-page .detial-goods .goods-tab .goods-pingjia .pingjia p:nth-of-type(2) {
+          margin-top: 0.25rem;
+          display: flex;
+          justify-content: space-between;
+          color: #C3C3C3; }
+        .detial-page .detial-goods .goods-tab .goods-pingjia .pingjia p:nth-of-type(3) {
+          margin-top: 0.25rem;
+          color: #C3C3C3; }
+    .detial-page .detial-goods .goods-tab .goods-pingjia .max-pingjia {
+      width: 100%;
+      text-align: center;
+      background: #fff; }
+  .detial-page .detial-goods .goods-tab .goods-canshu {
+    width: 100%; }
+    .detial-page .detial-goods .goods-tab .goods-canshu ul li {
+      display: flex;
+      justify-content: space-between;
+      line-height: 0.5rem;
+      padding: 0 0.2rem;
+      border-bottom: 0.01rem solid #ccc; }
+  .detial-page .detial-goods .goods-peddle {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-flow: row wrap; }
+    .detial-page .detial-goods .goods-peddle a {
+      display: block;
+      width: 50%;
+      padding: 0.1rem 0.1rem;
+      border-right: 0.01rem solid #ccc;
+      border-bottom: 0.01rem solid #ccc;
+      box-sizing: border-box; }
+      .detial-page .detial-goods .goods-peddle a img {
+        width: 100%;
+        margin: 0.5rem 0; }
+      .detial-page .detial-goods .goods-peddle a span {
+        font-size: 0.14rem;
+        color: #333333;
+        display: block;
+        line-height: 0.3rem; }
+        .detial-page .detial-goods .goods-peddle a span:nth-of-type(2) {
+          display: flex;
+          justify-content: space-between; }
+          .detial-page .detial-goods .goods-peddle a span:nth-of-type(2) .peddle-price {
+            color: #E51C23;
+            font-weight: bold; }
+          .detial-page .detial-goods .goods-peddle a span:nth-of-type(2):last-child {
+            color: #D4D4D4; }
+  .detial-page .detial-goods .kan-kan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 0.5rem;
+    padding: 0.15rem 0.1rem;
+    background: #F2F2F2; }
+    .detial-page .detial-goods .kan-kan span:first-child {
+      width: 35%;
+      position: relative; }
+      .detial-page .detial-goods .kan-kan span:first-child::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        background: #ccc;
+        transform: scaleY(0.5);
+        bottom: 0; }
+    .detial-page .detial-goods .kan-kan span:last-child {
+      width: 35%;
+      position: relative; }
+      .detial-page .detial-goods .kan-kan span:last-child::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        background: #ccc;
+        transform: scaleY(0.5);
+        bottom: 0; }
+  .detial-page .detial-goods .good-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 0.5rem;
+    padding: 0.15rem 0.1rem;
+    background: #F2F2F2; }
+    .detial-page .detial-goods .good-footer span:first-child {
+      width: 35%;
+      position: relative; }
+      .detial-page .detial-goods .good-footer span:first-child::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        background: #ccc;
+        transform: scaleY(0.5);
+        bottom: 0; }
+    .detial-page .detial-goods .good-footer span {
+      color: #C1C1C1; }
+    .detial-page .detial-goods .good-footer span:last-child {
+      width: 35%;
+      position: relative; }
+      .detial-page .detial-goods .good-footer span:last-child::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        background: #ccc;
+        transform: scaleY(0.5);
+        bottom: 0; }
+
+.detial-page .detial-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  height: 0.6rem;
+  align-items: center;
+  padding-left: 0.2rem;
+  border-top: 0.01rem solid #ccc; }
+  .detial-page .detial-footer span {
+    display: block;
+    font-size: #333333;
+    text-align: center;
+    font-size: 0.14rem; }
+  .detial-page .detial-footer .jrgwc {
+    width: 70%;
+    height: 0.6rem; }
+    .detial-page .detial-footer .jrgwc button {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      background: #FF9500;
+      color: #fff; }
