@@ -97,9 +97,11 @@ class UserComponent extends React.Component {
                             alert("用户名密码不符！")
                         }else{                        
                             if(that.state.isRight){
-                                location.href="/"
+                                // console.log(1111)
+                                location.href="http://localhost:9000/#/login"
                             }else{
                                 alert("验证码错误")
+
                             }                                               
                         }         
                 }
@@ -175,6 +177,8 @@ class UserComponent extends React.Component {
                     <input type="text" maxLength="4" id="code_input" placeholder="请输入验证码" className={this.state.isShow3?"back_style":""} onFocus={this.showBack2.bind(this)} onChange={this.changeValue_c.bind(this,'yanzheng_i')} onBlur={this.changeValue.bind(this,'yanzheng_i')}/>                   
                     <span className="sendy" id="v_container" alt="验证码" title="点击更新验证码"></span>
                 </div>
+
+                
             </form> 
             <a href="" className="forget">忘记密码？</a>
            <div className="login_footer">

@@ -16,8 +16,11 @@
         flex-wrap: wrap;  
         .guess_list--li{
             @include top;
+            display: block;
             width:50%;
             padding:10px;
+            color: #000;
+            text-decoration: none;
             h1{
                 text-align: center;
                 height:1.44rem;
@@ -34,6 +37,10 @@
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;              
             }
+            .price{
+                padding: 0.15rem 0;
+            }
+
         }
         .guess_list--li:nth-child(2n){
             //  @include line-left;

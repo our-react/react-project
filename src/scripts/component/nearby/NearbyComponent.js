@@ -8,7 +8,8 @@ class NearbyComponent extends React.Component {
         this.state={
         	isRed:true,
         	data:'',
-        	count:''
+			count:'',
+			id:''
         }
     }
 	changeNavStyle(){
@@ -30,9 +31,9 @@ class NearbyComponent extends React.Component {
         	cb(json)                      
         })
 	}
-	componentWillMount() {
-		let that=this;
-		
+
+	loadDate(){
+		let that=this
 		if(that.state.isRed){
 			that.getData("http://localhost:9000/loho/store/count",(json)=>{
 				//console.log(json)
@@ -40,15 +41,42 @@ class NearbyComponent extends React.Component {
 					count:json
 				})
 			})
-			that.getData("http://localhost:9000/loho/store/302",(json)=>{
-				//console.log(json)
+			that.getData("http://localhost:9000/loho/store/"+this.state.id,(json)=>{
+				console.log(json)
 				that.setState({
 					data:json
 				})
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/lyy20170925
 				
 			})
-		}             	
+		}      
+	}
+	componentWillMount(){
+		let that=this
+		// console.log(JSON.stringify(that.props.params))
+		if(JSON.stringify(that.props.params)=="{}"){
+			that.setState({
+				id: JSON.parse(localStorage.position).cityId
+			},()=>{
+				that.loadDate()
+			})			
+		}else if(JSON.stringify(that.props.params.id)!="null"){		
+			that.setState({
+				id:that.props.params.id
+			},()=>{
+				that.loadDate()
+			})
+		}		
+		else{
+			that.setState({
+				id: JSON.parse(localStorage.position).cityId
+			},()=>{
+				that.loadDate()
+			})
+		}		       	
     }
     render(){
         return (

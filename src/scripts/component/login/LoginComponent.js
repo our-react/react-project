@@ -6,12 +6,11 @@ import InfoComponent from "./InfoComponent"
 class LoginComponent extends React.Component {
     render() {
         return (
-            <div className="login_full">
+            <div className="login_fa">
                 <HeaderComponent data = {this.props}/>
                 <BinnerComponent/> 
                 <InfoComponent/>               
-            </div> 
-            
+            </div>            
         )
     }
 }

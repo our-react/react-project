@@ -41,39 +41,27 @@ class AllCityComponent extends React.Component {
                 })
                  $(".swi-slide").on("click",".list_cy",function(){                   
                     that.findId(that,$(this).html())
-                     localStorage.position=$(this).html()
-                     actions.getPosition(localStorage.position)
+                        actions.getPosition(JSON.parse(localStorage.position).cityName)
+
                 })
             }
         }
     }
      findId(type,str){   
         var that=type      
-        let arr=that.state. city_info.list
-        // console.log(arr)
+        let arr=that.state.city_info.list
         for(var key in arr){
             let obj=arr[key].filter(function(obj){
                 return obj.cityName==str+''
             })[0]
             if(obj){
-                that.goCity(obj.cityId)
+                localStorage.position=JSON.stringify(obj)
                 this.setState({
                     _id:obj.cityId
                 })
                 break;
             }                    
-        }
-        
-        
-    }
-    goCity(num){
-        console.log(num)
-        Fetch.Get("http://localhost:9000/loho/store/"+num,{}).then((res)=>{
-            return res.json()
-        }).then((json)=>{    
-          console.log(json)
-          
-        })
+        }       
     }
     wrapper(){
         let arr=[]
@@ -84,7 +72,7 @@ class AllCityComponent extends React.Component {
             for(var key in obj){
                 let _arr=[]
                 obj[key].forEach((item,i)=>{
-                    _arr.push(<li className="list"><Link to="/" className="list_cy">{item.cityName}</Link></li>)  
+                    _arr.push(<li className="list"><Link to={"/nearby/"+this.state._id} className="list_cy">{item.cityName}</Link></li>)  
                 })              
                 arr.push(<div className="swi-slide">
                     <p  className="list_tm">{key}</p>
@@ -111,11 +99,12 @@ class AllCityComponent extends React.Component {
     }
     jumpcity(){
         let that=this
-         $(".allcity").on("click",".list_li",function(){               
+         $(".allcity").on("click",".list_li",function(){                        
                  var i=$(this).index()
                  let array=that.state.city_position
                  let n=array[i]-60
-                 $("body").scrollTop(n)
+                 $("html").scrollTop(n)
+                //  console.log($("html").scrollTop())
              })             
     }
     
