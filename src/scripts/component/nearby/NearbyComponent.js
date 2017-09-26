@@ -45,7 +45,7 @@ class NearbyComponent extends React.Component {
 				that.setState({
 					data:json
 				})
-				console.log(this.state.data)
+
 				
 			})
 		}             	

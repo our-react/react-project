@@ -42,7 +42,7 @@ class HeaderComponent extends React.Component {
     showContent() {
         if(this.props.data.title) {
           return  <h4 className="logo">{this.props.data.title}</h4>
-        }else if(this.props.data.title==undefined){
+        }else if(this.props.data.title==''){
           return  <h4 className="logo"><img src="/images/index/logo.head.png" alt=""/></h4>
         }else {
             return <h4 className="logo"></h4>

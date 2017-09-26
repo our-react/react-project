@@ -947,7 +947,7 @@ var HeaderComponent = function (_React$Component) {
                     { className: 'logo' },
                     this.props.data.title
                 );
-            } else if (this.props.data.title == undefined) {
+            } else if (this.props.data.title == '') {
                 return React.createElement(
                     'h4',
                     { className: 'logo' },

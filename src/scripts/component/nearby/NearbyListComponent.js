@@ -1,5 +1,5 @@
 
-
+import $ from 'jquery'
 class NearbyListComponent extends React.Component {
 	getdataList(){
 		let data = this.props.listdata.data	
@@ -10,7 +10,7 @@ class NearbyListComponent extends React.Component {
 		    	arr.push(<div className="address_box">
 		               		<div className="address_box--top">
 		               			<b>{item.chineseName}</b>
-		               			<span className="iconfont icon-insta360logo12"></span>
+		               			<span className="iconfont icon-insta360logo12" ref="change"></span>
 		               		</div>
 		               		<div className="address_box--bottom">
 		               			<div className="iconfont icon-iconfont-map-marker"></div>
@@ -24,6 +24,9 @@ class NearbyListComponent extends React.Component {
 	    }	    
 	    return arr;    	
 	}	
+	hide(){
+		console.log(this.refs.change.parent())
+	}
     render(){
         return (
             <div>
