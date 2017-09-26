@@ -2,7 +2,7 @@
 import Fetch from "../../module/fetch"
 import store from '../../flux/store'
 import actions from '../../flux/actions'
-
+import {Link} from "react-router"
 class GuessComponent extends React.Component {   
     constructor(props,context){
         super(props,context)
@@ -38,11 +38,11 @@ class GuessComponent extends React.Component {
         if(this.state.glass_info.length!=0){           
          this.state.glass_info.forEach((item,i)=>{   
             let url="http://image.loho88.com/"+item.img
-             arr.push(<li className="guess_list--li">
+             arr.push(<Link to={"/detail/"+item.goodsId} className="guess_list--li">
                         <h1><img src={url} alt=""/></h1>
                         <p className="info">{item.title}</p>
                         <p className="price"><span className>￥{item.price}</span></p>
-                   </li>)
+                   </Link>)
          })
         }
         return arr
@@ -61,15 +61,10 @@ class GuessComponent extends React.Component {
         this.getGlasses()
         }
     }
-    componentDidMount(){       
+    componentWillMount(){       
         this.getGlasses()
-       
     }
-    // componentWillReceiveProps(props,context){
-        
-    //     this.getGlasses()
-    // }
- 
+   
     addMore(){
         let hrr=[];
          if(this.state.count<5){
@@ -85,9 +80,9 @@ class GuessComponent extends React.Component {
         return (
             <div className="guess">
                 <p className="guess_head" onClick={this.hideGlass.bind(this)}>你可能喜欢  <span className="iconfont icon-fanhui-copy"></span></p>             
-                <ul className={this.state.isShow?"guess_list":"guess_list hidden"}>          
+                <div className={this.state.isShow?"guess_list":"guess_list hidden"}>          
                       {this.showGlass()} 
-                </ul>
+                </div>
                 <div className={this.state.isShow?"addmore":"addmore hidden"}>
                    {this.addMore()}
                 </div>

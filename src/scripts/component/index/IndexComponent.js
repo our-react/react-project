@@ -30,6 +30,7 @@ class IndexComponent extends React.Component {
 
     componentWillMount() {
        let that = this
+       console.log(this.props.params,2)
         Fetch.Get("http://localhost:9000/loho/index",{
         }).then(res=>{
            return res.json()
@@ -38,7 +39,7 @@ class IndexComponent extends React.Component {
         	that.setState({
             	data:json
             })
-            
+        
             actions.addIndexData(json.result)                
         })
      

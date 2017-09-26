@@ -596,6 +596,31 @@ module.exports = invariant;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _get = __webpack_require__(109);
+
+var _get2 = _interopRequireDefault(_get);
+
+var _post = __webpack_require__(110);
+
+var _post2 = _interopRequireDefault(_post);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    Get: _get2.default, Post: _post2.default
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -658,31 +683,6 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = warning;
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _get = __webpack_require__(109);
-
-var _get2 = _interopRequireDefault(_get);
-
-var _post = __webpack_require__(110);
-
-var _post2 = _interopRequireDefault(_post);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    Get: _get2.default, Post: _post2.default
-};
 
 /***/ }),
 /* 8 */
@@ -869,6 +869,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactRouter = __webpack_require__(4);
 
+var _fetch = __webpack_require__(6);
+
+var _fetch2 = _interopRequireDefault(_fetch);
+
 var _position = __webpack_require__(30);
 
 var _position2 = _interopRequireDefault(_position);
@@ -893,83 +897,118 @@ var HeaderComponent = function (_React$Component) {
 
         _this.state = {
             now_position: '',
-            isGet: true
+            isGet: true,
+            city_info: {},
+            isLoad: true
         };
         return _this;
     }
 
     _createClass(HeaderComponent, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
+        key: "load",
+        value: function load() {
             var _this2 = this;
 
+            var that = this;
             if (localStorage.position) {
                 this.setState({
-                    now_position: localStorage.position
+                    now_position: JSON.parse(localStorage.position).cityName
                 });
             } else {
                 (0, _position2.default)(function (info) {
-                    _this2.setState({
+                    console.log(info);
+                    that.setState({
                         now_position: info.address.slice(0, -1)
                     }, function () {
-                        localStorage.position = _this2.state.now_position;
+                        var arr = _this2.state.city_info;
+                        for (var key in arr) {
+                            var obj = arr[key].filter(function (obj) {
+                                return obj.cityName == that.state.now_position;
+                            })[0];
+                            if (obj) {
+                                localStorage.position = JSON.stringify(obj);
+                                console.log(JSON.parse(localStorage.position).cityId);
+                                break;
+                            }
+                        }
                     });
                 });
             }
         }
     }, {
-        key: 'changing',
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            var _this3 = this;
+
+            var that = this;
+            if (this.state.isLoad) {
+                _fetch2.default.Get("http://localhost:9000/loho/store/clist/", {}).then(function (res) {
+                    return res.json();
+                }).then(function (json) {
+
+                    _this3.setState({
+                        city_info: json.result.list,
+                        isLoad: false
+                    }, function () {
+                        that.load();
+                    });
+                });
+            }
+            that.load();
+        }
+    }, {
+        key: "changing",
         value: function changing() {
             var arr = [];
             if (this.props.data.position != "") {
                 arr.push(React.createElement(
                     _reactRouter.Link,
-                    { to: '/position' },
-                    this.state.now_position,
-                    React.createElement('span', { className: this.props.data.fanhui + " " + "iconfont" })
+                    { to: "/position" },
+                    this.state.now_position ? this.state.now_position : "定位中..",
+                    React.createElement("span", { className: this.props.data.fanhui + " " + "iconfont" })
                 ));
             } else {
                 arr.push(React.createElement(
                     _reactRouter.Link,
-                    { to: '/' },
+                    { to: "/" },
                     this.props.data.position,
-                    React.createElement('span', { className: this.props.data.fanhui + " " + "iconfont" })
+                    React.createElement("span", { className: this.props.data.fanhui + " " + "iconfont" })
                 ));
             }
             return arr;
         }
     }, {
-        key: 'showContent',
+        key: "showContent",
         value: function showContent() {
             if (this.props.data.title) {
                 return React.createElement(
-                    'h4',
-                    { className: 'logo' },
+                    "h4",
+                    { className: "logo" },
                     this.props.data.title
                 );
-            } else if (this.props.data.title == undefined) {
+            } else if (this.props.data.title == "") {
                 return React.createElement(
-                    'h4',
-                    { className: 'logo' },
-                    React.createElement('img', { src: '/images/index/logo.head.png', alt: '' })
+                    "h4",
+                    { className: "logo" },
+                    React.createElement("img", { src: "/images/index/logo.head.png", alt: "" })
                 );
             } else {
-                return React.createElement('h4', { className: 'logo' });
+                return React.createElement("h4", { className: "logo" });
             }
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
-                { className: 'header' },
+                "div",
+                { className: "header" },
                 this.changing(),
                 React.createElement(
-                    'div',
-                    { className: 'header-right' },
+                    "div",
+                    { className: "header-right" },
                     this.showContent(),
-                    React.createElement(_reactRouter.Link, { href: '/', className: "iconfont" + " " + this.props.data.gouwu + " " + "gouwu" }),
-                    React.createElement(_reactRouter.Link, { to: '/register', className: "iconfont" + " " + this.props.data.login })
+                    React.createElement(_reactRouter.Link, { href: "/", className: "iconfont" + " " + this.props.data.gouwu + " " + "gouwu" }),
+                    React.createElement(_reactRouter.Link, { to: "/register", className: "iconfont" + " " + this.props.data.login })
                 )
             );
         }
@@ -978,9 +1017,7 @@ var HeaderComponent = function (_React$Component) {
     return HeaderComponent;
 }(React.Component);
 
-exports.default = (0, _reactRedux.connect)(function (state) {
-    return state;
-})(HeaderComponent);
+exports.default = HeaderComponent;
 
 /***/ }),
 /* 11 */
@@ -995,7 +1032,7 @@ exports.parsePath = parsePath;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -1927,7 +1964,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -2814,7 +2851,7 @@ exports.__esModule = true;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -2840,7 +2877,7 @@ exports.__esModule = true;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -5214,7 +5251,7 @@ exports.readState = readState;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -5340,7 +5377,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -5593,7 +5630,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -5888,7 +5925,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -9116,7 +9153,7 @@ var _GoTopComponent = __webpack_require__(92);
 
 var _GoTopComponent2 = _interopRequireDefault(_GoTopComponent);
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -9155,6 +9192,7 @@ var IndexComponent = function (_React$Component) {
         key: 'componentWillMount',
         value: function componentWillMount() {
             var that = this;
+            console.log(this.props.params, 2);
             _fetch2.default.Get("http://localhost:9000/loho/index", {}).then(function (res) {
                 return res.json();
             }).then(function (json) {
@@ -9247,7 +9285,7 @@ var LoginComponent = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 "div",
-                { className: "login_full" },
+                { className: "login_fa" },
                 React.createElement(_HeaderComponent2.default, { data: this.props }),
                 React.createElement(_BinnerComponent2.default, null),
                 React.createElement(_InfoComponent2.default, null)
@@ -9277,12 +9315,12 @@ exports.default = LoginComponent;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -9307,108 +9345,130 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var NearbyComponent = function (_React$Component) {
-  _inherits(NearbyComponent, _React$Component);
+	_inherits(NearbyComponent, _React$Component);
 
-  function NearbyComponent(props, context) {
-    _classCallCheck(this, NearbyComponent);
+	function NearbyComponent(props, context) {
+		_classCallCheck(this, NearbyComponent);
 
-    var _this = _possibleConstructorReturn(this, (NearbyComponent.__proto__ || Object.getPrototypeOf(NearbyComponent)).call(this, props, context));
+		var _this = _possibleConstructorReturn(this, (NearbyComponent.__proto__ || Object.getPrototypeOf(NearbyComponent)).call(this, props, context));
 
-    _this.state = {
-      isRed: true,
-      data: '',
-      count: ''
-    };
-    return _this;
-  }
+		_this.state = {
+			isRed: true,
+			data: '',
+			count: '',
+			id: ''
+		};
+		return _this;
+	}
 
-  _createClass(NearbyComponent, [{
-    key: 'changeNavStyle',
-    value: function changeNavStyle() {
-      this.setState({
-        isRed: true
-      });
-    }
-  }, {
-    key: 'changeNavStyle1',
-    value: function changeNavStyle1() {
-      this.setState({
-        isRed: false
-      });
-    }
-  }, {
-    key: 'getData',
-    value: function getData(url, cb) {
-      var that = this;
-      _fetch2.default.Get(url, {}).then(function (res) {
-        return res.json();
-      }).then(function (json) {
-        cb(json);
-      });
-    }
-  }, {
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      var _this2 = this;
+	_createClass(NearbyComponent, [{
+		key: 'changeNavStyle',
+		value: function changeNavStyle() {
+			this.setState({
+				isRed: true
+			});
+		}
+	}, {
+		key: 'changeNavStyle1',
+		value: function changeNavStyle1() {
+			this.setState({
+				isRed: false
+			});
+		}
+	}, {
+		key: 'getData',
+		value: function getData(url, cb) {
+			var that = this;
+			_fetch2.default.Get(url, {}).then(function (res) {
+				return res.json();
+			}).then(function (json) {
+				cb(json);
+			});
+		}
+	}, {
+		key: 'loadDate',
+		value: function loadDate() {
+			var that = this;
+			if (that.state.isRed) {
+				that.getData("http://localhost:9000/loho/store/count", function (json) {
+					//console.log(json)
+					that.setState({
+						count: json
+					});
+				});
+				that.getData("http://localhost:9000/loho/store/" + this.state.id, function (json) {
+					console.log(json);
+					that.setState({
+						data: json
+					});
+				});
+			}
+		}
+	}, {
+		key: 'componentWillMount',
+		value: function componentWillMount() {
+			var that = this;
+			// console.log(JSON.stringify(that.props.params))
+			if (JSON.stringify(that.props.params) == "{}") {
+				that.setState({
+					id: JSON.parse(localStorage.position).cityId
+				}, function () {
+					that.loadDate();
+				});
+			} else if (JSON.stringify(that.props.params.id) != "null") {
+				that.setState({
+					id: that.props.params.id
+				}, function () {
+					that.loadDate();
+				});
+			} else {
+				that.setState({
+					id: JSON.parse(localStorage.position).cityId
+				}, function () {
+					that.loadDate();
+				});
+			}
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(_HeaderComponent2.default, { data: this.props }),
+				React.createElement(
+					'div',
+					{ className: 'nearbyNav' },
+					React.createElement(
+						'ul',
+						null,
+						React.createElement(
+							'li',
+							{ className: this.state.isRed ? 'active' : '', onClick: this.changeNavStyle.bind(this) },
+							'\u5217\u8868',
+							React.createElement('span', null)
+						),
+						React.createElement(
+							'li',
+							{ className: this.state.isRed ? '' : 'active', onClick: this.changeNavStyle1.bind(this) },
+							'\u5730\u56FE'
+						)
+					)
+				),
+				this.state.isRed ? React.createElement(_NearbyListComponent2.default, { listdata: this.state }) : React.createElement(_NearbyPositionComponent2.default, null)
+			);
+		}
+	}]);
 
-      var that = this;
-
-      if (that.state.isRed) {
-        that.getData("http://localhost:9000/loho/store/count", function (json) {
-          //console.log(json)
-          that.setState({
-            count: json
-          });
-        });
-        that.getData("http://localhost:9000/loho/store/302", function (json) {
-          //console.log(json)
-          that.setState({
-            data: json
-          });
-          console.log(_this2.state.data);
-        });
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(_HeaderComponent2.default, { data: this.props }),
-        React.createElement(
-          'div',
-          { className: 'nearbyNav' },
-          React.createElement(
-            'ul',
-            null,
-            React.createElement(
-              'li',
-              { className: this.state.isRed ? 'active' : '', onClick: this.changeNavStyle.bind(this) },
-              '\u5217\u8868',
-              React.createElement('span', null)
-            ),
-            React.createElement(
-              'li',
-              { className: this.state.isRed ? '' : 'active', onClick: this.changeNavStyle1.bind(this) },
-              '\u5730\u56FE'
-            )
-          )
-        ),
-        this.state.isRed ? React.createElement(_NearbyListComponent2.default, { listdata: this.state }) : React.createElement(_NearbyPositionComponent2.default, null)
-      );
-    }
-  }]);
-
-  return NearbyComponent;
+	return NearbyComponent;
 }(React.Component);
 
 NearbyComponent.defaultProps = {
-  position: "",
-  fanhui: "icon-iconback",
-  title: "查找体验店",
-  gouwu: "icon-gouwuche",
-  login: "icon-gengduo"
+	position: "",
+	fanhui: "icon-iconback",
+	title: "查找体验店",
+	gouwu: "icon-gouwuche",
+	login: "icon-gengduo"
 };
 exports.default = NearbyComponent;
 
@@ -9435,7 +9495,7 @@ var _CompreComponent = __webpack_require__(104);
 
 var _CompreComponent2 = _interopRequireDefault(_CompreComponent);
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -9616,7 +9676,7 @@ var _HeaderComponent = __webpack_require__(10);
 
 var _HeaderComponent2 = _interopRequireDefault(_HeaderComponent);
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -9990,7 +10050,7 @@ ReactDOM.render(React.createElement(
             React.createElement(_reactRouter.Route, { path: '/login', component: _LoginComponent2.default }),
             React.createElement(_reactRouter.Route, { path: '/newthings', component: _NewthingsComponent2.default }),
             React.createElement(_reactRouter.Route, { path: '/socket', component: _SocketComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/nearby', component: _NearbyComponent2.default }),
+            React.createElement(_reactRouter.Route, { path: '/nearby/:id', component: _NearbyComponent2.default }),
             React.createElement(_reactRouter.Route, { path: '/position', component: _PositionComponent2.default }),
             React.createElement(_reactRouter.Route, { path: '/nearby', component: _NearbyComponent2.default }),
             React.createElement(_reactRouter.Route, { path: '/detial', component: _DetialComponent2.default })
@@ -10676,7 +10736,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -10687,6 +10747,8 @@ var _store2 = _interopRequireDefault(_store);
 var _actions = __webpack_require__(43);
 
 var _actions2 = _interopRequireDefault(_actions);
+
+var _reactRouter = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10743,8 +10805,8 @@ var GuessComponent = function (_React$Component) {
                 this.state.glass_info.forEach(function (item, i) {
                     var url = "http://image.loho88.com/" + item.img;
                     arr.push(React.createElement(
-                        'li',
-                        { className: 'guess_list--li' },
+                        _reactRouter.Link,
+                        { to: "/detail/" + item.goodsId, className: 'guess_list--li' },
                         React.createElement(
                             'h1',
                             null,
@@ -10788,15 +10850,10 @@ var GuessComponent = function (_React$Component) {
             }
         }
     }, {
-        key: 'componentDidMount',
-        value: function componentDidMount() {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
             this.getGlasses();
         }
-        // componentWillReceiveProps(props,context){
-
-        //     this.getGlasses()
-        // }
-
     }, {
         key: 'addMore',
         value: function addMore() {
@@ -10830,7 +10887,7 @@ var GuessComponent = function (_React$Component) {
                     React.createElement('span', { className: 'iconfont icon-fanhui-copy' })
                 ),
                 React.createElement(
-                    'ul',
+                    'div',
                     { className: this.state.isShow ? "guess_list" : "guess_list hidden" },
                     this.showGlass()
                 ),
@@ -11469,7 +11526,7 @@ var _store2 = _interopRequireDefault(_store);
 
 var _reactRouter = __webpack_require__(4);
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -11867,7 +11924,8 @@ var UserComponent = function (_React$Component) {
                                 alert("用户名密码不符！");
                             } else {
                                 if (that.state.isRight) {
-                                    location.href = "/";
+                                    // console.log(1111)
+                                    location.href = "http://localhost:9000/#/login";
                                 } else {
                                     alert("验证码错误");
                                 }
@@ -12178,7 +12236,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -12388,7 +12446,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactRedux = __webpack_require__(18);
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -12452,8 +12510,7 @@ var AllCityComponent = function (_React$Component) {
                     });
                     $(".swi-slide").on("click", ".list_cy", function () {
                         that.findId(that, $(this).html());
-                        localStorage.position = $(this).html();
-                        _actions2.default.getPosition(localStorage.position);
+                        _actions2.default.getPosition(JSON.parse(localStorage.position).cityName);
                     });
                 }
             }
@@ -12463,13 +12520,12 @@ var AllCityComponent = function (_React$Component) {
         value: function findId(type, str) {
             var that = type;
             var arr = that.state.city_info.list;
-            // console.log(arr)
             for (var key in arr) {
                 var obj = arr[key].filter(function (obj) {
                     return obj.cityName == str + '';
                 })[0];
                 if (obj) {
-                    that.goCity(obj.cityId);
+                    localStorage.position = JSON.stringify(obj);
                     this.setState({
                         _id: obj.cityId
                     });
@@ -12478,18 +12534,10 @@ var AllCityComponent = function (_React$Component) {
             }
         }
     }, {
-        key: "goCity",
-        value: function goCity(num) {
-            console.log(num);
-            _fetch2.default.Get("http://localhost:9000/loho/store/" + num, {}).then(function (res) {
-                return res.json();
-            }).then(function (json) {
-                console.log(json);
-            });
-        }
-    }, {
         key: "wrapper",
         value: function wrapper() {
+            var _this2 = this;
+
             var arr = [];
             if (JSON.stringify(this.state.city_info) == "{}") {
                 return arr;
@@ -12504,7 +12552,7 @@ var AllCityComponent = function (_React$Component) {
                             { className: "list" },
                             React.createElement(
                                 _reactRouter.Link,
-                                { to: "/", className: "list_cy" },
+                                { to: "/nearby/" + _this2.state._id, className: "list_cy" },
                                 item.cityName
                             )
                         ));
@@ -12557,7 +12605,8 @@ var AllCityComponent = function (_React$Component) {
                 var i = $(this).index();
                 var array = that.state.city_position;
                 var n = array[i] - 60;
-                $("body").scrollTop(n);
+                $("html").scrollTop(n);
+                //  console.log($("html").scrollTop())
             });
         }
     }, {
@@ -12607,7 +12656,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -12636,7 +12685,6 @@ var HotCityComponent = function (_React$Component) {
         _this.state = {
             city: {},
             _id: null
-
         };
         return _this;
     }
@@ -12653,13 +12701,14 @@ var HotCityComponent = function (_React$Component) {
                 _this2.setState({
                     city: json.result
                 });
-                // console.log(this.state.city.hot)
                 _actions2.default.city_info(_this2.state.city);
             });
         }
     }, {
         key: "add_hot",
         value: function add_hot() {
+            var _this3 = this;
+
             var arr = [];
             if (JSON.stringify(this.state.city) == "{}") {
                 return arr;
@@ -12667,7 +12716,7 @@ var HotCityComponent = function (_React$Component) {
                 this.state.city.hot.forEach(function (item, i) {
                     arr.push(React.createElement(
                         _reactRouter.Link,
-                        { to: "/", className: "hot_country" },
+                        { to: "/nearby/" + _this3.state._id, className: "hot_country" },
                         item.cityName
                     ));
                 });
@@ -12687,32 +12736,18 @@ var HotCityComponent = function (_React$Component) {
             var obj = arr.filter(function (obj) {
                 return obj.cityName == str + '';
             })[0];
-            // console.log(obj)
+            localStorage.position = JSON.stringify(obj);
             this.setState({
                 _id: obj.cityId
             });
-            that.goCity(obj.cityId);
         }
-        // goCity(num){
-        //     console.log(this.state._id)
-        //     Fetch.Get("http://localhost:9000/loho/store/"+num,{}).then((res)=>{
-        //         return res.json()
-        //     }).then((json)=>{
-
-        //       console.log(json)
-
-        //     })
-        // }
-
     }, {
         key: "componentDidMount",
         value: function componentDidMount() {
             var that = this;
             $(".hotcity_hot").on("click", ".hot_country", function () {
-                // console.log()
                 that.findId(that, $(this).html());
-                localStorage.position = $(this).html();
-                _actions2.default.getPosition(localStorage.position);
+                _actions2.default.getPosition(JSON.parse(localStorage.position).cityName);
             });
         }
     }, {
@@ -12739,7 +12774,6 @@ var HotCityComponent = function (_React$Component) {
 }(React.Component);
 
 HotCityComponent.defaultProps = {};
-
 exports.default = HotCityComponent;
 
 /***/ }),
@@ -12765,6 +12799,8 @@ var _actions2 = _interopRequireDefault(_actions);
 
 var _reactRedux = __webpack_require__(18);
 
+var _reactRouter = __webpack_require__(4);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12783,7 +12819,9 @@ var NowCityComponent = function (_React$Component) {
 
         _this.state = {
             now_position: '',
-            isGet: ''
+            getId: JSON.parse(localStorage.position).cityId,
+            city_info: {},
+            isGet: true
         };
         return _this;
     }
@@ -12791,20 +12829,47 @@ var NowCityComponent = function (_React$Component) {
     _createClass(NowCityComponent, [{
         key: "componentWillMount",
         value: function componentWillMount() {
+
             if (localStorage.position) {
+                // console.log(JSON.parse(localStorage.position).cityName)
                 this.setState({
-                    now_position: localStorage.position
+                    now_position: JSON.parse(localStorage.position).cityName
                 });
             }
         }
     }, {
         key: "componentDidUpdate",
         value: function componentDidUpdate() {
-            //  console.log(this.props.now_city,89) 
+            var _this2 = this;
+
+            var that = this;
+            if (this.state.isGet) {
+                this.setState({
+                    city_info: this.props.city_info.list,
+                    isGet: false
+                });
+            }
             if (this.props.now_city) {
                 if (this.state.now_position != this.props.now_city) {
                     this.setState({
                         now_position: this.props.now_city
+
+                    }, function () {
+                        if (JSON.stringify(_this2.state.city_info) != "{}") {
+
+                            var arr = _this2.state.city_info;
+                            for (var key in arr) {
+                                var obj = arr[key].filter(function (obj) {
+                                    return obj.cityName == that.state.now_position;
+                                })[0];
+                                if (obj) {
+                                    that.setState({
+                                        getId: obj.cityId
+                                    });
+                                    break;
+                                }
+                            }
+                        }
                     });
                 }
             }
@@ -12826,7 +12891,7 @@ var NowCityComponent = function (_React$Component) {
                         this.state.now_position
                     )
                 ),
-                React.createElement("span", { className: "iconfont icon-arrow-right" })
+                React.createElement(_reactRouter.Link, { to: "/nearby/" + this.state.getId, className: "iconfont icon-arrow-right" })
             );
         }
     }]);
@@ -14845,7 +14910,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -14903,7 +14968,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 

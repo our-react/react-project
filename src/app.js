@@ -16,7 +16,6 @@ import NearbyComponent from './scripts/component/nearby/NearbyComponent'
 import PositionComponent from './scripts/component/position/PositionComponent'
 import DetialComponent from './scripts/component/detial/DetialComponent'
 
-
 import {Provider} from 'react-redux'
 import store from './scripts/redux/store'
 
@@ -30,11 +29,10 @@ ReactDOM.render(
             <Route path="/login" component={LoginComponent}></Route>  
             <Route path="/newthings" component={NewthingsComponent}></Route>            
             <Route path="/socket" component={SocketComponent}></Route> 
-            <Route path="/nearby" component={NearbyComponent}></Route>
+            <Route path="/nearby/:id" component={NearbyComponent}></Route>
             <Route path="/position" component={PositionComponent}></Route>         
             <Route path="/nearby" component={NearbyComponent}></Route>   
             <Route path="/detial" component={DetialComponent}></Route>       
-
         </Route>
     </Router>
     </Provider>

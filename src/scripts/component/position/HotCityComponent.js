@@ -7,8 +7,7 @@ class HotCityComponent extends React.Component {
         super(props,context)
         this.state={
             city:{},
-            _id:null
-    
+            _id:null    
         }
       }
     hot_getDate(){
@@ -19,7 +18,6 @@ class HotCityComponent extends React.Component {
             this.setState({
                 city:json.result
             })
-            // console.log(this.state.city.hot)
             actions.city_info(this.state.city)
         })
     }
@@ -29,7 +27,7 @@ class HotCityComponent extends React.Component {
             return arr
         }else{
             this.state.city.hot.forEach((item,i)=>{
-                arr.push(<Link to="/" className="hot_country">{item.cityName}</Link>)
+                arr.push(<Link to={"/nearby/"+this.state._id} className="hot_country">{item.cityName}</Link>)
             })
         }
         return arr
@@ -43,29 +41,17 @@ class HotCityComponent extends React.Component {
         let obj=arr.filter(function(obj){
             return obj.cityName==str+''
         })[0]
-        // console.log(obj)
+        localStorage.position=JSON.stringify(obj)
         this.setState({
             _id:obj.cityId
         })
-        that.goCity(obj.cityId)
     }
-    // goCity(num){
-    //     console.log(this.state._id)
-    //     Fetch.Get("http://localhost:9000/loho/store/"+num,{}).then((res)=>{
-    //         return res.json()
-    //     }).then((json)=>{
-            
-    //       console.log(json)
-          
-    //     })
-    // }
+    
     componentDidMount(){
         var that=this
-        $(".hotcity_hot").on("click",".hot_country",function(){
-            // console.log()
+        $(".hotcity_hot").on("click",".hot_country",function(){           
             that.findId(that,$(this).html())
-            localStorage.position=$(this).html()
-            actions.getPosition(localStorage.position)
+            actions.getPosition(JSON.parse(localStorage.position).cityName)
         })
     }
     render() {
@@ -84,7 +70,6 @@ class HotCityComponent extends React.Component {
 HotCityComponent.defaultProps={
  
 }
-
 export default HotCityComponent
 
 
