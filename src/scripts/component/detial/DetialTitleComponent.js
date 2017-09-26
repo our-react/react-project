@@ -46,7 +46,7 @@ class DetialTitleComponent extends React.Component {
     getColor() {
         let data = this.props.data
         if(data.length!=0){
-            console.log(data.models)
+            // console.log(data.models)
             let arr = []  
             data.models.map((item, i)=>{     
                 arr.push(

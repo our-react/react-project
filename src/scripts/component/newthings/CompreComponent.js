@@ -1,4 +1,5 @@
 import Fetch from '../../module/fetch'
+import {Link} from 'react-router'
 
 class CompreComponent extends React.Component{
 	constructor(props,context) {
@@ -22,13 +23,13 @@ class CompreComponent extends React.Component{
 	    let arr=[];
 	    if(goods.length!=0){
 	    	goods.result.data.forEach((item,i)=>{
-		    	arr.push(<div className="goodslist-bar">
+		    	arr.push(<Link className="goodslist-bar" to={"/detial/"+item.goodsId}>
 		    				{item.isNew?<span className="isnew">New</span>:""}
 							<img src={"http://image.loho88.com/"+item.img}/>
 							<div className="goods_title">{item.title}</div>
 							<span className="goodsprice">￥ {item.price}</span>
 							<span className="goodsbuy">{item.salesNum}人已买</span>						
-						</div>)
+						</Link>)
 		    })
 	    }	    
 	    return arr;    	
@@ -50,13 +51,13 @@ class CompreComponent extends React.Component{
 	    let brr=[];
 	    if(moregoods.length!=0){
 	    	moregoods.result.data.forEach((item,i)=>{
-		    	brr.push(<div className="goodslist-bar">
+		    	brr.push(<Link className="goodslist-bar" to={"/detial/"+item.goodsId}>
 		    				{item.isNew?<span className="isnew">New</span>:""}
 							<img src={"http://image.loho88.com/"+item.img}/>
 							<div className="goods_title">{item.title}</div>
 							<span className="goodsprice">￥ {item.price}</span>
 							<span className="goodsbuy">{item.salesNum}人已买</span>						
-						</div>)
+						</Link>)
 		    })
 	    }	    
 	    return brr;    	
