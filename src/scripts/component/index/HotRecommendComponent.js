@@ -18,11 +18,11 @@ class HotRecommendComponent extends React.Component {
     		let that=this;
 		    let arr=[];
 		    hotdata.result.popular.show.forEach((item,i)=>{
-		    	arr.push(<a href={item.url} className="hotRecommend_content--box">
+		    	arr.push(<Link to={"/detial/"+item.gid} className="hotRecommend_content--box">
 		                	<p>{item.tag}</p>
 		                	<h2>{item.tag_en}</h2>
 		                	<img src={item.pic}/>
-		                </a>)
+		                </Link>)
 		    })
 		    return arr;
     	}

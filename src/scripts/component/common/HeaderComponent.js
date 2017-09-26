@@ -42,7 +42,7 @@ class HeaderComponent extends React.Component {
     showContent() {
         if(this.props.data.title) {
           return  <h4 className="logo">{this.props.data.title}</h4>
-        }else if(this.props.data.title==undefined){
+        }else if(this.props.data.title==""){
           return  <h4 className="logo"><img src="/images/index/logo.head.png" alt=""/></h4>
         }else {
             return <h4 className="logo"></h4>
@@ -58,7 +58,7 @@ class HeaderComponent extends React.Component {
                       this.showContent() 
                    }
                     <Link href="/" className={"iconfont"+" "+this.props.data.gouwu+" "+"gouwu"}></Link>
-                    <Link to="/register" className={"iconfont"+" "+this.props.data.login}></Link>
+                    <Link to="/login" className={"iconfont"+" "+this.props.data.login}></Link>
                 </div>
              </div> 
            
@@ -68,6 +68,6 @@ class HeaderComponent extends React.Component {
 }
 
 
-export default connect(state=>state)(HeaderComponent)
+export default HeaderComponent
 
 
