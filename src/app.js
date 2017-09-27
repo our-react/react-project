@@ -35,7 +35,6 @@ ReactDOM.render(
             <Route path="/nearby/:id" component={NearbyComponent}></Route>
             <Route path="/position" component={PositionComponent}></Route>         
             <Route path="/detial/:id" component={DetialComponent}></Route>       
-
             <Route path="/nearby" component={NearbyComponent}></Route>   
             <Route path="/detial" component={DetialComponent}></Route>       
 

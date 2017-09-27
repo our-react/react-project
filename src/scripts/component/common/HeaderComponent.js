@@ -64,8 +64,7 @@ class HeaderComponent extends React.Component {
     changing(){
         let arr=[]
         if(this.props.data.position!=""){       
-                arr.push(<Link to="/position">{this.state.now_position?this.state.now_position:"定位中.."}<span className={this.props.data.fanhui+" "+"iconfont"}></span></Link>)
-                   
+                arr.push(<Link to="/position">{this.state.now_position?this.state.now_position:"定位中.."}<span className={this.props.data.fanhui+" "+"iconfont"}></span></Link>)                  
         }else{
             arr.push( <Link to="/">{this.props.data.position}<span className={this.props.data.fanhui+" "+"iconfont"}></span></Link> )
         }
