@@ -38,7 +38,7 @@ class GuessComponent extends React.Component {
         if(this.state.glass_info.length!=0){           
          this.state.glass_info.forEach((item,i)=>{   
             let url="http://image.loho88.com/"+item.img
-             arr.push(<Link to={"/detail/"+item.goodsId} className="guess_list--li">
+             arr.push(<Link to={"/detial/"+item.goodsId} className="guess_list--li">
                         <h1><img src={url} alt=""/></h1>
                         <p className="info">{item.title}</p>
                         <p className="price"><span className>￥{item.price}</span></p>

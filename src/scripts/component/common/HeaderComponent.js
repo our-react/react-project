@@ -94,17 +94,11 @@ class HeaderComponent extends React.Component {
                     <Link to="/login" className={"iconfont"+" "+this.props.data.login}></Link>
                 </div>
              </div> 
-           
-
         )
     }
 }
 
-
-<<<<<<< HEAD
 export default HeaderComponent
-=======
-export default (HeaderComponent)
->>>>>>> origin/lyy20170925
+
 
 

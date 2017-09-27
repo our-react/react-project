@@ -263,58 +263,6 @@ process.umask = function() { return 0; };
 "use strict";
 
 
-module.exports = __webpack_require__(172);
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.default = routerWarning;
-exports._resetWarned = _resetWarned;
-
-var _warning = __webpack_require__(190);
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var warned = {};
-
-function routerWarning(falseToWarn, message) {
-  // Only issue deprecation warnings once.
-  if (message.indexOf('deprecated') !== -1) {
-    if (warned[message]) {
-      return;
-    }
-
-    warned[message] = true;
-  }
-
-  message = '[react-router] ' + message;
-
-  for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-    args[_key - 2] = arguments[_key];
-  }
-
-  _warning2.default.apply(undefined, [falseToWarn, message].concat(args));
-}
-
-function _resetWarned() {
-  warned = {};
-}
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
 exports.__esModule = true;
 exports.createMemoryHistory = exports.hashHistory = exports.browserHistory = exports.applyRouterMiddleware = exports.formatPattern = exports.useRouterHistory = exports.match = exports.routerShape = exports.locationShape = exports.PropTypes = exports.RoutingContext = exports.RouterContext = exports.createRoutes = exports.useRoutes = exports.RouteContext = exports.Lifecycle = exports.History = exports.Route = exports.Redirect = exports.IndexRoute = exports.IndexRedirect = exports.withRouter = exports.IndexLink = exports.Link = exports.Router = undefined;
 
@@ -471,6 +419,58 @@ exports.hashHistory = _hashHistory3.default;
 exports.createMemoryHistory = _createMemoryHistory3.default;
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(172);
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.default = routerWarning;
+exports._resetWarned = _resetWarned;
+
+var _warning = __webpack_require__(190);
+
+var _warning2 = _interopRequireDefault(_warning);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var warned = {};
+
+function routerWarning(falseToWarn, message) {
+  // Only issue deprecation warnings once.
+  if (message.indexOf('deprecated') !== -1) {
+    if (warned[message]) {
+      return;
+    }
+
+    warned[message] = true;
+  }
+
+  message = '[react-router] ' + message;
+
+  for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+    args[_key - 2] = arguments[_key];
+  }
+
+  _warning2.default.apply(undefined, [falseToWarn, message].concat(args));
+}
+
+function _resetWarned() {
+  warned = {};
+}
+
+/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -602,11 +602,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _get = __webpack_require__(109);
+var _get = __webpack_require__(112);
 
 var _get2 = _interopRequireDefault(_get);
 
-var _post = __webpack_require__(110);
+var _post = __webpack_require__(113);
 
 var _post2 = _interopRequireDefault(_post);
 
@@ -685,34 +685,6 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-<<<<<<< HEAD
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _get = __webpack_require__(112);
-
-var _get2 = _interopRequireDefault(_get);
-
-var _post = __webpack_require__(113);
-
-var _post2 = _interopRequireDefault(_post);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    Get: _get2.default, Post: _post2.default
-};
-
-/***/ }),
-=======
->>>>>>> origin/lyy20170925
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -799,7 +771,7 @@ exports.createRouteFromReactElement = createRouteFromReactElement;
 exports.createRoutesFromReactChildren = createRoutesFromReactChildren;
 exports.createRoutes = createRoutes;
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -895,7 +867,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 var _fetch = __webpack_require__(6);
 
@@ -1035,13 +1007,8 @@ var HeaderComponent = function (_React$Component) {
                     "div",
                     { className: "header-right" },
                     this.showContent(),
-<<<<<<< HEAD
-                    React.createElement(_reactRouter.Link, { href: '/', className: "iconfont" + " " + this.props.data.gouwu + " " + "gouwu" }),
-                    React.createElement(_reactRouter.Link, { to: '/login', className: "iconfont" + " " + this.props.data.login })
-=======
                     React.createElement(_reactRouter.Link, { href: "/", className: "iconfont" + " " + this.props.data.gouwu + " " + "gouwu" }),
-                    React.createElement(_reactRouter.Link, { to: "/register", className: "iconfont" + " " + this.props.data.login })
->>>>>>> origin/lyy20170925
+                    React.createElement(_reactRouter.Link, { to: "/login", className: "iconfont" + " " + this.props.data.login })
                 )
             );
         }
@@ -1117,7 +1084,7 @@ exports.__esModule = true;
 exports.routes = exports.route = exports.components = exports.component = exports.history = undefined;
 exports.falsy = falsy;
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var func = _react.PropTypes.func;
 var object = _react.PropTypes.object;
@@ -2281,7 +2248,7 @@ var _invariant = __webpack_require__(4);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -2295,7 +2262,7 @@ var _getRouteParams2 = _interopRequireDefault(_getRouteParams);
 
 var _RouteUtils = __webpack_require__(9);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -2437,7 +2404,7 @@ module.exports = exports['default'];
 exports.__esModule = true;
 exports.canUseMembrane = undefined;
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -3155,7 +3122,7 @@ function mapAsync(array, work, callback) {
 exports.__esModule = true;
 exports.router = exports.routes = exports.route = exports.components = exports.component = exports.location = exports.history = exports.falsy = exports.locationShape = exports.routerShape = undefined;
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _deprecateObjectProperties = __webpack_require__(26);
 
@@ -3165,7 +3132,7 @@ var _InternalPropTypes = __webpack_require__(12);
 
 var InternalPropTypes = _interopRequireWildcard(_InternalPropTypes);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -3266,7 +3233,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.default = createTransitionManager;
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -9060,10 +9027,6 @@ jQuery.fn.extend( {
 	}
 } );
 
-<<<<<<< HEAD
-=======
-var _fetch = __webpack_require__(6);
->>>>>>> origin/lyy20170925
 
 // Initialize a jQuery object
 
@@ -9102,70 +9065,8 @@ var rootjQuery,
 				match = rquickExpr.exec( selector );
 			}
 
-<<<<<<< HEAD
 			// Match html or make sure no context is specified for #id
 			if ( match && ( match[ 1 ] || !context ) ) {
-=======
-    function IndexComponent(props, context) {
-        _classCallCheck(this, IndexComponent);
-
-        var _this = _possibleConstructorReturn(this, (IndexComponent.__proto__ || Object.getPrototypeOf(IndexComponent)).call(this, props, context));
-
-        _this.state = {
-            data: [],
-            list: _store2.default.getIndexData()
-        };
-        return _this;
-    }
-
-    _createClass(IndexComponent, [{
-        key: 'componentWillMount',
-        value: function componentWillMount() {
-            var that = this;
-            console.log(this.props.params, 2);
-            _fetch2.default.Get("http://localhost:9000/loho/index", {}).then(function (res) {
-                return res.json();
-            }).then(function (json) {
-                // console.log(json)    
-                that.setState({
-                    data: json
-                });
-
-                _actions2.default.addIndexData(json.result);
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return React.createElement(
-                'div',
-                { className: 'index-page' },
-                React.createElement(_HeaderComponent2.default, { data: this.props }),
-                React.createElement(_LunboComponent2.default, { lunbodata: this.state.data }),
-                React.createElement(_NavComponent2.default, { navdata: this.state.data }),
-                React.createElement(_AdvertiseComponent2.default, { advdata: this.state.data }),
-                React.createElement(_HotRecommendComponent2.default, { hotdata: this.state.data }),
-                React.createElement(_ListComponent2.default, null),
-                React.createElement(_GuessComponent2.default, null),
-                React.createElement(_FooterComponent2.default, null),
-                React.createElement(_FootadComponent2.default, null),
-                React.createElement(_GoTopComponent2.default, null)
-            );
-        }
-    }]);
-
-    return IndexComponent;
-}(React.Component);
-
-IndexComponent.defaultProps = {
-    position: "北京市",
-    fanhui: "icon-fanhui-copy",
-    title: "",
-    gouwu: "icon-gouwuche",
-    login: "icon-wode1"
-
-};
->>>>>>> origin/lyy20170925
 
 				// HANDLE: $(html) -> $(array)
 				if ( match[ 1 ] ) {
@@ -9247,7 +9148,6 @@ rootjQuery = jQuery( document );
 
 var rparentsprev = /^(?:parents|prev(?:Until|All))/,
 
-<<<<<<< HEAD
 	// Methods guaranteed to produce a unique set when starting from a unique set
 	guaranteedUnique = {
 		children: true,
@@ -9255,20 +9155,6 @@ var rparentsprev = /^(?:parents|prev(?:Until|All))/,
 		next: true,
 		prev: true
 	};
-=======
-    _createClass(LoginComponent, [{
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                { className: "login_fa" },
-                React.createElement(_HeaderComponent2.default, { data: this.props }),
-                React.createElement(_BinnerComponent2.default, null),
-                React.createElement(_InfoComponent2.default, null)
-            );
-        }
-    }]);
->>>>>>> origin/lyy20170925
 
 jQuery.fn.extend( {
 	has: function( target ) {
@@ -9312,26 +9198,16 @@ jQuery.fn.extend( {
 			}
 		}
 
-<<<<<<< HEAD
 		return this.pushStack( matched.length > 1 ? jQuery.uniqueSort( matched ) : matched );
 	},
-=======
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
->>>>>>> origin/lyy20170925
 
 	// Determine the position of an element within the set
 	index: function( elem ) {
 
-<<<<<<< HEAD
 		// No argument, return index in parent
 		if ( !elem ) {
 			return ( this[ 0 ] && this[ 0 ].parentNode ) ? this.first().prevAll().length : -1;
 		}
-=======
-var _fetch = __webpack_require__(6);
->>>>>>> origin/lyy20170925
 
 		// Index in selector
 		if ( typeof elem === "string" ) {
@@ -9419,7 +9295,6 @@ jQuery.each( {
 	jQuery.fn[ name ] = function( until, selector ) {
 		var matched = jQuery.map( this, fn, until );
 
-<<<<<<< HEAD
 		if ( name.slice( -5 ) !== "Until" ) {
 			selector = until;
 		}
@@ -9456,135 +9331,6 @@ function createOptions( options ) {
 	} );
 	return object;
 }
-=======
-var NearbyComponent = function (_React$Component) {
-	_inherits(NearbyComponent, _React$Component);
-
-	function NearbyComponent(props, context) {
-		_classCallCheck(this, NearbyComponent);
-
-		var _this = _possibleConstructorReturn(this, (NearbyComponent.__proto__ || Object.getPrototypeOf(NearbyComponent)).call(this, props, context));
-
-		_this.state = {
-			isRed: true,
-			data: '',
-			count: '',
-			id: ''
-		};
-		return _this;
-	}
-
-	_createClass(NearbyComponent, [{
-		key: 'changeNavStyle',
-		value: function changeNavStyle() {
-			this.setState({
-				isRed: true
-			});
-		}
-	}, {
-		key: 'changeNavStyle1',
-		value: function changeNavStyle1() {
-			this.setState({
-				isRed: false
-			});
-		}
-	}, {
-		key: 'getData',
-		value: function getData(url, cb) {
-			var that = this;
-			_fetch2.default.Get(url, {}).then(function (res) {
-				return res.json();
-			}).then(function (json) {
-				cb(json);
-			});
-		}
-	}, {
-		key: 'loadDate',
-		value: function loadDate() {
-			var that = this;
-			if (that.state.isRed) {
-				that.getData("http://localhost:9000/loho/store/count", function (json) {
-					//console.log(json)
-					that.setState({
-						count: json
-					});
-				});
-				that.getData("http://localhost:9000/loho/store/" + this.state.id, function (json) {
-					console.log(json);
-					that.setState({
-						data: json
-					});
-				});
-			}
-		}
-	}, {
-		key: 'componentWillMount',
-		value: function componentWillMount() {
-			var that = this;
-			// console.log(JSON.stringify(that.props.params))
-			if (JSON.stringify(that.props.params) == "{}") {
-				that.setState({
-					id: JSON.parse(localStorage.position).cityId
-				}, function () {
-					that.loadDate();
-				});
-			} else if (JSON.stringify(that.props.params.id) != "null") {
-				that.setState({
-					id: that.props.params.id
-				}, function () {
-					that.loadDate();
-				});
-			} else {
-				that.setState({
-					id: JSON.parse(localStorage.position).cityId
-				}, function () {
-					that.loadDate();
-				});
-			}
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			return React.createElement(
-				'div',
-				null,
-				React.createElement(_HeaderComponent2.default, { data: this.props }),
-				React.createElement(
-					'div',
-					{ className: 'nearbyNav' },
-					React.createElement(
-						'ul',
-						null,
-						React.createElement(
-							'li',
-							{ className: this.state.isRed ? 'active' : '', onClick: this.changeNavStyle.bind(this) },
-							'\u5217\u8868',
-							React.createElement('span', null)
-						),
-						React.createElement(
-							'li',
-							{ className: this.state.isRed ? '' : 'active', onClick: this.changeNavStyle1.bind(this) },
-							'\u5730\u56FE'
-						)
-					)
-				),
-				this.state.isRed ? React.createElement(_NearbyListComponent2.default, { listdata: this.state }) : React.createElement(_NearbyPositionComponent2.default, null)
-			);
-		}
-	}]);
-
-	return NearbyComponent;
-}(React.Component);
-
-NearbyComponent.defaultProps = {
-	position: "",
-	fanhui: "icon-iconback",
-	title: "查找体验店",
-	gouwu: "icon-gouwuche",
-	login: "icon-gengduo"
-};
-exports.default = NearbyComponent;
->>>>>>> origin/lyy20170925
 
 /*
  * Create a callback list using the following parameters:
@@ -9640,12 +9386,8 @@ jQuery.Callbacks = function( options ) {
 		// Fire callbacks
 		fire = function() {
 
-<<<<<<< HEAD
 			// Enforce single-firing
 			locked = locked || options.once;
-=======
-var _fetch = __webpack_require__(6);
->>>>>>> origin/lyy20170925
 
 			// Execute callbacks for all pending executions,
 			// respecting firingIndex overrides and runtime changes
@@ -9874,13 +9616,9 @@ jQuery.extend( {
 					return promise.then( null, fn );
 				},
 
-<<<<<<< HEAD
 				// Keep pipe for back-compat
 				pipe: function( /* fnDone, fnFail, fnProgress */ ) {
 					var fns = arguments;
-=======
-var _fetch = __webpack_require__(6);
->>>>>>> origin/lyy20170925
 
 					return jQuery.Deferred( function( newDefer ) {
 						jQuery.each( tuples, function( i, tuple ) {
@@ -10199,37 +9937,12 @@ var rerrorNames = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
 
 jQuery.Deferred.exceptionHook = function( error, stack ) {
 
-<<<<<<< HEAD
 	// Support: IE 8 - 9 only
 	// Console exists when dev tools are open, which can happen at any time
 	if ( window.console && window.console.warn && error && rerrorNames.test( error.name ) ) {
 		window.console.warn( "jQuery.Deferred exception: " + error.message, error.stack, stack );
 	}
 };
-=======
-ReactDOM.render(React.createElement(
-    _reactRedux.Provider,
-    { store: _store2.default },
-    React.createElement(
-        _reactRouter.Router,
-        { history: _reactRouter.hashHistory },
-        React.createElement(
-            _reactRouter.Route,
-            { path: '/', component: _RootComponent2.default },
-            React.createElement(_reactRouter.IndexRoute, { component: _IndexComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/index', component: _IndexComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/register', component: _RegisterComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/login', component: _LoginComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/newthings', component: _NewthingsComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/socket', component: _SocketComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/nearby/:id', component: _NearbyComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/position', component: _PositionComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/nearby', component: _NearbyComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/detial', component: _DetialComponent2.default })
-        )
-    )
-), document.getElementById("app"));
->>>>>>> origin/lyy20170925
 
 
 
@@ -10858,10 +10571,6 @@ var pnum = ( /[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/ ).source;
 
 var rcssNum = new RegExp( "^(?:([+-])=|)(" + pnum + ")([a-z%]*)$", "i" );
 
-<<<<<<< HEAD
-=======
-var _fetch = __webpack_require__(6);
->>>>>>> origin/lyy20170925
 
 var cssExpand = [ "Top", "Right", "Bottom", "Left" ];
 
@@ -10881,14 +10590,8 @@ var isHiddenWithinTree = function( elem, el ) {
 			// in the document.
 			jQuery.contains( elem.ownerDocument, elem ) &&
 
-<<<<<<< HEAD
 			jQuery.css( elem, "display" ) === "none";
 	};
-=======
-var _reactRouter = __webpack_require__(4);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
->>>>>>> origin/lyy20170925
 
 var swap = function( elem, options, callback, args ) {
 	var ret, name,
@@ -10912,7 +10615,6 @@ var swap = function( elem, options, callback, args ) {
 
 
 
-<<<<<<< HEAD
 
 function adjustCSS( elem, prop, valueParts, tween ) {
 	var adjusted,
@@ -10933,132 +10635,6 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 			rcssNum.exec( jQuery.css( elem, prop ) );
 
 	if ( initialInUnit && initialInUnit[ 3 ] !== unit ) {
-=======
-    _createClass(GuessComponent, [{
-        key: 'getGlasses',
-        value: function getGlasses() {
-            var that = this;
-            _fetch2.default.Get("http://localhost:9000/loho/search/", {
-                sort: 'o6',
-                e: 249,
-                page: this.state.count
-            }).then(function (res) {
-                return res.json();
-            }).then(function (json) {
-                var brr = that.state.glass_info;
-                var crr = json.result.data;
-                for (var i in crr) {
-                    brr.push(crr[i]);
-                }
-                // console.log(brr);
-                that.setState({
-                    glass_info: brr
-                });
-                _actions2.default.addNew(that.state.glass_info);
-            });
-        }
-    }, {
-        key: 'showGlass',
-        value: function showGlass() {
-            var arr = [];
-            if (this.state.glass_info.length != 0) {
-                this.state.glass_info.forEach(function (item, i) {
-                    var url = "http://image.loho88.com/" + item.img;
-                    arr.push(React.createElement(
-                        _reactRouter.Link,
-                        { to: "/detail/" + item.goodsId, className: 'guess_list--li' },
-                        React.createElement(
-                            'h1',
-                            null,
-                            React.createElement('img', { src: url, alt: '' })
-                        ),
-                        React.createElement(
-                            'p',
-                            { className: 'info' },
-                            item.title
-                        ),
-                        React.createElement(
-                            'p',
-                            { className: 'price' },
-                            React.createElement(
-                                'span',
-                                { className: true },
-                                '\uFFE5',
-                                item.price
-                            )
-                        )
-                    ));
-                });
-            }
-            return arr;
-        }
-    }, {
-        key: 'hideGlass',
-        value: function hideGlass() {
-            this.setState({
-                isShow: !this.state.isShow
-            });
-        }
-    }, {
-        key: 'changeGlass',
-        value: function changeGlass() {
-            if (this.state.count < 5) {
-                this.setState({
-                    count: ++this.state.count
-                });
-                this.getGlasses();
-            }
-        }
-    }, {
-        key: 'componentWillMount',
-        value: function componentWillMount() {
-            this.getGlasses();
-        }
-    }, {
-        key: 'addMore',
-        value: function addMore() {
-            var hrr = [];
-            if (this.state.count < 5) {
-                hrr.push(React.createElement(
-                    'span',
-                    { classsName: 'addmore_first', onClick: this.changeGlass.bind(this) },
-                    '\u70B9\u51FB\u52A0\u8F7D\u66F4\u591A'
-                ));
-            } else {
-                hrr.push(React.createElement(
-                    'span',
-                    { addmore_first: true },
-                    '\u5DF2\u7ECF\u5230\u5E95\u90E8\u4E86'
-                ));
-            }
-            return hrr;
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-
-            return React.createElement(
-                'div',
-                { className: 'guess' },
-                React.createElement(
-                    'p',
-                    { className: 'guess_head', onClick: this.hideGlass.bind(this) },
-                    '\u4F60\u53EF\u80FD\u559C\u6B22  ',
-                    React.createElement('span', { className: 'iconfont icon-fanhui-copy' })
-                ),
-                React.createElement(
-                    'div',
-                    { className: this.state.isShow ? "guess_list" : "guess_list hidden" },
-                    this.showGlass()
-                ),
-                React.createElement(
-                    'div',
-                    { className: this.state.isShow ? "addmore" : "addmore hidden" },
-                    this.addMore()
-                )
-            );
-        }
->>>>>>> origin/lyy20170925
 
 		// Trust units reported by jQuery.css
 		unit = unit || initialInUnit[ 3 ];
@@ -11638,7 +11214,6 @@ jQuery.event = {
 						selector === "**" && handleObj.selector ) ) {
 					handlers.splice( j, 1 );
 
-<<<<<<< HEAD
 					if ( handleObj.selector ) {
 						handlers.delegateCount--;
 					}
@@ -11647,9 +11222,6 @@ jQuery.event = {
 					}
 				}
 			}
-=======
-var _fetch = __webpack_require__(6);
->>>>>>> origin/lyy20170925
 
 			// Remove generic event handler if we removed something and no more handlers exist
 			// (avoids potential for endless recursion during removal of special event handlers)
@@ -11809,7 +11381,6 @@ var _fetch = __webpack_require__(6);
 					}
 				},
 
-<<<<<<< HEAD
 			set: function( value ) {
 				Object.defineProperty( this, name, {
 					enumerable: true,
@@ -11820,203 +11391,6 @@ var _fetch = __webpack_require__(6);
 			}
 		} );
 	},
-=======
-            if (type == 'phone_number') {
-                this.setState({
-                    phone_number: e.target.value
-                }, function () {
-                    _this2.show_change();
-                });
-            } else if (type == 'password') {
-                this.setState({
-                    password: e.target.value
-                }, function () {
-                    _this2.show_change();
-                });
-            } else {
-                this.setState({
-                    yanzheng_i: e.target.value
-                }, function () {
-                    _this2.show_change();
-                });
-            }
-        }
-    }, {
-        key: "showBack",
-        value: function showBack() {
-            this.setState({
-                isShow1: !this.state.isShow1
-            });
-        }
-    }, {
-        key: "showBack1",
-        value: function showBack1() {
-            this.setState({
-                isShow2: !this.state.isShow2
-            });
-        }
-    }, {
-        key: "showBack2",
-        value: function showBack2() {
-            this.setState({
-                isShow3: !this.state.isShow3
-            });
-        }
-    }, {
-        key: "login_click",
-        value: function login_click(e) {
-            e.preventDefault();
-            var that = this;
-            //  console.log(this.state.phone_number,this.state.password,this.state.yanzheng_i,5)
-            if (this.show_change() == "true") {
-                that.reduce();
-                if (!this.state.isPhone) {
-                    $.ajax({
-                        url: "http://datainfo.duapp.com/shopdata/userinfo.php",
-                        data: {
-                            status: "login",
-                            userID: that.state.phone_number,
-                            password: that.state.password
-                        },
-                        success: function success(results) {
-                            _actions2.default.user_i({
-                                phone_number: that.state.phone_number,
-                                password: that.state.password,
-                                yanzheng_i: that.state.yanzheng_i
-                            });
-                            if (results == 0) {
-                                alert("用户名不存在！");
-                            } else if (results == 2) {
-                                alert("用户名密码不符！");
-                            } else {
-                                if (that.state.isRight) {
-                                    // console.log(1111)
-                                    location.href = "http://localhost:9000/#/login";
-                                } else {
-                                    alert("验证码错误");
-                                }
-                            }
-                        }
-                    });
-                }
-            } else {
-                alert(this.show_change());
-            }
-        }
-    }, {
-        key: "componentDidMount",
-        value: function componentDidMount() {
-            var verifyCode = new GVerify("v_container");
-            var br = [];
-            br.push(verifyCode);
-            this.setState({
-                array: br
-            });
-        }
-    }, {
-        key: "reduce",
-        value: function reduce() {
-            var res = this.state.array[0].validate(document.getElementById("code_input").value);
-            if (res) {
-                this.setState({
-                    isRight: true
-                });
-            } else {
-                this.setState({
-                    isRight: false
-                });
-            }
-        }
-    }, {
-        key: "show_change",
-        value: function show_change() {
-            var e1 = this.state.phone_number;
-            var e2 = this.state.password;
-            var e3 = this.state.yanzheng_i;
-            var result1 = /^1[3578]\d{9}$/.test(e1);
-            var result2 = /\w{6,20}/.test(e2);
-            if (!result1) {
-                this.setState({
-                    isReady: false
-                });
-                return "请输入正确的手机号";
-            } else if (!result2) {
-                this.setState({
-                    isReady: false
-                });
-                return "密码应在6-20位之间";
-            } else if (e3 == "") {
-                this.setState({
-                    isReady: false
-                });
-                return "请输入验证码";
-            } else {
-                this.setState({
-                    isReady: true
-                });
-                return "true";
-            }
-        }
-    }, {
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                { className: "login_form" },
-                React.createElement(
-                    "form",
-                    { className: "login_input" },
-                    React.createElement(
-                        "div",
-                        { className: "login_inp" },
-                        React.createElement("span", { className: "iconfont icon-lianxiren login_font" }),
-                        React.createElement("input", { type: "text", maxLength: "11", placeholder: "\u8BF7\u8F93\u5165\u624B\u673A\u53F7", className: this.state.isShow1 ? "back_style" : "", onFocus: this.showBack.bind(this), onChange: this.changeValue_c.bind(this, 'phone_number'), onBlur: this.changeValue.bind(this, 'phone_number') })
-                    ),
-                    React.createElement(
-                        "div",
-                        { className: "login_inp" },
-                        React.createElement("span", { className: "iconfont icon-mima login_font" }),
-                        React.createElement("input", { type: "text", placeholder: "\u8BF7\u8F93\u5165\u5BC6\u7801", className: this.state.isShow2 ? "back_style" : "", onFocus: this.showBack1.bind(this), onChange: this.changeValue_c.bind(this, 'password'), onBlur: this.changeValue.bind(this, 'password') })
-                    ),
-                    React.createElement(
-                        "div",
-                        { className: "login_inp" },
-                        React.createElement("span", { className: "iconfont icon-yanzhengma login_font" }),
-                        React.createElement("input", { type: "text", maxLength: "4", id: "code_input", placeholder: "\u8BF7\u8F93\u5165\u9A8C\u8BC1\u7801", className: this.state.isShow3 ? "back_style" : "", onFocus: this.showBack2.bind(this), onChange: this.changeValue_c.bind(this, 'yanzheng_i'), onBlur: this.changeValue.bind(this, 'yanzheng_i') }),
-                        React.createElement("span", { className: "sendy", id: "v_container", alt: "\u9A8C\u8BC1\u7801", title: "\u70B9\u51FB\u66F4\u65B0\u9A8C\u8BC1\u7801" })
-                    )
-                ),
-                React.createElement(
-                    "a",
-                    { href: "", className: "forget" },
-                    "\u5FD8\u8BB0\u5BC6\u7801\uFF1F"
-                ),
-                React.createElement(
-                    "div",
-                    { className: "login_footer" },
-                    React.createElement(
-                        "div",
-                        null,
-                        React.createElement(
-                            _reactRouter.Link,
-                            { to: "/register" },
-                            "\u6CE8\u518C"
-                        )
-                    ),
-                    React.createElement(
-                        "div",
-                        { className: this.state.isReady ? "login_click login_change" : "login_click", onClick: this.login_click.bind(this) },
-                        React.createElement(
-                            _reactRouter.Link,
-                            null,
-                            "\u767B\u5F55"
-                        )
-                    )
-                )
-            );
-        }
-    }]);
->>>>>>> origin/lyy20170925
 
 	fix: function( originalEvent ) {
 		return originalEvent[ jQuery.expando ] ?
@@ -12261,7 +11635,6 @@ jQuery.each( {
 				related = event.relatedTarget,
 				handleObj = event.handleObj;
 
-<<<<<<< HEAD
 			// For mouseenter/leave call the handler if related is outside the target.
 			// NB: No relatedTarget if the mouse left/entered the browser window
 			if ( !related || ( related !== target && !jQuery.contains( target, related ) ) ) {
@@ -12273,9 +11646,6 @@ jQuery.each( {
 		}
 	};
 } );
-=======
-var _fetch = __webpack_require__(6);
->>>>>>> origin/lyy20170925
 
 jQuery.fn.extend( {
 
@@ -12413,15 +11783,11 @@ function fixInput( src, dest ) {
 	if ( nodeName === "input" && rcheckableType.test( src.type ) ) {
 		dest.checked = src.checked;
 
-<<<<<<< HEAD
 	// Fails to return the selected option to the default selected state when cloning options
 	} else if ( nodeName === "input" || nodeName === "textarea" ) {
 		dest.defaultValue = src.defaultValue;
 	}
 }
-=======
-var _fetch = __webpack_require__(6);
->>>>>>> origin/lyy20170925
 
 function domManip( collection, args, callback, ignored ) {
 
@@ -12479,175 +11845,11 @@ function domManip( collection, args, callback, ignored ) {
 					}
 				}
 
-<<<<<<< HEAD
 				callback.call( collection[ i ], node, i );
 			}
 
 			if ( hasScripts ) {
 				doc = scripts[ scripts.length - 1 ].ownerDocument;
-=======
-        _this.state = {
-            city_info: {},
-            isHas: true,
-            isShow: true,
-            city_position: [],
-            _id: null
-        };
-        return _this;
-    }
-
-    _createClass(AllCityComponent, [{
-        key: "componentDidUpdate",
-        value: function componentDidUpdate() {
-            var that = this;
-            if (this.state.isHas) {
-                this.setState({
-                    city_info: this.props.city_info
-                });
-                this.setState({
-                    isHas: false
-                });
-            }
-            if (this.state.isShow) {
-                var crr = [];
-                var ps = Array.from(document.getElementsByClassName("list_tm"));
-                if (ps.length > 0) {
-                    this.setState({
-                        isShow: false
-                    });
-                    ps.forEach(function (item, i) {
-                        var tp = item.offsetTop;
-                        crr.push(tp);
-                    });
-                    this.setState({
-                        city_position: crr
-                    });
-                    $(".swi-slide").on("click", ".list_cy", function () {
-                        that.findId(that, $(this).html());
-                        _actions2.default.getPosition(JSON.parse(localStorage.position).cityName);
-                    });
-                }
-            }
-        }
-    }, {
-        key: "findId",
-        value: function findId(type, str) {
-            var that = type;
-            var arr = that.state.city_info.list;
-            for (var key in arr) {
-                var obj = arr[key].filter(function (obj) {
-                    return obj.cityName == str + '';
-                })[0];
-                if (obj) {
-                    localStorage.position = JSON.stringify(obj);
-                    this.setState({
-                        _id: obj.cityId
-                    });
-                    break;
-                }
-            }
-        }
-    }, {
-        key: "wrapper",
-        value: function wrapper() {
-            var _this2 = this;
-
-            var arr = [];
-            if (JSON.stringify(this.state.city_info) == "{}") {
-                return arr;
-            } else {
-                var obj = this.state.city_info.list;
-
-                var _loop = function _loop() {
-                    var _arr = [];
-                    obj[key].forEach(function (item, i) {
-                        _arr.push(React.createElement(
-                            "li",
-                            { className: "list" },
-                            React.createElement(
-                                _reactRouter.Link,
-                                { to: "/nearby/" + _this2.state._id, className: "list_cy" },
-                                item.cityName
-                            )
-                        ));
-                    });
-                    arr.push(React.createElement(
-                        "div",
-                        { className: "swi-slide" },
-                        React.createElement(
-                            "p",
-                            { className: "list_tm" },
-                            key
-                        ),
-                        React.createElement(
-                            "ul",
-                            null,
-                            _arr
-                        )
-                    ));
-                };
-
-                for (var key in obj) {
-                    _loop();
-                }
-                this.jumpcity();
-                return arr;
-            }
-        }
-    }, {
-        key: "pagination",
-        value: function pagination() {
-            var arr = [];
-            if (JSON.stringify(this.state.city_info) == "{}") {
-                return arr;
-            } else {
-                this.state.city_info.letters.forEach(function (item, i) {
-                    arr.push(React.createElement(
-                        "span",
-                        { className: "list list_li" },
-                        item
-                    ));
-                });
-                return arr;
-            }
-        }
-    }, {
-        key: "jumpcity",
-        value: function jumpcity() {
-            var that = this;
-            $(".allcity").on("click", ".list_li", function () {
-                var i = $(this).index();
-                var array = that.state.city_position;
-                var n = array[i] - 60;
-                $("html").scrollTop(n);
-                //  console.log($("html").scrollTop())
-            });
-        }
-    }, {
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                { className: "allcity" },
-                React.createElement(
-                    "p",
-                    null,
-                    "\u5168\u90E8\u57CE\u5E02"
-                ),
-                React.createElement(
-                    "div",
-                    { className: "allcity_head" },
-                    this.pagination()
-                ),
-                React.createElement(
-                    "div",
-                    { className: "allcity_body" },
-                    this.wrapper()
-                )
-            );
-        }
-    }]);
->>>>>>> origin/lyy20170925
 
 				// Reenable scripts
 				jQuery.map( scripts, restoreScript );
@@ -12695,12 +11897,8 @@ function remove( elem, selector, keepData ) {
 		}
 	}
 
-<<<<<<< HEAD
 	return elem;
 }
-=======
-var _fetch = __webpack_require__(6);
->>>>>>> origin/lyy20170925
 
 jQuery.extend( {
 	htmlPrefilter: function( html ) {
@@ -12762,7 +11960,6 @@ jQuery.extend( {
 							if ( special[ type ] ) {
 								jQuery.event.remove( elem, type );
 
-<<<<<<< HEAD
 							// This is a shortcut to avoid jQuery.event.remove's overhead
 							} else {
 								jQuery.removeEvent( elem, type, data.handle );
@@ -12775,14 +11972,6 @@ jQuery.extend( {
 					elem[ dataPriv.expando ] = undefined;
 				}
 				if ( elem[ dataUser.expando ] ) {
-=======
-        _this.state = {
-            city: {},
-            _id: null
-        };
-        return _this;
-    }
->>>>>>> origin/lyy20170925
 
 					// Support: Chrome <=35 - 45+
 					// Assign undefined instead of using delete, see Data#remove
@@ -12793,7 +11982,6 @@ jQuery.extend( {
 	}
 } );
 
-<<<<<<< HEAD
 jQuery.fn.extend( {
 	detach: function( selector ) {
 		return remove( this, selector, true );
@@ -12823,83 +12011,6 @@ jQuery.fn.extend( {
 			}
 		} );
 	},
-=======
-            var that = this;
-            _fetch2.default.Get("http://localhost:9000/loho/store/clist/", {}).then(function (res) {
-                return res.json();
-            }).then(function (json) {
-                _this2.setState({
-                    city: json.result
-                });
-                _actions2.default.city_info(_this2.state.city);
-            });
-        }
-    }, {
-        key: "add_hot",
-        value: function add_hot() {
-            var _this3 = this;
-
-            var arr = [];
-            if (JSON.stringify(this.state.city) == "{}") {
-                return arr;
-            } else {
-                this.state.city.hot.forEach(function (item, i) {
-                    arr.push(React.createElement(
-                        _reactRouter.Link,
-                        { to: "/nearby/" + _this3.state._id, className: "hot_country" },
-                        item.cityName
-                    ));
-                });
-            }
-            return arr;
-        }
-    }, {
-        key: "componentWillMount",
-        value: function componentWillMount() {
-            this.hot_getDate();
-        }
-    }, {
-        key: "findId",
-        value: function findId(type, str) {
-            var that = type;
-            var arr = that.state.city.hot;
-            var obj = arr.filter(function (obj) {
-                return obj.cityName == str + '';
-            })[0];
-            localStorage.position = JSON.stringify(obj);
-            this.setState({
-                _id: obj.cityId
-            });
-        }
-    }, {
-        key: "componentDidMount",
-        value: function componentDidMount() {
-            var that = this;
-            $(".hotcity_hot").on("click", ".hot_country", function () {
-                that.findId(that, $(this).html());
-                _actions2.default.getPosition(JSON.parse(localStorage.position).cityName);
-            });
-        }
-    }, {
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                { className: "hotcity" },
-                React.createElement(
-                    "p",
-                    null,
-                    "\u70ED\u95E8\u57CE\u5E02"
-                ),
-                React.createElement(
-                    "div",
-                    { className: "hotcity_hot" },
-                    this.add_hot()
-                )
-            );
-        }
-    }]);
->>>>>>> origin/lyy20170925
 
 	prepend: function() {
 		return domManip( this, arguments, function( elem ) {
@@ -12910,7 +12021,6 @@ jQuery.fn.extend( {
 		} );
 	},
 
-<<<<<<< HEAD
 	before: function() {
 		return domManip( this, arguments, function( elem ) {
 			if ( this.parentNode ) {
@@ -12926,10 +12036,6 @@ jQuery.fn.extend( {
 			}
 		} );
 	},
-=======
-HotCityComponent.defaultProps = {};
-exports.default = HotCityComponent;
->>>>>>> origin/lyy20170925
 
 	empty: function() {
 		var elem,
@@ -12972,13 +12078,7 @@ exports.default = HotCityComponent;
 			if ( typeof value === "string" && !rnoInnerhtml.test( value ) &&
 				!wrapMap[ ( rtagName.exec( value ) || [ "", "" ] )[ 1 ].toLowerCase() ] ) {
 
-<<<<<<< HEAD
 				value = jQuery.htmlPrefilter( value );
-=======
-var _reactRouter = __webpack_require__(4);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
->>>>>>> origin/lyy20170925
 
 				try {
 					for ( ; i < l; i++ ) {
@@ -13006,7 +12106,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	replaceWith: function() {
 		var ignored = [];
 
-<<<<<<< HEAD
 		// Make the changes, replacing each non-ignored context element with the new content
 		return domManip( this, arguments, function( elem ) {
 			var parent = this.parentNode;
@@ -13017,86 +12116,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 					parent.replaceChild( elem, this );
 				}
 			}
-=======
-        _this.state = {
-            now_position: '',
-            getId: JSON.parse(localStorage.position).cityId,
-            city_info: {},
-            isGet: true
-        };
-        return _this;
-    }
-
-    _createClass(NowCityComponent, [{
-        key: "componentWillMount",
-        value: function componentWillMount() {
-
-            if (localStorage.position) {
-                // console.log(JSON.parse(localStorage.position).cityName)
-                this.setState({
-                    now_position: JSON.parse(localStorage.position).cityName
-                });
-            }
-        }
-    }, {
-        key: "componentDidUpdate",
-        value: function componentDidUpdate() {
-            var _this2 = this;
-
-            var that = this;
-            if (this.state.isGet) {
-                this.setState({
-                    city_info: this.props.city_info.list,
-                    isGet: false
-                });
-            }
-            if (this.props.now_city) {
-                if (this.state.now_position != this.props.now_city) {
-                    this.setState({
-                        now_position: this.props.now_city
-
-                    }, function () {
-                        if (JSON.stringify(_this2.state.city_info) != "{}") {
-
-                            var arr = _this2.state.city_info;
-                            for (var key in arr) {
-                                var obj = arr[key].filter(function (obj) {
-                                    return obj.cityName == that.state.now_position;
-                                })[0];
-                                if (obj) {
-                                    that.setState({
-                                        getId: obj.cityId
-                                    });
-                                    break;
-                                }
-                            }
-                        }
-                    });
-                }
-            }
-        }
-    }, {
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                { className: "nowcity" },
-                React.createElement(
-                    "p",
-                    { className: "nowcity_now" },
-                    React.createElement("span", { className: "iconfont icon-iconfont-map-marker" }),
-                    React.createElement(
-                        "span",
-                        null,
-                        "\u5F53\u524D\u57CE\u5E02\uFF1A",
-                        this.state.now_position
-                    )
-                ),
-                React.createElement(_reactRouter.Link, { to: "/nearby/" + this.state.getId, className: "iconfont icon-arrow-right" })
-            );
-        }
-    }]);
->>>>>>> origin/lyy20170925
 
 		// Force callback invocation
 		}, ignored );
@@ -14770,11 +13789,7 @@ if ( !support.optSelected ) {
 	jQuery.propHooks.selected = {
 		get: function( elem ) {
 
-<<<<<<< HEAD
 			/* eslint no-unused-expressions: "off" */
-=======
-var _warning = __webpack_require__(7);
->>>>>>> origin/lyy20170925
 
 			var parent = elem.parentNode;
 			if ( parent && parent.parentNode ) {
@@ -14863,12 +13878,8 @@ jQuery.fn.extend( {
 			}
 		}
 
-<<<<<<< HEAD
 		return this;
 	},
-=======
-var _warning = __webpack_require__(7);
->>>>>>> origin/lyy20170925
 
 	removeClass: function( value ) {
 		var classes, elem, cur, curValue, clazz, j, finalValue,
@@ -17907,7 +16918,7 @@ if (process.env.NODE_ENV !== 'production') {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_Subscription__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_PropTypes__ = __webpack_require__(57);
@@ -18332,11 +17343,11 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -18513,7 +17524,7 @@ module.exports = exports['default'];
 
 exports.__esModule = true;
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -18730,7 +17741,7 @@ exports.default = makeStateWithLocation;
 
 var _deprecateObjectProperties = __webpack_require__(26);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -20420,7 +19431,7 @@ var _GoTopComponent = __webpack_require__(95);
 
 var _GoTopComponent2 = _interopRequireDefault(_GoTopComponent);
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -20459,6 +19470,7 @@ var IndexComponent = function (_React$Component) {
         key: 'componentWillMount',
         value: function componentWillMount() {
             var that = this;
+            console.log(this.props.params, 2);
             _fetch2.default.Get("http://localhost:9000/loho/index", {}).then(function (res) {
                 return res.json();
             }).then(function (json) {
@@ -20551,7 +19563,7 @@ var LoginComponent = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 "div",
-                { className: "login_full" },
+                { className: "login_fa" },
                 React.createElement(_HeaderComponent2.default, { data: this.props }),
                 React.createElement(_BinnerComponent2.default, null),
                 React.createElement(_InfoComponent2.default, null)
@@ -20581,12 +19593,12 @@ exports.default = LoginComponent;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -20611,105 +19623,130 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var NearbyComponent = function (_React$Component) {
-  _inherits(NearbyComponent, _React$Component);
+	_inherits(NearbyComponent, _React$Component);
 
-  function NearbyComponent(props, context) {
-    _classCallCheck(this, NearbyComponent);
+	function NearbyComponent(props, context) {
+		_classCallCheck(this, NearbyComponent);
 
-    var _this = _possibleConstructorReturn(this, (NearbyComponent.__proto__ || Object.getPrototypeOf(NearbyComponent)).call(this, props, context));
+		var _this = _possibleConstructorReturn(this, (NearbyComponent.__proto__ || Object.getPrototypeOf(NearbyComponent)).call(this, props, context));
 
-    _this.state = {
-      isRed: true,
-      data: '',
-      count: ''
-    };
-    return _this;
-  }
+		_this.state = {
+			isRed: true,
+			data: '',
+			count: '',
+			id: ''
+		};
+		return _this;
+	}
 
-  _createClass(NearbyComponent, [{
-    key: 'changeNavStyle',
-    value: function changeNavStyle() {
-      this.setState({
-        isRed: true
-      });
-    }
-  }, {
-    key: 'changeNavStyle1',
-    value: function changeNavStyle1() {
-      this.setState({
-        isRed: false
-      });
-    }
-  }, {
-    key: 'getData',
-    value: function getData(url, cb) {
-      var that = this;
-      _fetch2.default.Get(url, {}).then(function (res) {
-        return res.json();
-      }).then(function (json) {
-        cb(json);
-      });
-    }
-  }, {
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      var that = this;
+	_createClass(NearbyComponent, [{
+		key: 'changeNavStyle',
+		value: function changeNavStyle() {
+			this.setState({
+				isRed: true
+			});
+		}
+	}, {
+		key: 'changeNavStyle1',
+		value: function changeNavStyle1() {
+			this.setState({
+				isRed: false
+			});
+		}
+	}, {
+		key: 'getData',
+		value: function getData(url, cb) {
+			var that = this;
+			_fetch2.default.Get(url, {}).then(function (res) {
+				return res.json();
+			}).then(function (json) {
+				cb(json);
+			});
+		}
+	}, {
+		key: 'loadDate',
+		value: function loadDate() {
+			var that = this;
+			if (that.state.isRed) {
+				that.getData("http://localhost:9000/loho/store/count", function (json) {
+					//console.log(json)
+					that.setState({
+						count: json
+					});
+				});
+				that.getData("http://localhost:9000/loho/store/" + this.state.id, function (json) {
+					console.log(json);
+					that.setState({
+						data: json
+					});
+				});
+			}
+		}
+	}, {
+		key: 'componentWillMount',
+		value: function componentWillMount() {
+			var that = this;
+			// console.log(JSON.stringify(that.props.params))
+			if (JSON.stringify(that.props.params) == "{}") {
+				that.setState({
+					id: JSON.parse(localStorage.position).cityId
+				}, function () {
+					that.loadDate();
+				});
+			} else if (JSON.stringify(that.props.params.id) != "null") {
+				that.setState({
+					id: that.props.params.id
+				}, function () {
+					that.loadDate();
+				});
+			} else {
+				that.setState({
+					id: JSON.parse(localStorage.position).cityId
+				}, function () {
+					that.loadDate();
+				});
+			}
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(_HeaderComponent2.default, { data: this.props }),
+				React.createElement(
+					'div',
+					{ className: 'nearbyNav' },
+					React.createElement(
+						'ul',
+						null,
+						React.createElement(
+							'li',
+							{ className: this.state.isRed ? 'active' : '', onClick: this.changeNavStyle.bind(this) },
+							'\u5217\u8868',
+							React.createElement('span', null)
+						),
+						React.createElement(
+							'li',
+							{ className: this.state.isRed ? '' : 'active', onClick: this.changeNavStyle1.bind(this) },
+							'\u5730\u56FE'
+						)
+					)
+				),
+				this.state.isRed ? React.createElement(_NearbyListComponent2.default, { listdata: this.state }) : React.createElement(_NearbyPositionComponent2.default, null)
+			);
+		}
+	}]);
 
-      if (that.state.isRed) {
-        that.getData("http://localhost:9000/loho/store/count", function (json) {
-          //console.log(json)
-          that.setState({
-            count: json
-          });
-        });
-        that.getData("http://localhost:9000/loho/store/302", function (json) {
-          //console.log(json)
-          that.setState({
-            data: json
-          });
-        });
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(_HeaderComponent2.default, { data: this.props }),
-        React.createElement(
-          'div',
-          { className: 'nearbyNav' },
-          React.createElement(
-            'ul',
-            null,
-            React.createElement(
-              'li',
-              { className: this.state.isRed ? 'active' : '', onClick: this.changeNavStyle.bind(this) },
-              '\u5217\u8868',
-              React.createElement('span', null)
-            ),
-            React.createElement(
-              'li',
-              { className: this.state.isRed ? '' : 'active', onClick: this.changeNavStyle1.bind(this) },
-              '\u5730\u56FE'
-            )
-          )
-        ),
-        this.state.isRed ? React.createElement(_NearbyListComponent2.default, { listdata: this.state }) : React.createElement(_NearbyPositionComponent2.default, null)
-      );
-    }
-  }]);
-
-  return NearbyComponent;
+	return NearbyComponent;
 }(React.Component);
 
 NearbyComponent.defaultProps = {
-  position: "",
-  fanhui: "icon-iconback",
-  title: "查找体验店",
-  gouwu: "icon-gouwuche",
-  login: "icon-gengduo"
+	position: "",
+	fanhui: "icon-iconback",
+	title: "查找体验店",
+	gouwu: "icon-gouwuche",
+	login: "icon-gengduo"
 };
 exports.default = NearbyComponent;
 
@@ -20726,7 +19763,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 var _HeaderComponent = __webpack_require__(10);
 
@@ -20736,7 +19773,7 @@ var _CompreComponent = __webpack_require__(107);
 
 var _CompreComponent2 = _interopRequireDefault(_CompreComponent);
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -20925,7 +19962,7 @@ var _HeaderComponent = __webpack_require__(10);
 
 var _HeaderComponent2 = _interopRequireDefault(_HeaderComponent);
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -21240,7 +20277,7 @@ var _RootComponent = __webpack_require__(76);
 
 var _RootComponent2 = _interopRequireDefault(_RootComponent);
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 var _IndexComponent = __webpack_require__(78);
 
@@ -21300,9 +20337,11 @@ ReactDOM.render(React.createElement(
             React.createElement(_reactRouter.Route, { path: '/newthings', component: _NewthingsComponent2.default }),
             React.createElement(_reactRouter.Route, { path: '/newthings/:id', component: _NewthingsComponent2.default }),
             React.createElement(_reactRouter.Route, { path: '/socket', component: _SocketComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/nearby', component: _NearbyComponent2.default }),
+            React.createElement(_reactRouter.Route, { path: '/nearby/:id', component: _NearbyComponent2.default }),
             React.createElement(_reactRouter.Route, { path: '/position', component: _PositionComponent2.default }),
-            React.createElement(_reactRouter.Route, { path: '/detial/:id', component: _DetialComponent2.default })
+            React.createElement(_reactRouter.Route, { path: '/detial/:id', component: _DetialComponent2.default }),
+            React.createElement(_reactRouter.Route, { path: '/nearby', component: _NearbyComponent2.default }),
+            React.createElement(_reactRouter.Route, { path: '/detial', component: _DetialComponent2.default })
         )
     )
 ), document.getElementById("app"));
@@ -21394,7 +20433,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -21796,7 +20835,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -22077,7 +21116,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -22247,7 +21286,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -22412,7 +21451,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -22423,6 +21462,8 @@ var _store2 = _interopRequireDefault(_store);
 var _actions = __webpack_require__(43);
 
 var _actions2 = _interopRequireDefault(_actions);
+
+var _reactRouter = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22479,8 +21520,8 @@ var GuessComponent = function (_React$Component) {
                 this.state.glass_info.forEach(function (item, i) {
                     var url = "http://image.loho88.com/" + item.img;
                     arr.push(React.createElement(
-                        'li',
-                        { className: 'guess_list--li' },
+                        _reactRouter.Link,
+                        { to: "/detail/" + item.goodsId, className: 'guess_list--li' },
                         React.createElement(
                             'h1',
                             null,
@@ -22524,15 +21565,10 @@ var GuessComponent = function (_React$Component) {
             }
         }
     }, {
-        key: 'componentDidMount',
-        value: function componentDidMount() {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
             this.getGlasses();
         }
-        // componentWillReceiveProps(props,context){
-
-        //     this.getGlasses()
-        // }
-
     }, {
         key: 'addMore',
         value: function addMore() {
@@ -22566,7 +21602,7 @@ var GuessComponent = function (_React$Component) {
                     React.createElement('span', { className: 'iconfont icon-fanhui-copy' })
                 ),
                 React.createElement(
-                    'ul',
+                    'div',
                     { className: this.state.isShow ? "guess_list" : "guess_list hidden" },
                     this.showGlass()
                 ),
@@ -22602,7 +21638,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -22714,7 +21750,7 @@ var _store = __webpack_require__(20);
 
 var _store2 = _interopRequireDefault(_store);
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22960,7 +21996,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -23088,7 +22124,7 @@ var _store = __webpack_require__(19);
 
 var _store2 = _interopRequireDefault(_store);
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 var _reactRedux = __webpack_require__(18);
 
@@ -23205,9 +22241,9 @@ var _store = __webpack_require__(19);
 
 var _store2 = _interopRequireDefault(_store);
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -23479,7 +22515,7 @@ var _actions = __webpack_require__(14);
 
 var _actions2 = _interopRequireDefault(_actions);
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23605,7 +22641,8 @@ var UserComponent = function (_React$Component) {
                                 alert("用户名密码不符！");
                             } else {
                                 if (that.state.isRight) {
-                                    location.href = "/";
+                                    // console.log(1111)
+                                    location.href = "http://localhost:9000/#/login";
                                 } else {
                                     alert("验证码错误");
                                 }
@@ -23927,11 +22964,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24124,7 +23161,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactRedux = __webpack_require__(18);
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -24132,7 +23169,7 @@ var _actions = __webpack_require__(14);
 
 var _actions2 = _interopRequireDefault(_actions);
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24188,8 +23225,7 @@ var AllCityComponent = function (_React$Component) {
                     });
                     $(".swi-slide").on("click", ".list_cy", function () {
                         that.findId(that, $(this).html());
-                        localStorage.position = $(this).html();
-                        _actions2.default.getPosition(localStorage.position);
+                        _actions2.default.getPosition(JSON.parse(localStorage.position).cityName);
                     });
                 }
             }
@@ -24199,13 +23235,12 @@ var AllCityComponent = function (_React$Component) {
         value: function findId(type, str) {
             var that = type;
             var arr = that.state.city_info.list;
-            // console.log(arr)
             for (var key in arr) {
                 var obj = arr[key].filter(function (obj) {
                     return obj.cityName == str + '';
                 })[0];
                 if (obj) {
-                    that.goCity(obj.cityId);
+                    localStorage.position = JSON.stringify(obj);
                     this.setState({
                         _id: obj.cityId
                     });
@@ -24214,18 +23249,10 @@ var AllCityComponent = function (_React$Component) {
             }
         }
     }, {
-        key: "goCity",
-        value: function goCity(num) {
-            console.log(num);
-            _fetch2.default.Get("http://localhost:9000/loho/store/" + num, {}).then(function (res) {
-                return res.json();
-            }).then(function (json) {
-                console.log(json);
-            });
-        }
-    }, {
         key: "wrapper",
         value: function wrapper() {
+            var _this2 = this;
+
             var arr = [];
             if (JSON.stringify(this.state.city_info) == "{}") {
                 return arr;
@@ -24240,7 +23267,7 @@ var AllCityComponent = function (_React$Component) {
                             { className: "list" },
                             React.createElement(
                                 _reactRouter.Link,
-                                { to: "/", className: "list_cy" },
+                                { to: "/nearby/" + _this2.state._id, className: "list_cy" },
                                 item.cityName
                             )
                         ));
@@ -24293,7 +23320,8 @@ var AllCityComponent = function (_React$Component) {
                 var i = $(this).index();
                 var array = that.state.city_position;
                 var n = array[i] - 60;
-                $("body").scrollTop(n);
+                $("html").scrollTop(n);
+                //  console.log($("html").scrollTop())
             });
         }
     }, {
@@ -24343,7 +23371,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _fetch = __webpack_require__(7);
+var _fetch = __webpack_require__(6);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -24351,7 +23379,7 @@ var _actions = __webpack_require__(14);
 
 var _actions2 = _interopRequireDefault(_actions);
 
-var _reactRouter = __webpack_require__(3);
+var _reactRouter = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24372,7 +23400,6 @@ var HotCityComponent = function (_React$Component) {
         _this.state = {
             city: {},
             _id: null
-
         };
         return _this;
     }
@@ -24389,13 +23416,14 @@ var HotCityComponent = function (_React$Component) {
                 _this2.setState({
                     city: json.result
                 });
-                // console.log(this.state.city.hot)
                 _actions2.default.city_info(_this2.state.city);
             });
         }
     }, {
         key: "add_hot",
         value: function add_hot() {
+            var _this3 = this;
+
             var arr = [];
             if (JSON.stringify(this.state.city) == "{}") {
                 return arr;
@@ -24403,7 +23431,7 @@ var HotCityComponent = function (_React$Component) {
                 this.state.city.hot.forEach(function (item, i) {
                     arr.push(React.createElement(
                         _reactRouter.Link,
-                        { to: "/", className: "hot_country" },
+                        { to: "/nearby/" + _this3.state._id, className: "hot_country" },
                         item.cityName
                     ));
                 });
@@ -24423,32 +23451,18 @@ var HotCityComponent = function (_React$Component) {
             var obj = arr.filter(function (obj) {
                 return obj.cityName == str + '';
             })[0];
-            // console.log(obj)
+            localStorage.position = JSON.stringify(obj);
             this.setState({
                 _id: obj.cityId
             });
-            that.goCity(obj.cityId);
         }
-        // goCity(num){
-        //     console.log(this.state._id)
-        //     Fetch.Get("http://localhost:9000/loho/store/"+num,{}).then((res)=>{
-        //         return res.json()
-        //     }).then((json)=>{
-
-        //       console.log(json)
-
-        //     })
-        // }
-
     }, {
         key: "componentDidMount",
         value: function componentDidMount() {
             var that = this;
             $(".hotcity_hot").on("click", ".hot_country", function () {
-                // console.log()
                 that.findId(that, $(this).html());
-                localStorage.position = $(this).html();
-                _actions2.default.getPosition(localStorage.position);
+                _actions2.default.getPosition(JSON.parse(localStorage.position).cityName);
             });
         }
     }, {
@@ -24475,7 +23489,6 @@ var HotCityComponent = function (_React$Component) {
 }(React.Component);
 
 HotCityComponent.defaultProps = {};
-
 exports.default = HotCityComponent;
 
 /***/ }),
@@ -24501,6 +23514,8 @@ var _actions2 = _interopRequireDefault(_actions);
 
 var _reactRedux = __webpack_require__(18);
 
+var _reactRouter = __webpack_require__(1);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24519,7 +23534,9 @@ var NowCityComponent = function (_React$Component) {
 
         _this.state = {
             now_position: '',
-            isGet: ''
+            getId: JSON.parse(localStorage.position).cityId,
+            city_info: {},
+            isGet: true
         };
         return _this;
     }
@@ -24527,20 +23544,47 @@ var NowCityComponent = function (_React$Component) {
     _createClass(NowCityComponent, [{
         key: "componentWillMount",
         value: function componentWillMount() {
+
             if (localStorage.position) {
+                // console.log(JSON.parse(localStorage.position).cityName)
                 this.setState({
-                    now_position: localStorage.position
+                    now_position: JSON.parse(localStorage.position).cityName
                 });
             }
         }
     }, {
         key: "componentDidUpdate",
         value: function componentDidUpdate() {
-            //  console.log(this.props.now_city,89) 
+            var _this2 = this;
+
+            var that = this;
+            if (this.state.isGet) {
+                this.setState({
+                    city_info: this.props.city_info.list,
+                    isGet: false
+                });
+            }
             if (this.props.now_city) {
                 if (this.state.now_position != this.props.now_city) {
                     this.setState({
                         now_position: this.props.now_city
+
+                    }, function () {
+                        if (JSON.stringify(_this2.state.city_info) != "{}") {
+
+                            var arr = _this2.state.city_info;
+                            for (var key in arr) {
+                                var obj = arr[key].filter(function (obj) {
+                                    return obj.cityName == that.state.now_position;
+                                })[0];
+                                if (obj) {
+                                    that.setState({
+                                        getId: obj.cityId
+                                    });
+                                    break;
+                                }
+                            }
+                        }
                     });
                 }
             }
@@ -24562,7 +23606,7 @@ var NowCityComponent = function (_React$Component) {
                         this.state.now_position
                     )
                 ),
-                React.createElement("span", { className: "iconfont icon-arrow-right" })
+                React.createElement(_reactRouter.Link, { to: "/nearby/" + this.state.getId, className: "iconfont icon-arrow-right" })
             );
         }
     }]);
@@ -26581,7 +25625,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -26639,7 +25683,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _warning = __webpack_require__(6);
+var _warning = __webpack_require__(7);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -27380,7 +26424,7 @@ exports.stringify = function (obj) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["b"] = createProvider;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -27969,7 +27013,7 @@ function shallowEqual(objA, objB) {
 
 exports.__esModule = true;
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -28007,7 +27051,7 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -28039,11 +27083,11 @@ module.exports = exports['default'];
 
 exports.__esModule = true;
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -28109,11 +27153,11 @@ module.exports = exports['default'];
 
 exports.__esModule = true;
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -28176,11 +27220,11 @@ module.exports = exports['default'];
 
 exports.__esModule = true;
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -28251,7 +27295,7 @@ module.exports = exports['default'];
 
 exports.__esModule = true;
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -28315,11 +27359,11 @@ module.exports = exports['default'];
 
 exports.__esModule = true;
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -28381,7 +27425,7 @@ var _invariant = __webpack_require__(4);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -28399,7 +27443,7 @@ var _RouteUtils = __webpack_require__(9);
 
 var _RouterUtils = __webpack_require__(61);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -28598,7 +27642,7 @@ module.exports = exports['default'];
 
 exports.__esModule = true;
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -28606,7 +27650,7 @@ var _RouterContext = __webpack_require__(25);
 
 var _RouterContext2 = _interopRequireDefault(_RouterContext);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -28640,7 +27684,7 @@ exports.runLeaveHooks = runLeaveHooks;
 
 var _AsyncUtils = __webpack_require__(37);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -28766,7 +27810,7 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -28774,7 +27818,7 @@ var _RouterContext = __webpack_require__(25);
 
 var _RouterContext2 = _interopRequireDefault(_RouterContext);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -29301,7 +28345,7 @@ var _makeStateWithLocation2 = _interopRequireDefault(_makeStateWithLocation);
 
 var _PatternUtils = __webpack_require__(16);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -29555,7 +28599,7 @@ var _createTransitionManager = __webpack_require__(39);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
-var _routerWarning = __webpack_require__(2);
+var _routerWarning = __webpack_require__(3);
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
@@ -29611,7 +28655,7 @@ var _invariant = __webpack_require__(4);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 

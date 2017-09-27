@@ -45,12 +45,7 @@ class NearbyComponent extends React.Component {
 				console.log(json)
 				that.setState({
 					data:json
-				})
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/lyy20170925
-				
+				})			
 			})
 		}      
 	}
