@@ -1,0 +1,101 @@
+@import "../common/_mixin.scss";
+.login_fa{
+    width:100%;
+    overflow: hidden;
+    .logo{
+        font-weight: normal;
+        font-size: .16rem;
+        padding-right:0.3rem;
+    }
+    .icon-iconback{
+        font-size: .2rem;
+    }
+    .header{
+        padding:0 0.2rem;
+    }
+    .login_binner{
+        padding-top:.6rem;
+        img{
+            width:100%;
+        }
+    }
+    .login_choose{
+        ul{
+            height:0.5rem;
+            display: flex;
+            background: #fff;
+            li{
+                display: flex;
+                align-items: center;
+                width:50%;
+                span{
+                    font-size: .14rem;
+                    display: inline-block;
+                    width:100%;
+                    text-align: center;
+                    @include right;
+                }
+                ._choose_word{
+                    color:red;
+                }
+            }
+            ._choose{
+                border-bottom:1px solid red;
+            }
+
+        }
+        .login_form{
+            margin-top:10px;
+             height:1.48rem;
+             background: #fff;
+            .login_input{
+                padding-left:0.2rem; 
+                .login_inp{
+                    height:.5rem;
+                    @include bottom;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+                    .back_style{
+                        background:#f4f4f4;
+                    }
+                    .login_font{
+                        font-size:.2rem;
+                    }
+                    input{
+                        border:none;
+                        height:.5rem;
+                        margin-left:0.1rem;
+                        outline: none;
+                        flex-grow: 1
+                    }
+                    .sendm{
+                        display: inline-block;
+                        width: 1.2rem;
+                        height:.5rem;
+                        text-align: center;
+                        line-height: .5rem;
+                        color:#fff;
+                        background: red;
+                    }
+                     .sendy{
+                        display: inline-block;
+                        width: 1.2rem;
+                        height:.5rem;
+                        text-align: center;
+                        line-height: .5rem;
+                
+                        background: pink;
+                    }
+                }
+            }
+        }
+        .forget{
+            color:#333;
+            display: inline-block;
+            padding-top:.1rem;
+            padding-left:.1rem;
+        }
+    }
+}

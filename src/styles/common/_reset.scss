@@ -1,0 +1,36 @@
+
+html,body,#app {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 14px;
+    background: #F2F2F2;
+}
+a {
+    border: none;
+    text-decoration: none;
+    color: #ccc
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6,ul,li,p{
+    margin: 0;
+    padding: 0;
+}
+
+ul,li{
+   list-style: none;
+}
+
+body{
+    font-size: 14px;
+    background: #f2f2f2;
+}
+
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+}

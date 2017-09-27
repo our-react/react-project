@@ -1,0 +1,46 @@
+
+.app_fir{
+    height:100%;
+    .login_full{
+        height:100%;
+        overflow: visible;
+        .logo{
+            padding-right:0.1rem;
+        }
+    }
+}
+.allcity{
+    background: #fff;
+    margin-top:0.1rem;
+    height:100%;
+     p{
+        padding-left:0.15rem;
+        height:0.4rem;
+        line-height: 0.4rem;
+        @include bottom; 
+    }
+    .list{
+                display: inline-block;
+                width:33.3%;
+                height:0.6rem;
+                line-height: 0.6rem;
+                @include bottom;
+                @include right;
+                text-align: center;
+                .list_cy{
+                    display: inline-block;
+                    width:100%;
+                    height:100%;
+                    color:#000;
+                    text-decoration: none;
+                }
+            }
+    .allcity_body{
+        p{
+             background: #f2f2f2;
+        }
+        ul{
+            background: #fff;
+        }
+    }
+}

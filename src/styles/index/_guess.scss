@@ -1,0 +1,62 @@
+
+
+.guess{
+    margin-top:20px;
+    .guess_head{
+        margin-bottom: 0;
+        text-align: center;
+        height:0.6rem;
+        line-height: 0.6rem;
+        background: #fff;
+        @include top;
+    }
+    .guess_list{
+        background: #fff;
+        display: flex;
+        flex-wrap: wrap;  
+        .guess_list--li{
+            @include top;
+            display: block;
+            width:50%;
+            padding:10px;
+            color: #000;
+            text-decoration: none;
+            h1{
+                text-align: center;
+                height:1.44rem;
+                line-height: 1.44rem;
+                img{
+                    width:100%;
+                }
+            }
+            .info{
+                width:100%;              
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;              
+            }
+            .price{
+                padding: 0.15rem 0;
+            }
+
+        }
+        .guess_list--li:nth-child(2n){
+            //  @include line-left;
+             @include left;
+        }
+        .price{
+            text-align: center;
+            color:orangered;
+        }
+    }
+    .addmore{
+        text-align: center;
+        height:0.6rem;
+        line-height: 0.6rem;
+        span{
+            color:#666;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.navs{
+    @include top;
+    width:100%;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    height:0.54rem;
+    background: #fff;
+    a{
+        flex: 1;
+        flex-shrink: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color:#000;
+        font-size:0.12rem;
+        &.active {
+            text-decoration: none;
+            color: blue;
+        }
+        span{
+            font-size:0.28rem;
+            height:0.33rem;
+        }
+    }
+}

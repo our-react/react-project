@@ -1,7 +1,29 @@
 
 
-@import './_base.scss';
-@import './_mixin.scss';
-@import './_reset.scss';
-@import './_common.scss';
-@import './_index.scss';
+
+@import './common/_base.scss';
+@import './common/_mixin.scss';
+@import './common/_reset.scss';
+@import './index/_navs.scss';
+@import './index/_guess.scss';
+@import './index/_footad.scss';
+@import './index/_gotop.scss';
+@import './index/_index.scss';
+
+@import './newthings/_newthings.scss';
+@import './nearby/_nearby.scss';
+
+
+@import './login/_login.scss';
+@import './login/_bott.scss';
+
+@import './position/_hotcity.scss';
+@import './position/_allcity.scss';
+@import './position/_nowcity.scss';
+
+
+@import './register/_register.scss';
+
+
+@import './detial/_detial.scss';
+

@@ -9,13 +9,12 @@ module.exports = {
         filename:'app.js'
     },
     devServer:{
-        proxy:{
-            '/list':{
+        proxy:{         
+            '/loho':{
                 target:'http://m.loho88.com',
                 changeOrigin:true,
-                pathRewrite: {'^/list' : ''}
-            },
-           
+                pathRewrite: {'^/loho' : ''}
+            }
         },
 		contentBase:'./build',//服务器要在哪个地方开启，默认是在webpack.config.js的路径中
 		port:9000,//端口
@@ -31,22 +30,11 @@ module.exports = {
             filename:'app.css',
             allChunks:true
         })
-        // new webpack.optimize.UglifyJsPlugin({
-        //     compress: {
-        //         warnings: false
-        //     }
-        // })
+       
     ],
     module:{
         loaders:[
-            // {
-            //     test:/\.css$/,
-            //     loader:'style-loader!css-loader'
-            // },
-            // {
-            //     test:/\.scss$/,
-            //     loader:'style-loader!css-loader!sass-loader'
-            // },
+           
 
             {
                 test:/\.css$/,
@@ -62,10 +50,7 @@ module.exports = {
                     use:'css-loader!sass-loader'
                 })
             },
-            // {
-            //     test:/\.js$/,
-            //     loader:'jsx-loader'
-            // },
+            
             {
                 test:/\.js$/,
                 exclude: /node_modules/,

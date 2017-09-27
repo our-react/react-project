@@ -3,6 +3,7 @@
 
 
 import store from '../../flux/store'
+import {Link} from 'react-router'
 
 
 class ListComponent extends React.Component {
@@ -36,30 +37,30 @@ class ListComponent extends React.Component {
                             <h5>{item.title.word}</h5>
                             <a href={item.more.url}>{item.more.word}</a>
                         </div>
-                        <div className="banner"><img src={item.img.pic} alt=""/></div>
-                    </div>           
-                    
-                )             
+                        <div className="banner"><img src={item.img.pic} alt=""/></div>  
+                    </div>                              
+                )                     
                 _arr.push(
+
                     <div className="product-list">
                         <div className="product-left">
-                            <a  href="/">
+                            <Link  to={"/detial/"+item.show.gid}>
                                 <span>{item.show[0].tag}</span>
                                 <span>{item.show[0].tag_en}</span>
                                 <img src={item.show[0].pic} alt=""/>                      
-                            </a>
+                            </Link>
                         </div>  
                         <div className="product-right">
-                            <a href="/">
+                            <Link to={"/detial/"+item.show.gid}>
                                 <span>{item.show[1].tag}</span>
                                 <span>{item.show[1].tag_en}</span>
                                 <img src={item.show[1].pic} alt=""/>                      
-                            </a>
-                            <a  href="/">
+                            </Link>
+                            <Link to={"/detial/"+item.show.gid}>
                                 <span>{item.show[2].tag}</span>
                                 <span>{item.show[2].tag_en}</span>
                                 <img src={item.show[2].pic} alt=""/>                      
-                            </a>
+                            </Link>
                         </div>  
                     </div>
                 )  
@@ -67,12 +68,6 @@ class ListComponent extends React.Component {
               _arr=[]
                                          
             })
-
-          
-
-
-          
-           
         }
        return arr
         
