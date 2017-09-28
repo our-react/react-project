@@ -30,7 +30,7 @@ ReactDOM.render(
             <Route path="/register" component={RegisterComponent}></Route>  
             <Route path="/login" component={RootLoginComponent}></Route>  
             <Route path="/newthings" component={NewthingsComponent}></Route>   
-            <Route path="/newthings/:id" component={NewthingsComponent}></Route>             
+            <Route path="/newthings/:id/:tag" component={NewthingsComponent}></Route>             
             <Route path="/socket" component={SocketComponent}></Route> 
             <Route path="/nearby/:id" component={NearbyComponent}></Route>
             <Route path="/position" component={PositionComponent}></Route>         

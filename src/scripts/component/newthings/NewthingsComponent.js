@@ -6,20 +6,32 @@ import Fetch from '../../module/fetch'
 
 class NewthingsComponent extends React.Component {
 	constructor(props,context) {
+		
         super(props,context)
+		//let tag=this.props.params.tag?this.props.params.tag:'';
+		let _id=this.props.params.id?this.props.params.id:"222";
+		let _title=this.props.params.tag?this.props.params.tag:'新品上市';
         this.state={
         	index:0,
-        	url1:"http://localhost:9000/loho/search/?e=222&page=1",
-        	url2:'http://localhost:9000/loho/search/?e=222&page=2'
+        	id: _id,
+        	url1:"http://localhost:9000/loho/search/?e="+_id+"&page=1",
+        	url2:"http://localhost:9000/loho/search/?e="+_id+"&page=2",
+        	position: "",
+		    fanhui: "icon-iconback",
+		    gouwu: "icon-gouwuche",
+		    login: "icon-gengduo",
+		    title:_title
+        	
         }
     }
 	changeStyle(index,sort){
+		
 		//console.log(e)
 		let that=this;
 		that.setState({
 			index:index,
-			url1:"http://localhost:9000/loho/search/?e=222&page=1"+sort,
-			url2:'http://localhost:9000/loho/search/?e=222&page=2'+sort
+			url1:"http://localhost:9000/loho/search/?e="+this.state.id+"&page=1"+sort,
+			url2:"http://localhost:9000/loho/search/?e="+this.state.id+"&page=2"+sort
 		})
 		
 	}
@@ -27,7 +39,7 @@ class NewthingsComponent extends React.Component {
     render() {
         return (          
             <div className="newthings">
-                <HeaderComponent data = {this.props}/>               
+                <HeaderComponent data = {this.state} />               
                 <div className="goodsList">
 					<div className="production-filter-bar">
 						<div className="listnav">
@@ -49,10 +61,6 @@ class NewthingsComponent extends React.Component {
     }
 }
 NewthingsComponent.defaultProps={
-        position: "",
-        fanhui: "icon-iconback",
-        title: "新品上市",
-        gouwu: "icon-gouwuche",
-        login: "icon-gengduo"   
+    
 }
 export default NewthingsComponent
