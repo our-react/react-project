@@ -29,8 +29,12 @@ module.exports = {
         new ExtractWebpackPlugin({
             filename:'app.css',
             allChunks:true
-        })
-       
+        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     }
+        // })
     ],
     module:{
         loaders:[

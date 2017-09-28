@@ -1,0 +1,121 @@
+.login_person{
+    overflow: hidden;
+    .header{
+        a{
+            color: #000;
+            text-decoration: none;
+            span{
+                font-size: 0.24rem;
+                padding-left: 0.15rem;
+            }
+        }
+    }
+    .person_binner{
+            margin-top:0.5rem;
+            display: flex;
+            height: 1.5rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0.14rem 0;
+            background: url("/images/login/bg1.jpg") no-repeat;
+            background-size:100% 100%; 
+        .person_logo{
+          padding:10px 0;
+            img{
+                width:0.85rem;
+            }
+        }
+        .person_name{
+            color: #fff;
+            font-size: 0.16rem;
+            padding:0.03rem 0.2rem;
+            border-radius: 0.2rem;
+            background: rgba(0,0,0,0.4)
+        }
+    }
+    .person_lead{
+        display: flex;
+        height:0.78rem;
+        padding:0.15rem 0;
+        background: #fff;
+        a{
+            width: 25%;
+            height: 100%;
+            color:#000;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            span:first-child{
+                font-size: 0.28rem;
+            }
+            span:last-child{
+                font-size: 0.14rem;
+            }
+        }
+        a:nth-child(2){
+            @include short_right
+        }
+    }
+    .person_quan{
+        height: 0.6rem;
+        width: 100%;
+        padding: 0 0.2rem;
+        background: #FFF;
+        margin-top:0.1rem;
+        a{
+            color:#000;
+            text-decoration: none;
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+            dl{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                dt{
+                    font-size: 0.24rem;
+                    color:#666;
+                }
+                dd{
+                    display: flex;
+                    flex-direction:column; 
+                    justify-content: center;
+                    margin-left:0.1rem;
+                    .jifen{
+                        color:#666;
+                    }
+                }
+            }
+        }
+    }
+    .person_all{
+        margin-top: 0.1rem;
+        background: #fff;
+
+        a{
+             padding:0 0.2rem;
+            color: #000;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            height:0.5rem;
+            align-items: center;
+            @include bottom;
+            .font{
+                font-size: 0.24rem;
+                vertical-align: middle;
+                color: #666;
+            }
+            p{
+                flex-grow: 1;
+                .person_all{
+                    margin-left:0.1rem;
+                }
+            }
+        }
+    }
+}

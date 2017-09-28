@@ -1,6 +1,6 @@
 
 
-
+import {Link} from 'react-router'
 
 
 class DetialFooterComponent extends React.Component {
@@ -17,7 +17,7 @@ class DetialFooterComponent extends React.Component {
                     <span>收藏</span>
                 </div>
                  <div className="jrgwc">
-                    <button>加入购物车</button>
+                    <Link to="/cart">加入购物车</Link>
                 </div>
             </div>
             

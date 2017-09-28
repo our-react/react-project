@@ -205,35 +205,50 @@ body {
   padding: 0 0.25rem 0 0.25rem;
   box-sizing: border-box;
   line-height: 0.6rem;
-  background: #fff;
-  display: flex;
-  justify-content: space-between; }
-  .header .header-left a {
-    color: #000;
-    text-decoration: none;
-    font-size: 0.16rem; }
-    .header .header-left a .iconfont {
-      font-size: 0.16rem;
-      color: #000; }
-  .header .header-right {
+  background: #fff; }
+  .header .header-nav {
     display: flex;
     justify-content: space-between; }
-    .header .header-right h4 {
-      font-size: 0.20rem;
-      line-height: 0.6rem;
-      margin-right: 0.40rem;
-      font-weight: normal; }
-      .header .header-right h4 img {
-        height: 70%;
-        vertical-align: top; }
-    .header .header-right .iconfont {
-      display: inline-block;
-      font-size: 0.25rem;
-      color: #333333;
+    .header .header-nav .header-left a {
+      color: #000;
       text-decoration: none;
-      margin-top: 0; }
-      .header .header-right .iconfont.gouwu {
-        margin-right: 0.32rem; }
+      font-size: 0.16rem; }
+      .header .header-nav .header-left a .iconfont {
+        font-size: 0.16rem;
+        color: #000; }
+    .header .header-nav .header-right {
+      display: flex;
+      justify-content: space-between; }
+      .header .header-nav .header-right h4 {
+        font-size: 0.20rem;
+        line-height: 0.6rem;
+        margin-right: 0.40rem;
+        font-weight: normal; }
+        .header .header-nav .header-right h4 img {
+          height: 70%; }
+      .header .header-nav .header-right .iconfont {
+        display: inline-block;
+        font-size: 0.25rem;
+        color: #333333;
+        text-decoration: none;
+        margin-top: 0; }
+        .header .header-nav .header-right .iconfont.gouwu {
+          margin-right: 0.32rem; }
+  .header .header-tabs {
+    position: fixed;
+    right: 0;
+    top: 0.7rem;
+    border: 0.01rem solid #eee;
+    width: 30%;
+    padding: 0 0.15rem;
+    background: #fff; }
+    .header .header-tabs a {
+      display: block;
+      width: 100%;
+      line-height: 0.4rem;
+      color: #555; }
+      .header .header-tabs a span:first-child {
+        margin-right: 0.05rem; }
 
 .list-product {
   width: 100%;

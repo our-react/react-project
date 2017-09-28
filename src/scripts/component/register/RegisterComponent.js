@@ -168,11 +168,8 @@ class RegisterComponent extends React.Component {
 }
 
 RegisterComponent.defaultProps={
-        position: "",
-        fanhui: "icon-iconback",
-        title: "手机快速注册",
-        gouwu: "icon-gouwuche",
-        login: "icon-gengduo" 
+
+        title: "手机快速注册"
 }
 
 export default RegisterComponent

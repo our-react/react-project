@@ -4,6 +4,8 @@ import NowCityComponent from "../position/NowCityComponent"
 import HotCityComponent from "../position/HotCityComponent"
 import AllCityComponent from "../position/AllCityComponent"
 
+import GoTopComponent from "../common/GoTopComponent"
+
 
 class PositionComponent extends React.Component {
     render() {
@@ -12,18 +14,16 @@ class PositionComponent extends React.Component {
                 <HeaderComponent data = {this.props}/>
                 <NowCityComponent/>
                 <HotCityComponent/>    
-                <AllCityComponent/>     
+                <AllCityComponent/>  
+                <GoTopComponent />   
             </div>     
         )
     }
 }
 
 PositionComponent.defaultProps={
-        position: "",
-        fanhui: "icon-iconback",
-        title: "选择城市",
-        gouwu: "icon-gouwuche",
-        login: "icon-gengduo"
+
+        title: "选择城市"
     
 }
 
