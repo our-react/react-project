@@ -103,7 +103,7 @@ class AllCityComponent extends React.Component {
                  var i=$(this).index()
                  let array=that.state.city_position
                  let n=array[i]-60
-                 $("html").scrollTop(n)
+                 $("html,body").scrollTop(n)
                 //  console.log($("html").scrollTop())
              })             
     }

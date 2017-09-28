@@ -1,4 +1,3 @@
-
 class gotopComponent extends React.Component {   
     constructor(props,context){
         super(props,context)

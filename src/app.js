@@ -17,6 +17,7 @@ import PositionComponent from './scripts/component/position/PositionComponent'
 import DetialComponent from './scripts/component/detial/DetialComponent'
 import RootLoginComponent from './scripts/component/login/RootLoginComponent'
 
+import LoginSetComponent from './scripts/component/login/LoginSetComponent'
 
 import {Provider} from 'react-redux'
 import store from './scripts/redux/store'
@@ -36,7 +37,8 @@ ReactDOM.render(
                 <Route path="/position" component={PositionComponent}></Route>         
                 <Route path="/detial/:id" component={DetialComponent}></Route>       
                 <Route path="/nearby" component={NearbyComponent}></Route>   
-                <Route path="/detial" component={DetialComponent}></Route>       
+                <Route path="/detial" component={DetialComponent}></Route>   
+                <Route path="/exit" component={LoginSetComponent}></Route>   
             </Route>
         </Router>
 

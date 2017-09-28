@@ -17,12 +17,7 @@ class LoginPersonComponent extends React.Component {
              }
         }
     }
-    componentDidUpdate(){
-       
-    }
-    
     componentWillMount(){
-         console.log(this.props.user_info_i,1)
         if(JSON.stringify(this.props.user_info_i)!="{}"){         
              this.setState({
               user_info:this.props.user_info_i
@@ -33,14 +28,28 @@ class LoginPersonComponent extends React.Component {
             })
         }
     }
+    handleBack() {
+        history.back()
+    }
     render() {
         return(
             <div className="login_person">
+                 <div className="header">
+                    <div className="header-nav">
+                        <span className="iconfont icon-iconback" onClick={this.handleBack.bind(this)}></span>     
+                        <div className="header-right">
+                             <h4 className="logo">{this.state.data.title}</h4>
+                             <Link to="/"><span className="iconfont icon-shouye1 per"></span></Link>
+                             <Link to="/exit"><span className="iconfont icon-shezhi per"></span></Link>
+                        </div>
+                    </div>           
+            
+                </div>
                <div className="person_binner">
                     <span className="person_logo">
                         <img src="./images/login/index_logo.png" alt=""/>
                     </span>
-                    <span className="person_name">{this.state.user_info.phone_number}</span>
+                    <span className="person_name">{"hsjl_"+this.state.user_info.phone_number}</span>
                </div>
                 <div className="person_lead">
                     <Link>
@@ -125,11 +134,7 @@ class LoginPersonComponent extends React.Component {
     }
 }
 LoginPersonComponent.defaultProps={
-       position: "",
-        fanhui: "icon-iconback",
-        title: "会员中心",
-        gouwu: "icon-shouye1",
-        login: "icon-shezhi"      
+          
 }
 
 export default connect(state=>state)(LoginPersonComponent)
