@@ -8,31 +8,38 @@ class NewthingsComponent extends React.Component {
 	constructor(props,context) {
         super(props,context)
         this.state={
-        	
+        	index:0,
+        	url1:"http://localhost:9000/loho/search/?e=222&page=1",
+        	url2:'http://localhost:9000/loho/search/?e=222&page=2'
         }
     }
-	changeUrl(num){
-//		switch(num){
-//			case 1:actions.changeUrl("http://localhost:9000/loho/search/?e=222&page=1","http://localhost:9000/loho/search/?e=222&page=2");break;
-//			case 2:actions.changeUrl("http://localhost:9000/loho/search/?e=222&page=1&sort=o1","http://localhost:9000/loho/search/?e=222&page=2&sort=o1");break;	
-//			case 3:actions.changeUrl("http://localhost:9000/loho/search/?e=222&page=1&sort=o5","http://localhost:9000/loho/search/?e=222&page=2&sort=o5");break;			
-//		}
+	changeStyle(index,sort){
+		//console.log(e)
+		let that=this;
+		that.setState({
+			index:index,
+			url1:"http://localhost:9000/loho/search/?e=222&page=1"+sort,
+			url2:'http://localhost:9000/loho/search/?e=222&page=2'+sort
+		})
 		
 	}
+	
     render() {
         return (          
             <div className="newthings">
-                <HeaderComponent data = {this.props}/>
-                
+                <HeaderComponent data = {this.props}/>               
                 <div className="goodsList">
 					<div className="production-filter-bar">
 						<div className="listnav">
-							<a>综合</a>
-							<a>销量</a>
-							<a>价格</a>
-							<a>筛选</a>						
+							<li className={this.state.index==0?"active":''} onClick={this.changeStyle.bind(this,0,'')}>综合</li>
+							<li className={this.state.index==1?"active":''} onClick={this.changeStyle.bind(this,1,"&sort=o1")}>销量</li>
+							<li className={this.state.index==2?"active":''} onClick={this.changeStyle.bind(this,2,"&sort=o5")}>价格</li>
+							<li className={this.state.index==3?"active":''} onClick={this.changeStyle.bind(this,3)}>筛选</li>						
 						</div>
-						<CompreComponent/>
+						{this.state.index==0?<CompreComponent data={this.state}/>:''}
+						{this.state.index==1?<CompreComponent data={this.state}/>:''}
+						{this.state.index==2?<CompreComponent data={this.state}/>:''}
+						{this.state.index==3?<ChooseComponent/>:''}
 					</div>					
 				</div>
              </div> 

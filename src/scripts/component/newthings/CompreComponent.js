@@ -1,19 +1,21 @@
 import Fetch from '../../module/fetch'
+import {Link} from 'react-router'
 
 class CompreComponent extends React.Component{
 	constructor(props,context) {
         super(props,context)
-        this.state={
-        	
-        	
+        this.state={        	
         	goods:[],
         	moregoods:[],
-        	isLoading:true
-        	
+        	isLoading:true       	
         }
     }
 	componentWillMount() {
-        this.getListData()     	
+        this.getListData(this.props.data.url1,(json)=>{
+        	this.setState({
+	        	goods:json
+	       })  
+        })
     }
 	getGoodsList(){
 		let goods = this.state.goods   	
@@ -21,54 +23,41 @@ class CompreComponent extends React.Component{
 	    let arr=[];
 	    if(goods.length!=0){
 	    	goods.result.data.forEach((item,i)=>{
-		    	arr.push(<div className="goodslist-bar">
+		    	arr.push(<Link className="goodslist-bar" to={"/detial/"+item.goodsId}>
 		    				{item.isNew?<span className="isnew">New</span>:""}
 							<img src={"http://image.loho88.com/"+item.img}/>
 							<div className="goods_title">{item.title}</div>
 							<span className="goodsprice">￥ {item.price}</span>
 							<span className="goodsbuy">{item.salesNum}人已买</span>						
-						</div>)
+						</Link>)
 		    })
 	    }	    
 	    return arr;    	
 	}	
-	getListData(){
+	getListData(url,cb){
 		let that = this
-        Fetch.Get("http://localhost:9000/loho/search/?e=222&page=1",{
+        Fetch.Get(url,{
         }).then(res=>{
            return res.json()
         }).then(json=>{      
-        	
-        	that.setState({
-            	goods:json
-           })                         
+        	cb(json)        	                      
         })
 	}
-	loadingMoreData(){
-		let that = this
-        Fetch.Get('http://localhost:9000/loho/search/?e=222&page=2',{
-        }).then(res=>{
-           return res.json()
-        }).then(json=>{      
-        	
-        	that.setState({
-            	moregoods:json
-           })                         
-        })
-	}
+
+	
 	loadingMoreList(){
 		let moregoods = this.state.moregoods   	
 		let that=this;
 	    let brr=[];
 	    if(moregoods.length!=0){
 	    	moregoods.result.data.forEach((item,i)=>{
-		    	brr.push(<div className="goodslist-bar">
+		    	brr.push(<Link className="goodslist-bar" to={"/detial/"+item.goodsId}>
 		    				{item.isNew?<span className="isnew">New</span>:""}
 							<img src={"http://image.loho88.com/"+item.img}/>
 							<div className="goods_title">{item.title}</div>
 							<span className="goodsprice">￥ {item.price}</span>
 							<span className="goodsbuy">{item.salesNum}人已买</span>						
-						</div>)
+						</Link>)
 		    })
 	    }	    
 	    return brr;    	
@@ -78,18 +67,18 @@ class CompreComponent extends React.Component{
 		let st=document.documentElement.scrollTop||document.body.scrollTop;
 		let sh=document.documentElement.scrollHeight||document.body.scrollHeight;
 		let that=this;
-		if(ch+st==sh&&this.state.isLoading){			
-			
-			that.loadingMoreData()
+		if(ch+st==sh&&this.state.isLoading){						
+			that.getListData(this.props.data.url2,(json)=>{
+				that.setState({
+	            	moregoods:json
+	           })            
+			})
 			this.setState({
 				isLoading:false
 			})	
 		}	
 	}
-	activeStyle(e){
-		//console.log(e._targetInst._mountIndex)
-		
-	}
+
 	render(){
 		return(
 			<div className="goodsList">				

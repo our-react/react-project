@@ -3,6 +3,7 @@
 
 
 import store from '../../flux/store'
+import {Link} from 'react-router'
 
 
 class ListComponent extends React.Component {
@@ -43,23 +44,23 @@ class ListComponent extends React.Component {
 
                     <div className="product-list">
                         <div className="product-left">
-                            <a  href="/">
+                            <Link  to={"/detial/"+item.show.gid}>
                                 <span>{item.show[0].tag}</span>
                                 <span>{item.show[0].tag_en}</span>
                                 <img src={item.show[0].pic} alt=""/>                      
-                            </a>
+                            </Link>
                         </div>  
                         <div className="product-right">
-                            <a href="/">
+                            <Link to={"/detial/"+item.show.gid}>
                                 <span>{item.show[1].tag}</span>
                                 <span>{item.show[1].tag_en}</span>
                                 <img src={item.show[1].pic} alt=""/>                      
-                            </a>
-                            <a  href="/">
+                            </Link>
+                            <Link to={"/detial/"+item.show.gid}>
                                 <span>{item.show[2].tag}</span>
                                 <span>{item.show[2].tag_en}</span>
                                 <img src={item.show[2].pic} alt=""/>                      
-                            </a>
+                            </Link>
                         </div>  
                     </div>
                 )  

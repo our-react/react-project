@@ -48,7 +48,6 @@ class IndexComponent extends React.Component {
         return (
 
             <div className="index-page">
-
                 <HeaderComponent data = {this.props}/>
                 <LunboComponent lunbodata={this.state.data}/>
                 <NavComponent navdata={this.state.data}/>

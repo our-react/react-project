@@ -15,6 +15,8 @@ import NearbyComponent from './scripts/component/nearby/NearbyComponent'
 
 import PositionComponent from './scripts/component/position/PositionComponent'
 import DetialComponent from './scripts/component/detial/DetialComponent'
+import RootLoginComponent from './scripts/component/login/RootLoginComponent'
+
 
 import {Provider} from 'react-redux'
 import store from './scripts/redux/store'
@@ -26,13 +28,16 @@ ReactDOM.render(
             <IndexRoute component={IndexComponent}/>  
             <Route path="/index" component={IndexComponent}></Route>
             <Route path="/register" component={RegisterComponent}></Route>  
-            <Route path="/login" component={LoginComponent}></Route>  
-            <Route path="/newthings" component={NewthingsComponent}></Route>            
+            <Route path="/login" component={RootLoginComponent}></Route>  
+            <Route path="/newthings" component={NewthingsComponent}></Route>   
+            <Route path="/newthings/:id" component={NewthingsComponent}></Route>             
             <Route path="/socket" component={SocketComponent}></Route> 
             <Route path="/nearby/:id" component={NearbyComponent}></Route>
             <Route path="/position" component={PositionComponent}></Route>         
+            <Route path="/detial/:id" component={DetialComponent}></Route>       
             <Route path="/nearby" component={NearbyComponent}></Route>   
             <Route path="/detial" component={DetialComponent}></Route>       
+
         </Route>
     </Router>
     </Provider>

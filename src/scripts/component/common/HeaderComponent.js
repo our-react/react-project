@@ -14,7 +14,8 @@ class HeaderComponent extends React.Component {
         }
     }
     
-    load(){
+
+     load(){
         let that=this
          if(localStorage.position){
             this.setState({
@@ -60,12 +61,10 @@ class HeaderComponent extends React.Component {
         }
         that.load()
      }
- 
     changing(){
         let arr=[]
         if(this.props.data.position!=""){       
-                arr.push(<Link to="/position">{this.state.now_position?this.state.now_position:"定位中.."}<span className={this.props.data.fanhui+" "+"iconfont"}></span></Link>)
-                   
+                arr.push(<Link to="/position">{this.state.now_position?this.state.now_position:"定位中.."}<span className={this.props.data.fanhui+" "+"iconfont"}></span></Link>)                  
         }else{
             arr.push( <Link to="/">{this.props.data.position}<span className={this.props.data.fanhui+" "+"iconfont"}></span></Link> )
         }
@@ -91,16 +90,11 @@ class HeaderComponent extends React.Component {
                       this.showContent() 
                    }
                     <Link href="/" className={"iconfont"+" "+this.props.data.gouwu+" "+"gouwu"}></Link>
-                    <Link to="/register" className={"iconfont"+" "+this.props.data.login}></Link>
+                    <Link to="/login" className={"iconfont"+" "+this.props.data.login}></Link>
                 </div>
              </div> 
-           
-
         )
     }
 }
 
-
-export default (HeaderComponent)
-
-
+export default HeaderComponent

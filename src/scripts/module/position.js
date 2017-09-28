@@ -21,7 +21,6 @@ let Position = (cb)=>{
     });
     //解析定位结果
     function onComplete(data) {
-        
         let position_info = {
             longitude:data.position.getLng(),
             latitude:data.position.getLat()
@@ -33,16 +32,16 @@ let Position = (cb)=>{
                 radius: 1000,
                 extensions: "all"
             });
-            geocoder.getAddress([position_info.longitude,position_info.latitude], function(status, result) {  
+            geocoder.getAddress([position_info.longitude,position_info.latitude], function(status, result) {
+                // console.log(position_info.longitude,position_info.latitude,status, result,6) 
                 if (status === 'complete' && result.info === 'OK') {
-                    // console.log(111)
                      geocoder_CallBack(result);
                 }
             });        
 
         }
         function geocoder_CallBack(data) {
-            console.log(data)
+            console.log(data,"data")
             let address = data.regeocode.addressComponent.province
             position_info.address=address;
             cb(position_info)
