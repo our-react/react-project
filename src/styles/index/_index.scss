@@ -12,18 +12,20 @@
     box-sizing: border-box;
     line-height: 0.6rem;
     background: #fff;
-    display: flex;
-    justify-content: space-between;
-    
-    .header-left {
-        a {
-            color: #000;
-            text-decoration: none;
-            font-size: 0.16rem;
-
-            .iconfont{
-                font-size: 0.16rem;
+    // position: relative;  
+    .header-nav {
+         display: flex;
+        justify-content: space-between;
+        .header-left {
+            a {
                 color: #000;
+                text-decoration: none;
+                font-size: 0.16rem;
+
+                .iconfont{
+                    font-size: 0.16rem;
+                    color: #000;
+                }
             }
         }
     }    
@@ -39,16 +41,25 @@
             img {
                 height: 70%;
                 vertical-align:top;
+
             }
         }
-        .iconfont {
-            display: inline-block;
-            font-size: 0.25rem;
-            color: #333333;
-            text-decoration: none;
-            margin-top: 0;
-            &.gouwu {
-                margin-right:0.32rem;
+    }
+    .header-tabs {
+        position: fixed;
+        right: 0;
+        top: 0.7rem;
+        border: 0.01rem solid #eee;
+        width: 30%;
+        padding: 0 0.15rem;
+        background: #fff;
+        a {
+            display: block;
+            width: 100%;
+            line-height: 0.4rem;
+            color: #555;
+            span:first-child {
+                margin-right: 0.05rem;
             }
         }
     }

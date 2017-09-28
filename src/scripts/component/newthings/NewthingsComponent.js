@@ -3,23 +3,31 @@ import HeaderComponent from '../common//HeaderComponent'
 
 import CompreComponent from './CompreComponent'
 import Fetch from '../../module/fetch'
+import GoTopComponent from "../common/GoTopComponent"
 
 class NewthingsComponent extends React.Component {
 	constructor(props,context) {
+		
         super(props,context)
+		//let tag=this.props.params.tag?this.props.params.tag:'';
+		let _id=this.props.params.id?this.props.params.id:"222";
+		let _title=this.props.params.tag?this.props.params.tag:'新品上市';
         this.state={
         	index:0,
+
         	url1:"http://localhost:9000/loho/search/?e=222&page=1",
         	url2:'http://localhost:9000/loho/search/?e=222&page=2'
         }
     }
 	changeStyle(index,sort){
+
 		//console.log(e)
 		let that=this;
 		that.setState({
 			index:index,
 			url1:"http://localhost:9000/loho/search/?e=222&page=1"+sort,
 			url2:'http://localhost:9000/loho/search/?e=222&page=2'+sort
+
 		})
 		
 	}
@@ -28,6 +36,7 @@ class NewthingsComponent extends React.Component {
         return (          
             <div className="newthings">
                 <HeaderComponent data = {this.props}/>               
+
                 <div className="goodsList">
 					<div className="production-filter-bar">
 						<div className="listnav">
@@ -42,6 +51,7 @@ class NewthingsComponent extends React.Component {
 						{this.state.index==3?<ChooseComponent/>:''}
 					</div>					
 				</div>
+				<GoTopComponent />
              </div> 
              
            
@@ -49,10 +59,5 @@ class NewthingsComponent extends React.Component {
     }
 }
 NewthingsComponent.defaultProps={
-        position: "",
-        fanhui: "icon-iconback",
-        title: "新品上市",
-        gouwu: "icon-gouwuche",
-        login: "icon-gengduo"   
 }
 export default NewthingsComponent

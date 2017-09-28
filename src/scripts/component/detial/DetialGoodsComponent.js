@@ -36,10 +36,10 @@ class DetialGoodsComponent extends React.Component {
     getPeddle() {
         let goodsPeddle=[]
         if(this.props.peddle) {
-            // console.log(this.props.peddle)
             this.props.peddle.forEach((item, i)=>{
                 goodsPeddle.push(
-                    <Link to={"/detial/"+item.goodsId}>
+                    <Link to={"/detial/"+item.goodsId} onClick={this.handleChangeHash.bind(this)}>
+
                         <img src={"http://image.loho88.com/"+item.img}/>
                         <span>{item.title}</span>
                         <span><span className="peddle-price">&yen;{item.price}</span><span>{item.salesNum}人已买</span></span>
@@ -48,6 +48,9 @@ class DetialGoodsComponent extends React.Component {
             })
             return goodsPeddle
         }
+    }
+    handleChangeHash() {
+        location.reload()
     }
     getPingJia() {
         let goodsPingJia=[]

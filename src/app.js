@@ -23,23 +23,23 @@ import store from './scripts/redux/store'
 
 ReactDOM.render(
     <Provider store={store}>
-    <Router history={hashHistory}>
-        <Route path="/" component={RootComponent}>           
-            <IndexRoute component={IndexComponent}/>  
-            <Route path="/index" component={IndexComponent}></Route>
-            <Route path="/register" component={RegisterComponent}></Route>  
-            <Route path="/login" component={RootLoginComponent}></Route>  
-            <Route path="/newthings" component={NewthingsComponent}></Route>   
-            <Route path="/newthings/:id" component={NewthingsComponent}></Route>             
-            <Route path="/socket" component={SocketComponent}></Route> 
-            <Route path="/nearby/:id" component={NearbyComponent}></Route>
-            <Route path="/position" component={PositionComponent}></Route>         
-            <Route path="/detial/:id" component={DetialComponent}></Route>       
-            <Route path="/nearby" component={NearbyComponent}></Route>   
-            <Route path="/detial" component={DetialComponent}></Route>       
+        <Router history={hashHistory}>
+            <Route path="/" component={RootComponent}>           
+                <IndexRoute component={IndexComponent}/>  
+                <Route path="/index" component={IndexComponent}></Route>
+                <Route path="/register" component={RegisterComponent}></Route>  
+                <Route path="/login" component={RootLoginComponent}></Route>  
+                <Route path="/newthings" component={NewthingsComponent}></Route>   
+                <Route path="/newthings/:id/:tag" component={NewthingsComponent}></Route>             
+                <Route path="/socket" component={SocketComponent}></Route> 
+                <Route path="/nearby/:id" component={NearbyComponent}></Route>
+                <Route path="/position" component={PositionComponent}></Route>         
+                <Route path="/detial/:id" component={DetialComponent}></Route>       
+                <Route path="/nearby" component={NearbyComponent}></Route>   
+                <Route path="/detial" component={DetialComponent}></Route>       
+            </Route>
+        </Router>
 
-        </Route>
-    </Router>
     </Provider>
 ,document.getElementById("app"))
 

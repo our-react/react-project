@@ -1,5 +1,6 @@
 
 import {connect} from 'react-redux'
+
 import {Link} from "react-router"
 import HeaderComponent from "../common/HeaderComponent"
 class LoginPersonComponent extends React.Component {
@@ -35,8 +36,6 @@ class LoginPersonComponent extends React.Component {
     render() {
         return(
             <div className="login_person">
-               
-
                <div className="person_binner">
                     <span className="person_logo">
                         <img src="./images/login/index_logo.png" alt=""/>
@@ -121,6 +120,7 @@ class LoginPersonComponent extends React.Component {
                     </Link>
                 </div>
             </div>            
+
         )
     }
 }

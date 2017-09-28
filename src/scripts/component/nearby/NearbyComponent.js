@@ -2,6 +2,7 @@ import Fetch from '../../module/fetch'
 import HeaderComponent from '../common/HeaderComponent'
 import NearbyListComponent from './NearbyListComponent'
 import NearbyPositionComponent from './NearbyPositionComponent'
+import GoTopComponent from "../common/GoTopComponent"
 class NearbyComponent extends React.Component {
 	constructor(props,context) {
         super(props,context)
@@ -85,16 +86,13 @@ class NearbyComponent extends React.Component {
                 	
                 </div>
                 {this.state.isRed?<NearbyListComponent listdata={this.state}/>:<NearbyPositionComponent/>}
+				<GoTopComponent />
              </div> 
             
         )
     }
 }
 NearbyComponent.defaultProps={
-        position:"",
-        fanhui: "icon-iconback",
-        title: "查找体验店",
-        gouwu: "icon-gouwuche",
-        login: "icon-gengduo"   
+        title: "查找体验店"
 }
 export default NearbyComponent

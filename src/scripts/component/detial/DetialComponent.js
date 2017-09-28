@@ -7,11 +7,15 @@ import DetialStoreComponent from "./DetialStoreComponent"
 import DetialGoodsComponent  from './DetialGoodsComponent'
 import DetialFooterComponent from './DetialFooterComponent'
 
+import GoTopComponent from '../common/GoTopComponent'
+
+
 
 
 class DetialComponent extends React.Component {
       constructor(props,context) {
         super(props,context)
+        console.log(this.props.params.id)
         this.state={
             data:[],
             peddle:[]
@@ -21,7 +25,7 @@ class DetialComponent extends React.Component {
 
    componentWillMount() {
        let that = this
-        fetch("http://localhost:9000/loho/goods/5645").then(res=>{
+        fetch("http://localhost:9000/loho/goods/"+this.props.params.id).then(res=>{
             return res.json()
         }).then(json=>{ 
             that.setState({
@@ -46,6 +50,8 @@ class DetialComponent extends React.Component {
                 <DetialStoreComponent />
                 <DetialGoodsComponent goods={this.state.data} peddle={this.state.peddle}/>
                 <DetialFooterComponent />
+                <GoTopComponent />
+
             </div>
             
         )
@@ -54,13 +60,7 @@ class DetialComponent extends React.Component {
     
 }
 DetialComponent.defaultProps={
-        position: "",
-        fanhui: "icon-iconback",
-        title: "",
-        gouwu: "icon-gouwuche",
-        login: "icon-gengduo"
-    
-    
+        title: ""      
 }
 
 export default DetialComponent

@@ -6,6 +6,7 @@ class CompreComponent extends React.Component{
         super(props,context)
         this.state={        	
         	goods:[],
+
         	moregoods:[],
         	isLoading:true       	
         }
@@ -16,12 +17,18 @@ class CompreComponent extends React.Component{
 	        	goods:json
 	       })  
         })
+
     }
+	componentDidMount(){
+		
+	}
 	getGoodsList(){
 		let goods = this.state.goods   	
 		let that=this;
-	    let arr=[];
+		let arr=[];
+	
 	    if(goods.length!=0){
+
 	    	goods.result.data.forEach((item,i)=>{
 		    	arr.push(<Link className="goodslist-bar" to={"/detial/"+item.goodsId}>
 		    				{item.isNew?<span className="isnew">New</span>:""}
@@ -35,16 +42,20 @@ class CompreComponent extends React.Component{
 	    return arr;    	
 	}	
 	getListData(url,cb){
+
 		let that = this
         Fetch.Get(url,{
         }).then(res=>{
            return res.json()
         }).then(json=>{      
+
         	cb(json)        	                      
+
         })
 	}
 
 	
+
 	loadingMoreList(){
 		let moregoods = this.state.moregoods   	
 		let that=this;
@@ -62,11 +73,13 @@ class CompreComponent extends React.Component{
 	    }	    
 	    return brr;    	
 	}
+
 	loadingMore(){
 		let ch=document.documentElement.clientHeight||document.body.clientHeight;
 		let st=document.documentElement.scrollTop||document.body.scrollTop;
 		let sh=document.documentElement.scrollHeight||document.body.scrollHeight;
 		let that=this;
+
 		if(ch+st==sh&&this.state.isLoading){						
 			that.getListData(this.props.data.url2,(json)=>{
 				that.setState({
@@ -74,9 +87,13 @@ class CompreComponent extends React.Component{
 	           })            
 			})
 			this.setState({
+
 				isLoading:false
-			})	
+			})
+			that.getListData(that.props.data.url2)
+			
 		}	
+
 	}
 
 	render(){
@@ -87,10 +104,7 @@ class CompreComponent extends React.Component{
 				</div>
 				{
 					this.state.isLoading?<div className="loadingmore">正在加载更多中</div>:''
-				}
-				<div className="godslist_box">
-					{this.state.isLoading?'':this.loadingMoreList()}				
-				</div>
+				}				
 				{this.state.isLoading?'':<p className="bottom">已经到底部了</p>}
 			</div>
 		)
