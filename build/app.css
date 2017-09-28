@@ -751,6 +751,295 @@ body {
   .login_footer .login_change {
     background: red; }
 
+.login_fa {
+  width: 100%;
+  overflow: hidden; }
+  .login_fa .logo {
+    font-weight: normal;
+    font-size: .16rem;
+    padding-right: 0.3rem; }
+  .login_fa .icon-iconback {
+    font-size: .2rem; }
+  .login_fa .header {
+    padding: 0 0.2rem; }
+  .login_fa .login_binner {
+    padding-top: .6rem; }
+    .login_fa .login_binner img {
+      width: 100%; }
+  .login_fa .login_choose ul {
+    height: 0.5rem;
+    display: flex;
+    background: #fff; }
+    .login_fa .login_choose ul li {
+      display: flex;
+      align-items: center;
+      width: 50%; }
+      .login_fa .login_choose ul li span {
+        font-size: .14rem;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        position: relative; }
+        .login_fa .login_choose ul li span::after {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          background: #ccc;
+          transform: scaleX(0.5);
+          left: 100%; }
+      .login_fa .login_choose ul li ._choose_word {
+        color: red; }
+    .login_fa .login_choose ul ._choose {
+      border-bottom: 1px solid red; }
+  .login_fa .login_choose .login_form {
+    margin-top: 10px;
+    height: 1.48rem;
+    background: #fff; }
+    .login_fa .login_choose .login_form .login_input {
+      padding-left: 0.2rem; }
+      .login_fa .login_choose .login_form .login_input .login_inp {
+        height: .5rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        .login_fa .login_choose .login_form .login_input .login_inp::before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          left: 0;
+          background: #ccc;
+          transform: scaleY(0.5);
+          bottom: 0; }
+        .login_fa .login_choose .login_form .login_input .login_inp .back_style {
+          background: #f4f4f4; }
+        .login_fa .login_choose .login_form .login_input .login_inp .login_font {
+          font-size: .2rem; }
+        .login_fa .login_choose .login_form .login_input .login_inp input {
+          border: none;
+          height: .5rem;
+          margin-left: 0.1rem;
+          outline: none;
+          flex-grow: 1; }
+        .login_fa .login_choose .login_form .login_input .login_inp .sendm {
+          display: inline-block;
+          width: 1.2rem;
+          height: .5rem;
+          text-align: center;
+          line-height: .5rem;
+          color: #fff;
+          background: red; }
+        .login_fa .login_choose .login_form .login_input .login_inp .sendy {
+          display: inline-block;
+          width: 1.2rem;
+          height: .5rem;
+          text-align: center;
+          line-height: .5rem;
+          background: pink; }
+  .login_fa .login_choose .forget {
+    color: #333;
+    display: inline-block;
+    padding-top: .1rem;
+    padding-left: .1rem; }
+
+.login_person {
+  overflow: hidden; }
+  .login_person .header a {
+    color: #000;
+    text-decoration: none; }
+    .login_person .header a span {
+      font-size: 0.24rem;
+      padding-left: 0.15rem; }
+  .login_person .person_binner {
+    margin-top: 0.5rem;
+    display: flex;
+    height: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.14rem 0;
+    background: url("/images/login/bg1.jpg") no-repeat;
+    background-size: 100% 100%; }
+    .login_person .person_binner .person_logo {
+      padding: 10px 0; }
+      .login_person .person_binner .person_logo img {
+        width: 0.85rem; }
+    .login_person .person_binner .person_name {
+      color: #fff;
+      font-size: 0.16rem;
+      padding: 0.03rem 0.2rem;
+      border-radius: 0.2rem;
+      background: rgba(0, 0, 0, 0.4); }
+  .login_person .person_lead {
+    display: flex;
+    height: 0.78rem;
+    padding: 0.15rem 0;
+    background: #fff; }
+    .login_person .person_lead a {
+      width: 25%;
+      height: 100%;
+      color: #000;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center; }
+      .login_person .person_lead a span:first-child {
+        font-size: 0.28rem; }
+      .login_person .person_lead a span:last-child {
+        font-size: 0.14rem; }
+    .login_person .person_lead a:nth-child(2) {
+      position: relative; }
+      .login_person .person_lead a:nth-child(2)::after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 70%;
+        position: absolute;
+        top: 20%;
+        left: 100%;
+        background: #ccc;
+        transform: scaleX(0.5); }
+  .login_person .person_quan {
+    height: 0.6rem;
+    width: 100%;
+    padding: 0 0.2rem;
+    background: #FFF;
+    margin-top: 0.1rem; }
+    .login_person .person_quan a {
+      color: #000;
+      text-decoration: none;
+      display: flex;
+      height: 100%;
+      justify-content: space-between;
+      align-items: center; }
+      .login_person .person_quan a dl {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .login_person .person_quan a dl dt {
+          font-size: 0.24rem;
+          color: #666; }
+        .login_person .person_quan a dl dd {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-left: 0.1rem; }
+          .login_person .person_quan a dl dd .jifen {
+            color: #666; }
+  .login_person .person_all {
+    margin-top: 0.1rem;
+    background: #fff; }
+    .login_person .person_all a {
+      padding: 0 0.2rem;
+      color: #000;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      height: 0.5rem;
+      align-items: center;
+      position: relative; }
+      .login_person .person_all a::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        background: #ccc;
+        transform: scaleY(0.5);
+        bottom: 0; }
+      .login_person .person_all a .font {
+        font-size: 0.24rem;
+        vertical-align: middle;
+        color: #666; }
+      .login_person .person_all a p {
+        flex-grow: 1; }
+        .login_person .person_all a p .person_all {
+          margin-left: 0.1rem; }
+
+.login_exit {
+  height: 100%;
+  overflow: hidden; }
+  .login_exit .header_exit {
+    display: flex;
+    align-items: center;
+    height: 0.6rem;
+    background: #fff;
+    padding: 0 0.2rem; }
+    .login_exit .header_exit .logo {
+      flex-grow: 1;
+      text-align: center; }
+  .login_exit .exit_body {
+    height: 100%;
+    background: url("/images/login/logout_bg.jpg") no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .login_exit .exit_body .exit_content {
+      height: 5.1rem;
+      width: 90%;
+      margin-top: 0.15rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 20px; }
+      .login_exit .exit_body .exit_content h1 {
+        text-align: center;
+        padding: 0.2rem 0; }
+        .login_exit .exit_body .exit_content h1 img {
+          width: 1.34rem;
+          height: 0.76rem; }
+      .login_exit .exit_body .exit_content p {
+        color: #fff;
+        padding: 0 0.15rem;
+        line-height: 1.6;
+        font-size: 0.16rem;
+        padding-bottom: 0.25rem; }
+      .login_exit .exit_body .exit_content dl {
+        display: flex;
+        padding: 0.2rem;
+        position: relative; }
+        .login_exit .exit_body .exit_content dl::before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          left: 0;
+          background: #ccc;
+          transform: scaleY(0.5);
+          top: 0; }
+        .login_exit .exit_body .exit_content dl dt img {
+          border-radius: 5px;
+          width: 1rem;
+          height: 1rem; }
+        .login_exit .exit_body .exit_content dl dd {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%; }
+          .login_exit .exit_body .exit_content dl dd span {
+            padding-bottom: 0.08rem;
+            color: #fff;
+            font-size: 0.12rem; }
+    .login_exit .exit_body .bot {
+      display: block;
+      width: 90%;
+      padding: 0.1rem 0;
+      margin-top: 0.2rem;
+      border-radius: 0.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      text-align: center; }
+      .login_exit .exit_body .bot span {
+        color: #fff; }
+
 .hotcity {
   margin-top: 0.15rem;
   height: 0.9rem;
