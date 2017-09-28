@@ -34,7 +34,7 @@ class LoginPersonComponent extends React.Component {
     render() {
         return(
             <div className="login_person">
-                <HeaderComponent  data = {this.state.date}/>
+                {/* <HeaderComponent/> */}
             </div> 
             
         )

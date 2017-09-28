@@ -1,8 +1,5 @@
 
 import LoginComponent from "./LoginComponent"
-import LoginpersonComponent from "./LoginpersonComponent"
-
-
 import {connect} from "react-redux"
 import LoginPersonComponent from "./LoginPersonComponent"
 class RootLoginComponent extends React.Component {

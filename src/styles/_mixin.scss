@@ -1,0 +1,50 @@
+@mixin border-top-bottom($h:1px,$color:#ccc){
+    content: '';
+    display: block;
+    width: 100%;  
+    height: $h;
+    position: absolute;
+    left: 0;
+    background: $color;
+    transform: scaleY(0.5);
+}
+@mixin border-left-right($w:1px,$color:#ccc){
+    content: '';
+    display: block;
+    width: $w;  
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: $color;
+    transform: scaleX(0.5);
+}
+
+@mixin top($h:1px,$color:#ccc) {
+    position: relative;
+    &::before {
+       @include border-top-bottom;        
+        top: 0;      
+    }  
+}
+@mixin bottom($h:1px,$color:#ccc) {
+    position: relative;
+    &::before {
+        @include border-top-bottom; 
+        bottom: 0;
+    }
+}
+@mixin left($w:1px,$color:#ccc) {
+    position: relative;
+    &::after {
+        @include border-left-right; 
+        left: 0;
+     
+    }
+}
+@mixin right($w:1px,$color:#ccc) {
+    position: relative;
+    &::after {
+       @include border-left-right; 
+        left: 100%;
+    }
+}
