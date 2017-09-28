@@ -3,6 +3,7 @@ import HeaderComponent from '../common//HeaderComponent'
 
 import CompreComponent from './CompreComponent'
 import Fetch from '../../module/fetch'
+import GoTopComponent from "../common/GoTopComponent"
 
 class NewthingsComponent extends React.Component {
 	constructor(props,context) {
@@ -54,6 +55,7 @@ class NewthingsComponent extends React.Component {
 						{this.state.index==3?<ChooseComponent/>:''}
 					</div>					
 				</div>
+				<GoTopComponent />
              </div> 
              
            
@@ -61,6 +63,5 @@ class NewthingsComponent extends React.Component {
     }
 }
 NewthingsComponent.defaultProps={
-    
 }
 export default NewthingsComponent

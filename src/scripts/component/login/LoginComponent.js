@@ -16,13 +16,7 @@ class LoginComponent extends React.Component {
 }
 
 LoginComponent.defaultProps={
-        position: "",
-        fanhui: "icon-iconback",
-        title: "登录",
-        gouwu: "icon-gouwuche",
-        login: "icon-gengduo"
-    
-    
+        title: "登录"   
 }
 
 export default LoginComponent
