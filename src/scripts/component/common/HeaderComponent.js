@@ -37,7 +37,7 @@ class HeaderComponent extends React.Component {
                     {
                         this.showContent() 
                     }
-                        <Link href="/" className="iconfont icon-gouwuche gouwu"></Link>
+                        <Link to="/cart" className="iconfont icon-gouwuche gouwu"></Link>
                         <span className="iconfont icon-gengduo" onClick={this.handleTabs.bind(this)}></span>
                     </div>
                 </div>

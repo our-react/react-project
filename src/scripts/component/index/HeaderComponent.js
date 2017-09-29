@@ -87,7 +87,7 @@ class HeaderComponent extends React.Component {
                         {this.changing()}           
                     <div className="header-right">
                         <h4 className="logo"><img src="/images/index/logo.head.png" alt=""/></h4>
-                        <Link href="/" className="iconfont icon-gouwuche gouwu"></Link>
+                        <Link to="/cart" className="iconfont icon-gouwuche gouwu"></Link>
                         <Link to="/login" className="iconfont icon-wode1"></Link>
                     </div>
                 </div>

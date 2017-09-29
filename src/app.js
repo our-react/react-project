@@ -16,6 +16,7 @@ import NearbyComponent from './scripts/component/nearby/NearbyComponent'
 import PositionComponent from './scripts/component/position/PositionComponent'
 import DetialComponent from './scripts/component/detial/DetialComponent'
 import RootLoginComponent from './scripts/component/login/RootLoginComponent'
+import CartComponent from "./scripts/component/cart/CartComponent"
 
 
 import {Provider} from 'react-redux'
@@ -36,7 +37,8 @@ ReactDOM.render(
                 <Route path="/position" component={PositionComponent}></Route>         
                 <Route path="/detial/:id" component={DetialComponent}></Route>       
                 <Route path="/nearby" component={NearbyComponent}></Route>   
-                <Route path="/detial" component={DetialComponent}></Route>       
+                <Route path="/detial" component={DetialComponent}></Route>    
+                <Route path="/cart" component={CartComponent}></Route>   
             </Route>
         </Router>
     </Provider>
