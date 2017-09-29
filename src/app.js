@@ -16,6 +16,7 @@ import NearbyComponent from './scripts/component/nearby/NearbyComponent'
 import PositionComponent from './scripts/component/position/PositionComponent'
 import DetialComponent from './scripts/component/detial/DetialComponent'
 import RootLoginComponent from './scripts/component/login/RootLoginComponent'
+import CartComponent from "./scripts/component/cart/CartComponent"
 
 import LoginSetComponent from './scripts/component/login/LoginSetComponent'
 
@@ -39,6 +40,8 @@ ReactDOM.render(
                 <Route path="/nearby" component={NearbyComponent}></Route>   
                 <Route path="/detial" component={DetialComponent}></Route>   
                 <Route path="/exit" component={LoginSetComponent}></Route>   
+                <Route path="/cart" component={CartComponent}></Route>   
+
             </Route>
         </Router>
 
