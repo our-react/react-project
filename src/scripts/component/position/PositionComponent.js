@@ -3,6 +3,7 @@ import HeaderComponent from "../common/HeaderComponent"
 import NowCityComponent from "../position/NowCityComponent"
 import HotCityComponent from "../position/HotCityComponent"
 import AllCityComponent from "../position/AllCityComponent"
+
 import GoTopComponent from "../common/GoTopComponent"
 
 
@@ -21,6 +22,7 @@ class PositionComponent extends React.Component {
 }
 
 PositionComponent.defaultProps={
+
         title: "选择城市"
     
 }

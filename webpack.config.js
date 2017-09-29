@@ -38,14 +38,7 @@ module.exports = {
     ],
     module:{
         loaders:[
-            // {
-            //     test:/\.css$/,
-            //     loader:'style-loader!css-loader'
-            // },
-            // {
-            //     test:/\.scss$/,
-            //     loader:'style-loader!css-loader!sass-loader'
-            // },
+           
 
             {
                 test:/\.css$/,
@@ -61,10 +54,7 @@ module.exports = {
                     use:'css-loader!sass-loader'
                 })
             },
-            // {
-            //     test:/\.js$/,
-            //     loader:'jsx-loader'
-            // },
+            
             {
                 test:/\.js$/,
                 exclude: /node_modules/,

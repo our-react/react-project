@@ -168,6 +168,7 @@ class RegisterComponent extends React.Component {
 }
 
 RegisterComponent.defaultProps={
+
         title: "手机快速注册"
 }
 

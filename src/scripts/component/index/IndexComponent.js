@@ -3,6 +3,7 @@ import LunboComponent from './LunboComponent'
 import NavComponent from './NavComponent'
 import AdvertiseComponent from './AdvertiseComponent'
 import HotRecommendComponent from './HotRecommendComponent'
+
 import HeaderComponent from "./HeaderComponent"
 import ListComponent from "./ListComponent"
 import FooterComponent from "./FooterComponent"
@@ -10,6 +11,7 @@ import FooterComponent from "./FooterComponent"
 import GuessComponent from "./GuessComponent"
 
 import FootadComponent from "./FootadComponent"
+
 
 import GoTopComponent from "../common/GoTopComponent"
 import Fetch from '../../module/fetch'
@@ -30,7 +32,6 @@ class IndexComponent extends React.Component {
 
     componentWillMount() {
        let that = this
-       //console.log(this.props.params,2)
         Fetch.Get("http://localhost:9000/loho/index",{
         }).then(res=>{
            return res.json()
@@ -65,8 +66,7 @@ class IndexComponent extends React.Component {
     
 }
 IndexComponent.defaultProps={
-        position: "北京市",
-   
+        position: "北京市"
     
 }
 

@@ -1,0 +1,84 @@
+.login_exit{
+    height: 100%;
+    overflow: hidden;
+        .header_exit{
+            display: flex;
+            align-items: center;
+            height: 0.6rem;
+            background: #fff;
+            padding: 0 0.2rem;
+           .logo{
+               flex-grow: 1;
+                text-align: center;
+            } 
+        }
+       .exit_body{
+           height: 100%;
+           background: url("/images/login/logout_bg.jpg") no-repeat;
+           background-size: 100% 100%;
+           overflow: hidden;
+           display: flex;
+           flex-direction:column; 
+           align-items: center;
+           .exit_content{
+                height:5.1rem;
+                width:90%;
+                margin-top:0.15rem;
+                background: rgba(0,0,0,.3);
+                border-radius: 20px; 
+                h1{
+                    text-align: center;
+                    padding:0.2rem 0;
+                    img{
+                        width:1.34rem;
+                        height:0.76rem;
+                    }
+                }
+                p{
+                    color: #fff;
+                    padding:0 0.15rem;
+                    line-height: 1.6;
+                    font-size:0.16rem;
+                    padding-bottom:0.25rem;
+                   
+                }
+                dl{
+                    display: flex;
+                    padding: 0.2rem;
+                     @include top;
+                    dt{
+                        img{
+                           border-radius: 5px;                           
+                            width:1rem;
+                            height:1rem;
+                        }
+                    }
+                    dd{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        span{
+                            padding-bottom:0.08rem;
+                            color:#fff;
+                            font-size:0.12rem;
+                        }
+                    }
+                }
+           }
+            .bot{
+                display: block;
+                width:90%;
+                padding:0.1rem 0;
+                margin-top:0.2rem;
+                border-radius: 0.5rem;
+                background: rgba(0,0,0,.3);
+                text-align: center;
+                span{
+                    color:#fff;
+                }
+            }
+       }
+    
+}

@@ -16,6 +16,7 @@ class LoginComponent extends React.Component {
 }
 
 LoginComponent.defaultProps={
+
         title: "登录"   
 }
 

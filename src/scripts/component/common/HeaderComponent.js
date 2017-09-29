@@ -31,6 +31,7 @@ class HeaderComponent extends React.Component {
         let style = this.state.isShow?{display:"block"}:{display:"none"}
         return (
             <div className="header">
+
                 <div className="header-nav">
                     <span className="iconfont icon-iconback" onClick={this.handleBack.bind(this)}></span>     
                     <div className="header-right">
@@ -45,6 +46,7 @@ class HeaderComponent extends React.Component {
                 <div className="header-tabs" style={style}>
                     <Link><span className="iconfont icon-wode1"></span><span>会员中心</span></Link>
                     <Link to="/"><span className="iconfont icon-shouye1"></span><span>首页</span></Link>
+
                 </div>
              </div> 
         )
@@ -52,6 +54,4 @@ class HeaderComponent extends React.Component {
 }
 
 export default HeaderComponent
-
-
 

@@ -14,25 +14,20 @@ class NewthingsComponent extends React.Component {
 		let _title=this.props.params.tag?this.props.params.tag:'新品上市';
         this.state={
         	index:0,
-        	id: _id,
-        	url1:"http://localhost:9000/loho/search/?e="+_id+"&page=1",
-        	url2:"http://localhost:9000/loho/search/?e="+_id+"&page=2",
-        	position: "",
-		    fanhui: "icon-iconback",
-		    gouwu: "icon-gouwuche",
-		    login: "icon-gengduo",
-		    title:_title
-        	
+
+        	url1:"http://localhost:9000/loho/search/?e=222&page=1",
+        	url2:'http://localhost:9000/loho/search/?e=222&page=2'
         }
     }
 	changeStyle(index,sort){
-		
+
 		//console.log(e)
 		let that=this;
 		that.setState({
 			index:index,
-			url1:"http://localhost:9000/loho/search/?e="+this.state.id+"&page=1"+sort,
-			url2:"http://localhost:9000/loho/search/?e="+this.state.id+"&page=2"+sort
+			url1:"http://localhost:9000/loho/search/?e=222&page=1"+sort,
+			url2:'http://localhost:9000/loho/search/?e=222&page=2'+sort
+
 		})
 		
 	}
@@ -40,7 +35,8 @@ class NewthingsComponent extends React.Component {
     render() {
         return (          
             <div className="newthings">
-                <HeaderComponent data = {this.state} />               
+                <HeaderComponent data = {this.props}/>               
+
                 <div className="goodsList">
 					<div className="production-filter-bar">
 						<div className="listnav">

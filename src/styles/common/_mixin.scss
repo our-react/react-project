@@ -48,3 +48,17 @@
         left: 100%;
     }
 }
+@mixin short_right($w:1px,$color:#ccc){
+    position: relative;
+    &::after {
+    content: '';
+    display: block;
+    width: $w;  
+    height: 70%;
+    position: absolute;
+    top: 20%;
+    left: 100%;
+    background: $color;
+    transform: scaleX(0.5);
+    }
+}
