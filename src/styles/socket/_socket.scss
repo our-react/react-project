@@ -1,0 +1,60 @@
+.socket-header{
+    
+    width:100%;
+    height:.45rem;
+    background: white;
+    padding-left:.1rem;
+    line-height:.45rem;
+    font-size:.16rem;
+    .iconfont{
+        color:#333;
+    }
+    .back_content{
+        margin-left:.1rem;
+        color:#333;
+    }
+    
+    .kefu{
+        margin-left: .7rem;
+    }
+}
+.socket-footer{
+    width:100%;
+    height:.50rem;
+    background: white;
+    padding-left:.1rem;
+
+    
+    position: absolute;
+    left:0;
+    bottom: 0;
+    .iconfont{
+        width: auto;
+        font-size:.3rem;
+    
+    }
+    input{
+        width:2.5rem;
+        height:.37rem;
+        margin-left:.08rem;
+        margin-bottom: .04rem;        
+        border-radius: .1rem;
+       border:1px solid #ccc;
+       margin-right:.1rem;
+    }
+    .text-send{
+        font-size:.2rem;
+    }
+}
+.allMessage{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    .txtBox{
+        padding:.05rem .1rem;
+        height:auto;
+        background: #ccc;
+        
+    }
+}

@@ -13,7 +13,7 @@ import GoTopComponent from '../common/GoTopComponent'
 class DetialComponent extends React.Component {
       constructor(props,context) {
         super(props,context)
-        console.log(this.props.params.id)
+      // console.log(this.props.params.id)
         this.state={
             data:[],
             peddle:[]
